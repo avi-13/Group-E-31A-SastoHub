@@ -2,6 +2,7 @@ package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
 import com.system.sastohub.services.ProductService;
+import com.system.sastohub.services.UserServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +41,7 @@ public class HomepageController {
                         .imageBase64(getImageBase64(product.getImage()))
                         .build()
         ));
-        return "HomePage";
+        return "mainhomepage";
     }
 
     public String getImageBase64(String fileName) {

@@ -28,10 +28,10 @@ public class UserController {
     private final UserServices userServices;
 
 
-    @GetMapping("/admin")
-    public String admin() {
-        return "Admindashboard";
-    }
+//    @GetMapping("/admin")
+//    public String admin() {
+//        return "Admindashboard";
+//    }
 
     @GetMapping("/bought")
     public String store(){

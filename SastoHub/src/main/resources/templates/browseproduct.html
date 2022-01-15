@@ -67,7 +67,7 @@
 <!--            <h1 hidden th:text="${product.productPrice}"></h1>-->
 <!--            <h1 hidden th:text="${product.imageBase64}"></h1>-->
 
-            <input type="text"  hidden="hidden" name="pid" th:value="${product.pid}">
+            <input type="text"  hidden="hidden" name="pid" th:field="${product.pid}">
             <input type="text"  hidden="hidden" name="id" th:value="${loggedUser.id}">
             <input type="text"  hidden="hidden" name="ptitle" th:value="${product.ptitle}">
             <input type="text"  hidden="hidden" name="pPrice" th:value="${product.PPrice}">
