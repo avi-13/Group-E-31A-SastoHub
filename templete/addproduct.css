@@ -1,0 +1,57 @@
+.class1 {
+    background-color: #eee;
+    height: 200px;
+  }
+
+.class1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 6;
+  }
+
+.about {
+    background-color: #eee;
+    height: 200px;
+  }
+
+.about h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 6;
+  }
+
+.services {
+    background-color: #eee;
+    height: 200px;
+  }
+
+.services h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 6;
+  }
+
+.contact {
+    background-color: #eee;
+    height: 200px;
+  }
+
+.{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 6;
+  }
+
+.footer {
+    background-color: #777;
+    height: 40px;
+  }
+
+.footer{
+    margin: 0 auto;
+    line-height: 1.7;
+  }
