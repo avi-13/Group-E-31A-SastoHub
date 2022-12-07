@@ -1,0 +1,304 @@
+* {
+    padding: 0%;
+    margin: 0%;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow: hidden;
+  }
+  header {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: rgb(8, 9, 19);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .shooping{
+    text-align: center;
+    font-size: large;
+
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 4%;
+    width: 20%;
+  }
+  .brand .SastoHub {
+    font-size: 35px;
+  }
+  .brand h1 {
+    margin-left: 5%;
+  }
+  .navbar {
+    position: relative;
+    width: 70%;
+    padding: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .searchBox {
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+  .searchBox input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    padding: 1%;
+    text-indent: 10px;
+    font-size: 18px;
+  }
+  #searchIcon {
+    position: relative;
+    left: -30px;
+    font-size: 22px;
+    color: rgb(77, 77, 77);
+    cursor: pointer;
+    z-index: 221;
+  }
+  ul {
+    width: 60%;
+    text-align: center;
+  }
+  ul li {
+    display: inline-block;
+    margin-left: 4%;
+    transition: all 0.5s ease;
+    text-align: center;
+    cursor: pointer;
+    padding: 1%;
+    height: 20px;
+    overflow: hidden;
+  }
+  ul li:hover {
+    height: 45px;
+  }
+  ul li #headIcon {
+    display: block;
+    font-size: 22px;
+  }
+  ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+  }
+  ul li a:active,
+  :focus {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  #menuIcon {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      position: relative;
+      display: block;
+      width: 60%;
+      display: none;
+    }
+    .navbar.navactive {
+      display: inline;
+    }
+    .searchBox {
+      position: relative;
+      width: 100%;
+      top: 60px;
+      z-index: 221;
+      left: 5%;
+    }
+    #menuIcon {
+      display: inline;
+      position: fixed;
+      font-size: 25px;
+      margin-left: 88%;
+      z-index: 222;
+      float: right;
+      padding: 1%;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid rgb(221, 221, 221);
+    }
+    .navbar ul {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(8, 9, 19);
+    }
+    .navbar ul li {
+      display: block;
+      margin-top: 20px;
+      width: 100%;
+      height: 40px;
+      text-align: left;
+      position: relative;
+      top: 50px;
+      padding: 2%;
+    }
+    ul li #headIcon {
+      display: inline-block;
+      font-size: 33px;
+    }
+    ul li:hover {
+      background: rgb(35, 36, 51);
+    }
+    ul li a {
+      margin-left: 40px;
+      font-family: 600;
+    }
+  }
+  /* for footer */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    text-decoration: none;
+  }
+  footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #111;
+  }
+  footer .content{
+    max-width: 1350px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer .content p,a{
+    color: #fff;
+  }
+  footer .content .box{
+    width: 33%;
+    transition: all 0.4s ease;
+  }
+  footer .content .topic{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+  
+  }
+  footer .content p{
+    text-align: justify;
+  }
+  footer .content .lower .topic{
+    margin: 24px 0 5px 0;
+  }
+  footer .content .lower i{
+    padding-right: 16px;
+  }
+  footer .content .middle{
+    padding-left: 80px;
+  }
+  footer .content .middle a{
+    line-height: 32px;
+  }
+  footer .content .right input[type="text"]{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    color: #d9d9d9;
+    background: #000;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 2px solid #222222;
+  }
+  footer .content .right input[type="submit"]{
+    height: 42px;
+    width: 100%;
+    font-size: 18px;
+    color: #d9d9d9;
+    background: #eb2f06;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 12px;
+    border: 2px solid #eb2f06;
+    transition: all 0.3s ease-in-out;
+  }
+  .content .right input[type="submit"]:hover{
+    background: none;
+    color:  #eb2f06;
+  }
+  footer .content .media-icons a{
+    font-size: 16px;
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    text-align: center;
+    line-height: 43px;
+    border-radius: 5px;
+    border: 2px solid #ffff;
+    margin: 30px 5px 0 0;
+    transition: all 0.3s ease;
+  }
+  .content .media-icons a:hover{
+    border-color: #ffff;
+  }
+  footer .bottom{
+    width: 100%;
+    text-align: right;
+    color: #d9d9d9;
+    padding: 0 40px 5px 0;
+  }
+  footer .bottom a{
+    color: #eb2f06;
+  }
+  footer a{
+    transition: all 0.3s ease;
+  }
+  footer a:hover{
+    color: #eb2f06;
+  }
+  @media (max-width:1100px) {
+    footer .content .middle{
+      padding-left: 50px;
+    }
+  }
+  @media (max-width:950px){
+    footer .content .box{
+      width: 50%;
+    }
+    .content .right{
+      margin-top: 40px;
+    }
+  }
+  @media (max-width:560px){
+    footer{
+      position: relative;
+    }
+    footer .content .box{
+      width: 100%;
+      margin-top: 30px;
+    }
+    footer .content .middle{
+      padding-left: 0;
+    }
+
+    
+
+  }
+
+
