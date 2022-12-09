@@ -64,6 +64,11 @@ html{
     font-size: 16px;
     font-weight: bold;
   }
+
+  /* .input .icons{
+    position: relative;
+    margin-left: 300px;
+  } */
   
   ::placeholder {
     color: #879C97;
