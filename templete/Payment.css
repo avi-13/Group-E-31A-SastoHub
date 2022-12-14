@@ -45,4 +45,64 @@
     cursor: pointer;
     z-index: 221;
   }
+
+  ul {
+    width: 60%;
+    text-align: center;
+  }
+  ul li {
+    display: inline-block;
+    margin-left: 4%;
+    transition: all 0.5s ease;
+    text-align: center;
+    cursor: pointer;
+    padding: 1%;
+    height: 20px;
+    overflow: hidden;
+  }
+  ul li:hover {
+    height: 45px;
+  }
+  ul li #headIcon {
+    display: block;
+    font-size: 22px;
+  }
+  ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+  }
+  ul li a:active,
+  :focus {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  #menuIcon {
+    display: none;
+  }
+  
+  
+  section{
+    display: flex;
+    height: 60vh;
+  }
+  section img{
+    
+  
+  width: 40%;
+  }
+  .side_content{
+    margin-left: 100px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .inputsection .CardNumber{
+  margin-top: 10px;
+  
+  }
+  
+  
   
