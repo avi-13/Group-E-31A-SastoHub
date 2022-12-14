@@ -104,5 +104,32 @@
   
   }
   
+input{
+    width: 50%;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #eee;
+    
+    
+  }
+  button{
+    background-color: #4081cd;
+    height: 40px;
+    width: 60px;
+    margin-left: 200px;
+    cursor: pointer;
+    
+  }
+  
+  footer{
+    background-color: black;
+    height: 14vh;
+    margin-top: 90px;
+  
+  }
+  
+  
+  
+  
   
   
