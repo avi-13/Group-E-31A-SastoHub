@@ -58,14 +58,15 @@
 }
 input{
     border-radius: 10px;
-    width: 40%;
-    background-color: #eeeee4;
+    width: 60%;
+    height: 25px;
+    background-color: #EBEFF3;
     
 }
 .input_info{
     display: flex;
     
-    background-color: white;
+    background-color: #f4f4f4;
     flex-wrap: wrap;
     margin-left: 10%;
     padding-bottom: 20px;
@@ -76,8 +77,10 @@ input{
     margin-top: 10px;
     
    
-    background-color: white;
+    background-color: #f4f4f4;
 }
+
+
 /* .right button{
     border-radius: 10px;
     margin-top: 60px;
@@ -140,6 +143,12 @@ body{
 .modal-body{
     padding: 10px 20px;
 }
+
+/* .modal-body input{
+    border-radius: 10px;
+    width: 40%;
+    background-color: #eeeee4;
+} */
 
 .modal-footer{
     background: coral;
