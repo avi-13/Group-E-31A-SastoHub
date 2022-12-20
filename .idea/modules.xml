@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Group-E-31A-SastoHub.iml" filepath="$PROJECT_DIR$/.idea/Group-E-31A-SastoHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SastoHub/SastoHub.iml" filepath="$PROJECT_DIR$/SastoHub/SastoHub.iml" />
+    </modules>
+  </component>
+</project>
