@@ -336,3 +336,119 @@ margin: 2px;
 i:hover{
 color: orange;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  
+* {
+  font-family: Roboto;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 5vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.whole h1{
+  background-color: #b3b30e;
+}
+
+.right h1{
+  background-color: white;
+}
+.right h2{
+  background-color: white;
+
+}
+.bodies{
+      
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0;
+  flex-wrap: wrap;
+  
+  
+}
+.left{
+  width: 20%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  
+}
+.left a{
+  margin-top: 5px;
+  padding: 5px;
+  text-decoration: none;
+ 
+  border-radius: 5px;
+  background-color: #d6d6d6;
+  color: black;
+  
+}
+.left a:hover{
+  background-color: grey;
+}
+.right{
+  width: 70%;
+  height: 80vh;
+  
+  
+  background-color: rgb(255, 252, 252);
+  border-radius: 20px;
+  
+  
+}
+input{
+  border-radius: 10px;
+  width: 40%;
+  background-color: #fdfdfb;
+  
+  
+
+  
+  
+  
+}
+.input_info{
+  display: flex;
+  
+  background-color: white;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  padding-bottom: 20px;
+
+}
+.element{
+  width: 50%;
+  margin-top: 10px;
+  
+ 
+  background-color: white;
+/* }
+input[type=file]{
+border: 4px dotted red;
+width: 100px;
+height: 100px;
+
+} choose file css*/
+}
+.right button{
+  border-radius: 10px;
+  height:7%;
+  width: 7%;
+  margin-top: 60px;
+  margin-left: 50px;
+  background-color: rgb(209, 206, 206);
+  cursor: pointer;
+  
+
+  margin-bottom: 40px;
+  
+
+}
