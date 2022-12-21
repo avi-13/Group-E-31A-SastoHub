@@ -60,3 +60,31 @@
     height: 20px;
     overflow: hidden;
   }
+
+  ul li:hover {
+    height: 45px;
+  }
+  ul li #headIcon {
+    display: block;
+    font-size: 22px;
+  }
+  ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+  }
+  ul li a:active,
+  :focus {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  #menuIcon {
+    display: none;
+  }
+
+  section{
+    /* border: solid 2px green; */
+    height: 75vh;
+    display: flex;
+    background-color: #eeeee4;
+  }
