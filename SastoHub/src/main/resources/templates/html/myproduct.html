@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Address</title>
+    <title>My Product</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/SastoHub//src/main/resources/static/css/myproduct.css">
     </head>
@@ -75,7 +75,7 @@
       
                   <h4>Price: 700</h4>
                   <button class="button-1" role="button">Edit</button>
-                  <button class="button-2" role="button">Delete</button>
+                  <button class="button-2" role="button" onClick="showMessage()"">Delete</button>
       
       
       
@@ -124,6 +124,11 @@
         </div>
 
     </footer>
+    <script>
+      function showMessage() {
+          alert("Are you sure you want to delete?");
+      }
+  </script>
 </body>
 
 </html>
