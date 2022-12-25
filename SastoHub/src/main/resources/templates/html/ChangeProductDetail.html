@@ -10,8 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <link rel="stylesheet" href=>
 
-  <link rel="stylesheet" href="/Group-E-31A-SastoHub/SastoHub/src/main/resources/static/css/ChangeProductDetail.css" />
+  <link rel="stylesheet" href="/SastoHub/src/main/resources/static/css/ChangeProductDetail.css" />
   <title>Edit Product Details</title>
 </head>
 <!-- <body>
@@ -65,7 +67,10 @@
   </div>
 </header>
 <body>
+
+
   <section id="whole">
+    
       <h1>Edit Product Details</h1>
       <div class="bodies">
           <div class="left">
@@ -102,10 +107,25 @@
                   Description<br>
                   <input type="text">
               </div>
+              <div class="wrapper">
+                <form action="#">
+                    <input class="file-input" type="file" name="file" accept="image/jpeg, image/png, image/jpg" hidden>
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <p>Upload Photos</p>
+                </form>
+                <!-- <section class="progress-area"></section>
+                <section class="uploaded-area"></section> -->
+            </div>
               </div>
               <button>Save</button>
+
+
+
           </div>
+
       </div>
+
+
   </section>
   
 </body>
@@ -155,6 +175,5 @@
 
 </div>
 
-
+<script src="/SastoHub/src/main/resources/static/js/ChangeProductDetail.js"></script>
 </html>
-
