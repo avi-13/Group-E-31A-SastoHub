@@ -7,7 +7,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  background: #292929;
+  background: #ebe9e9;
 }
 
 .login-form {
@@ -16,6 +16,7 @@ body {
   /* align-items: center; */
   width: 780px;
   height: 650px;
+  text-decoration-color: aliceblue;
   background-color: white;
   box-shadow: 0 6px 20px rgba(25, 27, 28, 0.5);
   /* padding: 30px; */
@@ -24,12 +25,13 @@ body {
 
 .left-section {
   width: 55%;
-  background: #4a698a;
+  background: #878889;
 }
 
 .right-section {
   width: 50%;
-  background: white;
+  background: rgb(253, 251, 251);
+  
 }
 .login-form .left-section h2 {
   text-align: center;
@@ -38,7 +40,7 @@ body {
 }
 
 .left-section span {
-  color: blue;
+  color: rgb(237, 237, 239);
 }
 
 .login-form .formGroup {
@@ -52,25 +54,26 @@ body {
   font-size: 14px;
   border: none;
   width: 45%;
-  background-color: #4a698a ;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #69696b ;
+  border-bottom: 1px solid rgb(11, 11, 11);
   padding: 13px;
 
 }
 
 .formGroup input:focus {
   outline: none;
-  border-bottom: 1.5px solid blue ;
+  border-bottom: 1.5px solid rgb(250, 19, 54) ;
   font-size: 16px;
   font-weight: bold;
 }
 
 ::placeholder {
-  color: black;
+  color: rgb(248, 234, 234);
 }
 
 .left-section .submit-btn {
-  background-color: black;
+  background-color: rgb(162, 159, 159);
+ 
   color: white;
   margin-left: 100px;
   padding: 11px 50px;
@@ -100,23 +103,25 @@ body {
 
 .facebook-class {
   display: block;
-  margin-top: 265px;
+  width: 52%;
+  margin-top: 45px;
   margin-left: 60px;
   margin-right: 60px;
   padding: 12px 25px;
-  background-color: black;
-  color: white;
+  background-color: rgb(241, 235, 235);
+  color: rgb(13, 146, 241);
 
 }
 
  .google-class {
   display: block;
+  width: 52%;
   margin-right: 60px;
   margin-left: 60px;
   margin-top: 30px;
   padding: 12px 25px;
-  background-color: black;
-  color: white;
+  background-color: rgb(241, 235, 235);
+  color: rgb(0, 5, 1);
 } 
 
 /* .right-section a i {
