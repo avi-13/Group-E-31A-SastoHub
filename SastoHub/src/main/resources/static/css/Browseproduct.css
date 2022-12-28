@@ -17,6 +17,108 @@ header {
   align-items: center;
   justify-content: space-around;
 }
+.navbar .profile{
+    align-items: center;
+    justify-content: center;
+    flex: 1; 
+    padding-right: 50px;
+}
+
+.navbar .profile .profile-div{
+    width: 30px;
+    float: right;
+    display: flex;
+    transition: all 175ms ease-in-out;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar .profile .profile-div:hover{
+    scale: 1.1;
+}
+
+.navbar .profile .profile-div .picture{
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    border-style: hidden;
+    background-color: white;
+    float: right;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.navbar .profile .profile-div {
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: white;
+    display:flex;
+}
+
+.navbar .profile .profile-div .picture .profile-head{
+    width: 12px;
+    height: 14px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.navbar .profile .profile-div .picture .profile-body{
+    width: 32px;
+    height: 21px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 6px;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* .navbar .profile-div:hover, .picture:hover, .dropdown:hover  {
+  background-color: rgb(253, 25, 25);
+} */
+
+.navbar .profile .dropdown {
+  margin-top: 230px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display:block;
+  text-align: left;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.profile:hover .dropdown {
+  display: block;
+}
 .shooping{
   text-align: center;
   font-size: large;
@@ -576,4 +678,3 @@ footer a:hover{
   }
 
    */
-
