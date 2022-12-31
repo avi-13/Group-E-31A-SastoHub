@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" >
 
 <head>
   <meta charset="UTF-8" />
@@ -52,7 +52,7 @@
     <h1>BROWSE PRODUCT</h1>
 
     <div class="project">
-      <form th:method="post" th:action="@{/order/saveOrder}" th:object="${saveorder}" enctype="multipart/form-data">
+      <form th:method="post" th:action="@{/product/saveP}" th:object="${product}" enctype="multipart/form-data">
 
       <div class="shop">
 
@@ -85,12 +85,16 @@
             <p> ProductPrice: <i th:text="${pro.productPrice}" style="color: red"></i></p>
 <!--            <p class="unit">Quantity: <p th:> </p> </p>-->
 
-            <p class="unit">Quantity: <input type="number" value=" " th:field="${saveorder.quantity}"></p>
+<!--            <p class="unit">Quantity: <input type="number" value=" " th:field="${saveorder.quantity}"></p>-->
 
 
             <button class="btn-area1" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></button>
 
-            <button class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
+<!--            <form class="form-item" th:method="post" th:action="@{/product/saveP}" th:object="${product}">-->
+            <button class="btn-area" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
+              <input type="text"  hidden="hidden" name="p_id" th:value="${product.pid}">
+              <input type="text"  hidden="hidden" name="user_id" th:value="${loggedUser.id}">
+<!--              </form>-->
 
 
           </div>

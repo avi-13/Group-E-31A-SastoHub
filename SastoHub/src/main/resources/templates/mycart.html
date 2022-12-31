@@ -11,15 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/static/css/style1.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
-    <link rel="stylesheet" href="/static/css/myproduct.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
-    <link rel="stylesheet" href="/static/css/deleteproduct.css" />
+
     <link rel="stylesheet" th:href="@{~/css/deleteproduct.css}" />
 
     <title>Responsive header</title>
@@ -30,106 +22,61 @@
         document.getElementById("nav").classList.toggle("navactive");
       };
     </script> -->
-    <header>
-      <div class="brand">
-        <span class="SastoHub"></span>
-        <h1>SastoHub</h1>
-      </div>
-      <span class="fas fa-bars" id="menuIcon" onclick="toggle()"></span>
-      <div class="navbar" id="nav">
-        <div class ="searchBox">
-          <input type="text" placeholder="Search here..." />
-          <span class="fas fa-search" id="searchIcon"></span>
-        </div>
-        <ul>
-          <li>
-            <span class="fas fa-home" id="headIcon"></span>
-            <a href="#"> Home </a>
-          </li>
-          <li>
-            <span class="fa fa-user-circle" id="headIcon"></span>
-            <a href="#"> Categories </a>
-          </li>
-          <li>
-            <span class="fas fa-question-circle" id="headIcon"></span>
-            <a href="#"> Sell On SastoHub</a>
-          </li>
-          <li>
-            <span class="fas fa-lock" id="headIcon"></span>
-            <a href="#"> Services </a>
-          </li>
-          <li>
-            <span class="fas fa-sign-out" id="headIcon"></span>
-            <a href="#"> Contact </a>
-          </li>
-          <li>
-            <span class="fas fa-lock" id="headIcon"></span>
-            <a href="#"> About </a>
-            <li>
-                <span class="fas fa-lock" id="headIcon"></span>
-                <a href="#"> Help </a>
-              </li>
-        </ul>
-      </div>
-    </header>
+<!--    <header>-->
+<!--      <div class="brand">-->
+<!--        <span class="SastoHub"></span>-->
+<!--        <h1>SastoHub</h1>-->
+<!--      </div>-->
+<!--      <span class="fas fa-bars" id="menuIcon" onclick="toggle()"></span>-->
+<!--      <div class="navbar" id="nav">-->
+<!--        <div class ="searchBox">-->
+<!--          <input type="text" placeholder="Search here..." />-->
+<!--          <span class="fas fa-search" id="searchIcon"></span>-->
+<!--        </div>-->
+<!--        <ul>-->
+<!--          <li>-->
+<!--            <span class="fas fa-home" id="headIcon"></span>-->
+<!--            <a href="#"> Home </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <span class="fa fa-user-circle" id="headIcon"></span>-->
+<!--            <a href="#"> Categories </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <span class="fas fa-question-circle" id="headIcon"></span>-->
+<!--            <a href="#"> Sell On SastoHub</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <span class="fas fa-lock" id="headIcon"></span>-->
+<!--            <a href="#"> Services </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <span class="fas fa-sign-out" id="headIcon"></span>-->
+<!--            <a href="#"> Contact </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <span class="fas fa-lock" id="headIcon"></span>-->
+<!--            <a href="#"> About </a>-->
+<!--            <li>-->
+<!--                <span class="fas fa-lock" id="headIcon"></span>-->
+<!--                <a href="#"> Help </a>-->
+<!--              </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </header>-->
 
     <body>
       
     
     
-    <div class="wrapper">
-      <h1>Shopping Cart</h1>
-      <div class="project">
-        <div class="shop">
-          <div class="box" th:each="product:${mycart}">
-            <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
+
+          <div class="box" th:each="product:${cartItems}">
+<!--            <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />-->
             <div class="content">
-              <h1 th:text="${product.productTitle}"></h1>
-
-              <p><i>Brand New</i></p>
-
-              <h4 th:text="${product.productPrice}"></h4>
-
-
-              <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
+              <h1 th:text="${product.getProduct.productTitle}"></h1>
             </div>
-          </div>
+                </div>
 
-          <div class="box">
-
-            <img src="/static/images/2.jpg">
-            <div class="content">
-              <h3>Man's Watches</h3>
-              <h4>Price: $40</h4>
-              <p class="unit">Quantity: <input name="" value="1"></p>
-              <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-            </div>
-          </div>
-          <div class="box">
-
-            <img src="/static/images/3.jpg">
-            <div class="content">
-              <h3>Samsung Mobile</h3>
-              <h4>Price: $250</h4>
-              <p class="unit">Quantity: <input name="" value="0"></p>
-              <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="right-bar">
-          <p><span>Subtotal</span> <span>$120</span></p>
-          <hr>
-          <p><span>Tax (5%)</span> <span>$6</span></p>
-          <hr>
-          <p><span>Shipping</span> <span>$15</span></p>
-          <hr>
-          <p><span>Total</span> <span>$141</span></p><a href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
-        </div>
-      </div>
-    </div>
-
-
-</div>
   </body>
 
   <section>SastoHub</section>

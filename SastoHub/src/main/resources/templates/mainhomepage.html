@@ -95,7 +95,7 @@
 <div class="maindiv">
 <!--    <h1 id="h1">Recently Added Product</h1>-->
     <div class="hmprodclass">
-        <div class="hmproddiv" th:each="product:${products}">
+        <div class="hmproddiv" th:each="product:${product}">
             <a th:href="@{~/product/}+${product.productId}">
                 <img class="hmprodimg" th:src="'data:image/png;base64,'+${product.imageBase64}"  alt="image"/>
 <!--                <h3 th:text="${product.productTitle}"> </h3>-->

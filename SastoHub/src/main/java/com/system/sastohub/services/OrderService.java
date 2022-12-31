@@ -14,4 +14,5 @@ public interface OrderService {
     Order fetchById(Integer id);
 
 
+    List<Order> findBookingById(Integer id);
 }

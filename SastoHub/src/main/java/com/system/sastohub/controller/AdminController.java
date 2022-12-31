@@ -90,27 +90,34 @@ public class AdminController {
         productService.deleteById(id);
         return "redirect:/product/list";
     }
+//
+//    @GetMapping("/orderList")
+//    public String getOrderList(Model model){
+//        List <Order> orderLists=orderService.fetchAll();
+//        List <Order> orderList=orderService.fetchAll();
+////        model.addAttribute("orderList", orderLists);
+//        model.addAttribute("orders", orderList);
+////        model.addAttribute("order", orderLists.stream().map(orders ->
+////                Order.builder()
+////                        .orderId(orders.getOrderId())
+////                        .full_name(orders.getFull_name())
+////                        .productTitle(orders.getProductTitle())
+////                        .quantity(orders.getQuantity())
+////                        .productPrice(orders.getProductPrice())
+////                        .productCategory(orders.getProductCategory())
+////                        .address(orders.getAddress())
+////                        .mobileNo(orders.getMobileNo())
+////                        .size(orders.getSize())
+////                        .email(orders.getEmail())
+////                        .build()
+////        ));
+//        return "Admindashboard";
+//    }
 
-    @GetMapping("/orderList")
-    public String getOrderList(Model model){
-        List <Order> orderLists=orderService.fetchAll();
-        List <Order> orderList=orderService.fetchAll();
-//        model.addAttribute("orderList", orderLists);
-        model.addAttribute("orders", orderList);
-//        model.addAttribute("order", orderLists.stream().map(orders ->
-//                Order.builder()
-//                        .orderId(orders.getOrderId())
-//                        .full_name(orders.getFull_name())
-//                        .productTitle(orders.getProductTitle())
-//                        .quantity(orders.getQuantity())
-//                        .productPrice(orders.getProductPrice())
-//                        .productCategory(orders.getProductCategory())
-//                        .address(orders.getAddress())
-//                        .mobileNo(orders.getMobileNo())
-//                        .size(orders.getSize())
-//                        .email(orders.getEmail())
-//                        .build()
-//        ));
+    @GetMapping("/Admin-dashboard")
+    public String admin(Model model) {
+        List<Order> orderLists=orderService.fetchAll();
+        model.addAttribute("orderLists", orderLists);
         return "Admindashboard";
     }
 }

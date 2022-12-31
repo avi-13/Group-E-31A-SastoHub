@@ -27,22 +27,6 @@ public class MyCart {
             foreignKey = @ForeignKey(name = "FKM_Product_Id"))
     private Product product;
 
-    private String productTitle;
-
-    private String productCategory;
-
-    private String brandName;
-
-    private String size;
-
-    private String productDescription;
-
-    private Double productPrice;
-
-    private String image;
-
-    @Transient
-    private String imageBase64;
 
 
 }

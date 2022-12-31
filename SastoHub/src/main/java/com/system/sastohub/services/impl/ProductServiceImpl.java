@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -81,7 +82,22 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> fetchAll() {
-        return productRepo.findAll();
+        return findAllInList(productRepo.findAll());
+    }
+
+    public List<Product> findAllInList(List<Product> list){
+        Stream<Product> allCart=list.stream().map(product ->
+                Product.builder()
+                        .productId(product.getProductId())
+                        .imageBase64(getImageBase64(product.getImage()))
+                        .productTitle(product.getProductTitle())
+//                        .quantity(product.getQuantity())
+//                        .price(product.getPrice())
+                        .build()
+        );
+
+        list = allCart.toList();
+        return list;
     }
 
     @Override

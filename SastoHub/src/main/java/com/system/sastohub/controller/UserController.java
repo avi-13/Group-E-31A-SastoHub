@@ -28,12 +28,7 @@ public class UserController {
     private final UserServices userServices;
     private final OrderService orderService;
 
-    @GetMapping("/admin")
-    public String admin(Model model) {
-        List<Order> orderLists=orderService.fetchAll();
-        model.addAttribute("orderLists", orderLists);
-        return "Admindashboard";
-    }
+
 
     @GetMapping("/bought")
     public String store(){
@@ -124,5 +119,21 @@ public class UserController {
         model.addAttribute("message","Your new password has been sent to your email Please " +
                 "check your inbox");
         return "redirect:/home";
+    }
+
+    @GetMapping("/booked")
+    public String fetchAllbooking(){
+        return "Ordereditems";
+
+
+    }
+
+    @GetMapping("/booked/{id}")
+    public String fetchAllbook(@PathVariable("id") Integer id, Model model , Principal principal){
+        List<Order> order= orderService.findBookingById(id);
+        model.addAttribute("books",order);
+        model.addAttribute("userdata",userServices.findByEmail(principal.getName()));
+
+        return "Ordereditems";
     }
 }

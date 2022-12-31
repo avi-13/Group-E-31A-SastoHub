@@ -52,26 +52,37 @@ public class OrderServiceImpl implements OrderService {
         return orderRepo.findAll();
     }
 
-//    public List<Order> findAllInOrder(List<Order> list){
-//        Stream<Order> allOrders=list.stream().map(order ->
-//                Order.builder()
-//                        .orderId(order.getOrderId())
-//                        .orderDate(order.getOrderDate())
-//                        .orderDate(order.getOrderDate())
-//                        .orderDelivered(order.isOrderDelivered())
-//                        .quantity(order.getQuantity())
-//                        .build()
-//                );
-//
-//                list = allOrders.toList();
-//        return list;
-//    }
+    public List<Order> findAllInOrder(List<Order> list){
+        Stream<Order> allOrders=list.stream().map(order ->
+                Order.builder()
+                        .orderId(order.getOrderId())
+                        .product(order.getProduct())
+                        .user(order.getUser())
+                        .orderDate(order.getOrderDate())
+                        .orderDelivered(order.isOrderDelivered())
+                        .quantity(order.getQuantity())
+                        .build()
+                );
+
+                list = allOrders.toList();
+        return list;
+    }
 
     @Override
     public Order fetchById(Integer id) {
-        //        order = Order.builder()
-//                .product(order.getProduct())
-//                .build();
-        return orderRepo.findById(id).orElseThrow(()-> new RuntimeException("CouldNot Find"));
+        Order application= orderRepo.findById(id).orElseThrow(()->new RuntimeException("not found application"));
+        application =Order.builder()
+                .orderId(application.getOrderId())
+                .user(application.getUser())
+                .product(application.getProduct())
+                .build();
+        return application;
+
     }
+    @Override
+    public List<Order> findBookingById(Integer id) {
+        return findAllInOrder(orderRepo.findBookingById(id));
+
+    }
+
 }

@@ -1,8 +1,10 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
+import com.system.sastohub.pojo.AddToCartPojo;
 import com.system.sastohub.pojo.OrderPojo;
 import com.system.sastohub.pojo.ProductPojo;
+import com.system.sastohub.services.AddToCartService;
 import com.system.sastohub.services.ProductService;
 
 import com.system.sastohub.services.UserServices;
@@ -34,6 +36,7 @@ public class ProductController {
 
     private final ProductService productService;
     private final UserServices userService;
+    private final AddToCartService productCartService;
 
     @GetMapping("/addProduct")
     public String createProduct(Model model){
@@ -58,10 +61,18 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
+    @PostMapping("/saveP")
+    public String savecart(@Valid AddToCartPojo productCartPojo) {
+        productCartService.save(productCartPojo);
+        return "redirect:/cart";
+    }
 
     @GetMapping("/{id}")
     public String fetchById(@PathVariable Integer id, Model model,Principal principal){
+        List<Product> hproduct = productService.fetchAll();
         Product product= productService.fetchById(id);
+        model.addAttribute("product", hproduct);
+        model.addAttribute("savecarts", new AddToCartPojo());
         model.addAttribute("product", new ProductPojo(product));
         model.addAttribute("pro", product);
         model.addAttribute("saveorder",new OrderPojo());
