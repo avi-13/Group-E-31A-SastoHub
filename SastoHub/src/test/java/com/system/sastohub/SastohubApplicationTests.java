@@ -1,13 +1,13 @@
-package SastoHub.SastoHub;
+package com.system.sastohub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SastoHubApplicationTests {
+class SastohubApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

@@ -23,7 +23,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
+
     <style>
         body{margin:0;}
         * {box-sizing: border-box;}
@@ -33,14 +33,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 nav{
-  
+
     padding: 1em;
       }
-         
+
         /* styling navlist */
         #navlist {
             height: 55px;
-            
+
             background-color: black;
            top:0;
             width: 100%;
@@ -49,25 +49,25 @@ nav{
         #navlist1 {
             height: 55px;
             position:fixed;
-            
+
             background-color: black;
-            
+
             width: 100%;
         }
         /* styling navlist anchor element */
         #navlist a {
             float:left;
-            
+
             display: block;
-            
+
             text-align: center;
             padding: 7px;
             text-decoration: none;
             font-size: 14px;
-            
+
             border-color:rgb(232, 223, 223);
-            
-  
+
+
         }
         h2 {
             text-align: center;
@@ -76,18 +76,18 @@ nav{
             }
         img#getImage {
             width: 100%;
-            height: 800px;  
-            border: 4px solid #f1d1d1;  
+            height: 800px;
+            border: 4px solid #f1d1d1;
             }
             img#getImage1 {
                 width: 230px;
-                height: 230px;  
-                border: 4px solid black;  
+                height: 230px;
+                border: 4px solid black;
                 }
                 img#getImage2 {
                     width: 100%;
-                    height: 800px;  
-                    border: 4px solid #171515;  
+                    height: 800px;
+                    border: 4px solid #171515;
                     }
 
         #navlist1 a {
@@ -102,11 +102,11 @@ nav{
     background-color: rgb(231, 229, 229);
     color: black;
     width: 14%;
-    border: 2px solid black; 
-            
-             color: black; 
-            
-  
+    border: 2px solid black;
+
+             color: black;
+
+
         }
         footer {
             text-align: center;
@@ -123,12 +123,12 @@ nav{
             font-size: 22px;
             border: none;
           }
-          
+
           .dropdown {
             position: relative;
             display: inline-block;
           }
-          
+
           .removebg-white
           {
             background-color: unset!important;
@@ -142,7 +142,7 @@ nav{
             z-index: 1;
           }
           .button1 {
-        
+
             background-color: rgb(4, 4, 4); /* Green */
             border: none;
             color: rgb(247, 245, 245);
@@ -155,11 +155,11 @@ nav{
             opacity: 1;
             transition: all 0.5s;
   cursor: pointer;
-           
+
           }
           .button1:hover {opacity: 0.8}
-          
-       
+
+
           .dropdown-content a {
             background-color: rgba(237, 232, 232, 0.848)!important;
             color: rgb(253, 250, 250);
@@ -172,7 +172,7 @@ nav{
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: rgb(238, 238, 235)}
-          
+
         .navlist-right{
             float:right;
         }
@@ -184,41 +184,41 @@ nav{
             background-color: #ddd;
             color: rgb(14, 14, 13);
         }
-         
+
         /* styling search bar */
         .search input[type=text]{
             width:500px;
             height:25px;
             border-radius:25px;
             border: none;
- 
+
         }
-       
-          
-         
-          
+
+
+
+
         .icon1{float: right;
         margin:0px}
-         
+
         .search{
             float:right;
             margin:7px;
- 
+
         }
-       
-         
+
+
         .search .button{
             background-color: white;
             color: black;
             float: right;
             transform: translate(-150%, 10%);
             -ms-transform: translate(-50%, -50%);
-        
+
             font-size: 4px;
             border: none;
             cursor: pointer;
         }
-        
+
         html{
             scroll-behaviour:smooth;
            }
@@ -230,26 +230,26 @@ nav{
            height:600px;
            background-color: white;
            }
-           
+
     </style>
 </head>
  
 <body>
-     
+
     <!-- Navbar items -->
     <nav id="navlist">
         <div class="row">
             <div class="col-md-3">
                 <a style="background-color:black; color: rgb(245, 240, 240); border-style: solid;" href="#">SASTO</a>
                 <a style="background-color:  rgb(77, 71, 71);color: rgb(240, 234, 234); border-style: solid;" href="#">HUB</a>
-                
+
 
             </div>
 
             <div class="col-md-7">
 
                 <div class="search">
-             
+
                         <input type="text"
                             placeholder=" Search "
                             name="search">
@@ -258,10 +258,10 @@ nav{
                                 style="font-size: 18px;">
                             </i>
                         </button>
-                        
-        
-                   
-                   
+
+
+
+
                 </div>
 
             </div>
@@ -275,16 +275,16 @@ nav{
                     <i class="fa fa-user" style="font-size:24px;color:rgb(208, 200, 200);   "></i>
 
                 </a>
-               
+
 
             </div>
-           
+
          </div>
-         
-       
+
+
     </nav>
       <nav id="navlist1">
-       
+
         <div class="row">
             <div class="col-md-3"><div class="dropdown">
                 <button class="dropbtn">Categories</button>
@@ -305,44 +305,44 @@ nav{
 
 
         </div>
-        
+
         </div>
       </nav>
-     
+
     <!-- logo with tag -->
-   
- 
-   
+
+
+
 <div class="main" id ="section1">
     
 
 
 
-    <img src="/SastoHub/src/main/resources/static/images/a2.jpg" id="getImage">
+    <img src="/static/images/a2.jpg" id="getImage">
     <h2>Recommended</h2>
-   <button class ="button1"> <img src="../images/a1.jpg" id="getImage1"><br/>Delux sofa set<br/>$200</button>
-   <button class ="button1"><img src="../images/a3.jpg" id="getImage1"><br/>ktm bike<br/>$3000</button>
-   <button class ="button1"><img src="../images/a4.jpg" id="getImage1"><br/>refrigenerator<br/>$100</button>
-   <button class ="button1"><img src="../images/a5.jpg" id="getImage1"><br/>oven<br/>$50</button>
-   <button class ="button1"><img src="../images/a6.jpg" id="getImage1"><br/>dress<br/>$20</button>
+   <button class ="button1"> <img src="/static/images/a1.jpg" id="getImage1"><br/>Delux sofa set<br/>$200</button>
+   <button class ="button1"><img src="/static/images/a3.jpg" id="getImage1"><br/>ktm bike<br/>$3000</button>
+   <button class ="button1"><img src="/static/images/a4.jpg" id="getImage1"><br/>refrigenerator<br/>$100</button>
+   <button class ="button1"><img src="/static/images/a5.jpg" id="getImage1"><br/>oven<br/>$50</button>
+   <button class ="button1"><img src="/static/images/a6.jpg" id="getImage1"><br/>dress<br/>$20</button>
    
     
     </div>
 <div class="main" id="section2">
     
 </div> 
-<div class="main" id="section2"><img src="/SastoHub/src/main/resources/static/images/a9.jpg" id="getImage2">
+<div class="main" id="section2"><img src="/static/images/a9.jpg" id="getImage2">
     <h2>suggested</h2>
-    <button class ="button1"> <img src="../images/a10.jpg" id="getImage1"><br/>Chanel<br/>$20</button>
-    <button class ="button1"><img src="../images/a12.jpg" id="getImage1"><br/>Apple Product<br/>$300</button>
-    <button class ="button1"><img src="../images/a7.jpg" id="getImage1"><br/>shoes<br/>$10</button>
-    <button class ="button1"><img src="../images/a11.jpg" id="getImage1"><br/>Rolex<br/>$50</button>
-    <button class ="button1"><img src="../images/a13.jpg" id="getImage1"><br/>Apple Watch<br/>$50</button>
+    <button class ="button1"> <img src="/static/images/a10.jpg" id="getImage1"><br/>Chanel<br/>$20</button>
+    <button class ="button1"><img src="/static/images/a12.jpg" id="getImage1"><br/>Apple Product<br/>$300</button>
+    <button class ="button1"><img src="/static/images/a7.jpg" id="getImage1"><br/>shoes<br/>$10</button>
+    <button class ="button1"><img src="/static/images/a11.jpg" id="getImage1"><br/>Rolex<br/>$50</button>
+    <button class ="button1"><img src="/static/images/a13.jpg" id="getImage1"><br/>Apple Watch<br/>$50</button>
     
     
 </div> 
 <div class="main" id="section2"><h2></h2>
-</div> 
+</div>
 <footer>
     <p><a > sastohub@gmail.com</a><br>SASTOHUB
     </p>
