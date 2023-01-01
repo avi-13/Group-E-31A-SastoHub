@@ -3,7 +3,9 @@ package com.system.sastohub.controller;
 import com.system.sastohub.entity.Order;
 import com.system.sastohub.entity.Product;
 import com.system.sastohub.entity.User;
+import com.system.sastohub.pojo.ContactPojo;
 import com.system.sastohub.pojo.ProductPojo;
+import com.system.sastohub.services.ContactService;
 import com.system.sastohub.services.OrderService;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.pojo.UserPojo;
@@ -27,6 +29,8 @@ import java.util.List;
 public class UserController {
     private final UserServices userServices;
     private final OrderService orderService;
+    private final ContactService contactService;
+
 
 
 
@@ -56,6 +60,19 @@ public class UserController {
 
         return "Signup";
     }
+
+    @GetMapping("/contactus")
+    public String contact(Model model) {
+        model.addAttribute("contact", new ContactPojo());
+        return "Contactus";
+    }
+
+    @PostMapping("/savecontact")
+    public String save(@Valid ContactPojo contactPojo) {
+        contactService.save(contactPojo);
+        return "redirect:/home/homepage";
+    }
+
 
     @GetMapping("/login")
     public String login() {

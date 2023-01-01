@@ -1,10 +1,12 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.Contact;
 import com.system.sastohub.entity.Order;
 import com.system.sastohub.entity.Product;
 
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.repo.OrderRepo;
+import com.system.sastohub.services.ContactService;
 import com.system.sastohub.services.OrderService;
 import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +30,7 @@ public class AdminController {
 
     private final ProductService productService;
     private final OrderService orderService;
+    private final ContactService contactService;
 
     @GetMapping("/{id}")
     public String fetchById(@PathVariable Integer id, Model model, Principal principal){
@@ -53,6 +56,21 @@ public class AdminController {
 
         ));
         return "adminproductlist";
+    }
+
+    @GetMapping("/contact")
+    public String createcontact(Model model) {
+        List<Contact> admincontact = contactService.fetchAll();
+        model.addAttribute("contact", admincontact.stream().map(contact ->
+                Contact.builder()
+                        .contactId(contact.getContactId())
+                        .contactname(contact.getContactname())
+                        .contactemail(contact.getContactemail())
+                        .contactsubject(contact.getContactsubject())
+                        .contactmessage(contact.getContactmessage())
+                        .build()
+        ));
+        return "visualization";
     }
 
 
