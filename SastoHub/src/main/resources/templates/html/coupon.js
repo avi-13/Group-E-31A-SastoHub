@@ -35,3 +35,25 @@ const coupon = [{
     applicableProducts: ["Product 3", "Product 4"],
 },
 ];
+const applyCouponToProduct = (product, couponCode) => {
+const couponToApply = coupon.find((c) => c.code === couponCode);
+
+if (!couponToApply) return "Invalid Coupon Code";
+
+if (couponToApply.applicableProducts.includes(product.name)) {
+    if (product.couponApplied) return "Coupon already applied to this product";
+    else {
+        product.salePrice = product.salePrice - couponToApply.discountPrice;
+        product.couponApplied = true;
+        products = products.filter((p) => p.name !== product.name);
+        products.push(product);
+
+        return product;
+    }
+} else {
+    return "Coupon not applicable to this product";
+}
+};
+
+console.log(applyCouponToProduct(products[0], "p10"));
+// console.log("products list", products);
