@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="/static/css/signupcss.css">
+  <link rel="stylesheet" th:href="@{/css/signupcss.css}">
 
   <script src="https://kit.fontawesome.com/b0f0ee728d.js" crossorigin="anonymous"></script>
 
@@ -20,34 +20,35 @@
         <span>sign </span>up
       </h2>
 
-      <form action="">
+      <form th:method="post" th:action="@{/user/save}" th:object="${user}">
 
       <div class="formGroup">
-        <input type="text" id="fullname" placeholder="FullName" required>
+        <input type="text"  placeholder="FullName" required th:field="*{fullname}"th:value="${user.fullname}">
       </div>
 
       <div class="formGroup">
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="email" id="email" placeholder="Email" required th:field="*{email}"th:value="${user.email}">
       </div>
 
       <div class="formGroup">
-        <input type="text" id="fullname" placeholder="Phone No." required>
+        <input type="text"  placeholder="Phone No." required th:field="*{mobile_no}"th:value="${user.mobile_no}">
+      </div>
+
+      <div class="formGroup" >
+        <input type="text"  placeholder="Address" required th:field="*{address}"th:value="${user.address}">
       </div>
 
       <div class="formGroup">
-        <input type="text" id="fullname" placeholder="Address" required>
+        <input type="password"  placeholder="Password" required th:field="*{password}"th:value="${user.password}">
       </div>
 
       <div class="formGroup">
-        <input type="password" id="fullname" placeholder="Password" required>
+        <input type="password"  placeholder="Confirm Password" required>
       </div>
 
-      <div class="formGroup">
-        <input type="password" id="fullname" placeholder="Confirm Password" required>
-      </div>
-
-      <button class="submit-btn">
-        <a href="login.html">Submit</a>
+      <button class="submit-btn" type="submit">
+<!--        <a href="login.html">Submit</a>-->
+        submit
       </button>
       <p class="ask">
         Already a member?
