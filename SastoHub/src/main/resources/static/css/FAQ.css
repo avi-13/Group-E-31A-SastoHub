@@ -16,3 +16,22 @@ flex-direction: column;
   margin: auto;
   
 }
+.faq-page {
+    
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+
+}
+.faq-body{
+    margin: auto;
+    
+   width: 50%; 
+   padding: auto;
+   
+}
