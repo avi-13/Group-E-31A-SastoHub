@@ -15,6 +15,9 @@
 </head>
 
 <body>
+<form th:method="post" th:action="@{/product/save}" th:object="${product}">
+
+<img src="/static/images/addproductbg.jpg" alt="">
     
     <div class="container">
 <div class="inside_container">
@@ -25,8 +28,8 @@
         <h1><i class="fa-thin fa-loader"></i> Details</h1></div>
   
       <div class="bodies">
-        
-  
+<!--          <img src="/static/images/addproductbg.jpg" alt="">-->
+
         <select name="condition " id="condition">
           <option value="">Category</option>
           <option value="banana">1</option>
@@ -34,7 +37,7 @@
           <option value="mercedes">3</option>
           <option value="audi">4</option>
         </select>
-  
+
         <select name="Category " id="category">
           <option value="">Condition</option>
           <option value="banana">1</option>
@@ -45,6 +48,7 @@
         
         <textarea rows="10" cols="100"> </textarea>
       </div>
+
       <div class="footer">
         <button>Back</button>
         <button>Next</button>
