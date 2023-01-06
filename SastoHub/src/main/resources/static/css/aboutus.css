@@ -365,3 +365,17 @@ img{
     height: 100%;
 
 }
+
+.desc{
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+    margin-top: 10%;
+    width: 50%;
+    line-height: 250%;
+}
+.desc h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
