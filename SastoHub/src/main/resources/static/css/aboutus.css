@@ -348,4 +348,20 @@ ul li a:active,
     background-color: #dacfcb;
 }
 
+.main-img{
+    display: inline-block;
+    margin-left: 10%;
+    height: 60%;
+    width: 42%;
+    margin-top: 10%;
+    flex-wrap: wrap;
+    float: left;
+    /*background-color: #0f26f0;*/
 
+}
+
+img{
+    width: 100%;
+    height: 100%;
+
+}
