@@ -379,3 +379,13 @@ img{
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 768px) {
+    .main-img{
+        display: none;
+    }
+
+    .page-body{
+        justify-content: center;
+    }
+}
