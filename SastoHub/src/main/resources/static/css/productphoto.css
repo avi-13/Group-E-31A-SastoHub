@@ -13,13 +13,16 @@ body{
   background: #fffdfb;
 }
 
+
+
+
 ::selection{
   color: rgb(255, 255, 255);
   background: #5e617b;
 }
 
 .wrapper{
-  width: 430px;
+  width: 80%;
   background: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 15px;
@@ -34,9 +37,10 @@ body{
 }
 .wrapper form{
   height: 167px;
+  width: 100%;
   display: flex;
   cursor: pointer;
-  margin: 30px 0;
+  margin: 30px 10px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -49,15 +53,33 @@ body{
   border-radius: 10px;
   border: 40px;
   height: 50px;
-  width: 400px;
+  width: 100%;
   text-align: center;
   font-size: 30px;
 
 }
+input{
+  margin-bottom: 10px;
+}
+
+textarea{
+  background-color: lightgrey;
+  border-radius: 10px;
+  border: 40px;
+  height: 200px;
+  width: 100%;
+  resize: none;
+  text-align: left;
+  font-size: 20px;
+}
+
 
 ::placeholder{
   padding-left: 10px;
   color: black;
+  font-size: 30px;
+
+
 }
 
 
