@@ -13,9 +13,6 @@ body{
   background: #fffdfb;
 }
 
-
-
-
 ::selection{
   color: rgb(255, 255, 255);
   background: #5e617b;

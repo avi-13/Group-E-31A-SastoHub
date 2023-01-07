@@ -10,14 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" th:href="@{~css/productphoto.css}">
+    <link th:href="@{~/css/addproduct.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/addproduct.css">
+
 
 </head>
 
 <body>
 
 
-      <div class="bodies">
+      <div class="wrapper">
           <form th:method="post" th:action="@{/product/save}" th:object="${product}">
 
               <input type="text" hidden placeholder="UserId..."  th:field="*{pid}" th:value="${product.pid}" />
@@ -28,16 +30,17 @@
 
               <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." required th:field="*{PDesc}"  th:value="${product.PDesc}"  > </textarea>
 
-              <input type="number" name="" id="price" placeholder="Product Price"  th:field="*{PPrice}" required th:value="${product.PPrice}" />
+              <input type="number" id="price" placeholder="Product Price"  required th:field="*{PPrice}"  th:value="${product.PPrice}" />
 
               <div class="footer">
-                  <button type="submit">Next</button>
+                  <button class="next">AddProduct</button>
               </div>
 
           </form>
 
       </div>
 
+      <script src="/static/js/productphoto.js"></script>
 
 </body>
 </html>
