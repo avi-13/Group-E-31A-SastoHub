@@ -18,6 +18,7 @@ public class ProductPojo {
     private String pCategories;
 
     private String pDesc;
+    private double pPrice;
 
 
     public ProductPojo(Product product){
@@ -25,5 +26,6 @@ public class ProductPojo {
         this.ptitle=product.getProductTitle();
         this.pCategories= product.getProductCategory();
         this.pDesc = product.getProductDescription();
+        this.pPrice = product.getProductPrice();
     }
 }

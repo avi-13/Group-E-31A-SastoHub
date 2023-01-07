@@ -17,30 +17,27 @@
 <body>
 <form th:method="post" th:action="@{/product/save}" th:object="${product}">
 
-    <div class="container">
-<div class="inside_container">
-    <div class="header">
-        <h1>Post Ad</h1>
-      </div>
-      <div class="icon">
-        <h1><i class="fa-thin fa-loader"></i> Details</h1></div>
-  
+
       <div class="bodies">
+          <form >
+<!--              <label  id="pid" th:field="*{productId}" th:value="${product.getPid()}"> label</label><br>-->
 
-          <input type="text" name="Title" id="category" placeholder="Category"/>
+              <input type="text"  id="title" placeholder="Add Title" />
 
-          <input type="text" name="Category " id="category" placeholder="Category"/>
+              <input type="text"  id="category" placeholder="Category"  />
 
-          <textarea type="number" rows="10" cols="100" placeholder="Product Description" > </textarea>
+              <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." > </textarea>
+
+              <input type="number" name="" id="price" placeholder="Product Price"  />
+
+          </form>
+
       </div>
 
       <div class="footer">
         <button>Back</button>
         <button>Next</button>
       </div>
-
-</div>
-    </div>
 </form>
 </body>
 </html>

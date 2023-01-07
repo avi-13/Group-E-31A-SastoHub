@@ -9,15 +9,18 @@
 </head>
 <body>
   <div class="wrapper">
-      <input type="text" name="title" id="title" placeholder="Add Title">
+      <form th:method="post" th:action="@{/product/save}" th:object="${product}">
+      <input type="text" name="title" id="title" placeholder="Add Title" th:field="*{productTitle}" th:value="${product.getPtitle()}" />
 
-      <input type="text" name="category " id="category" placeholder="Category"/>
+      <input type="text" name="category " id="category" placeholder="Category" th:field="*{productCategory}" th:value="${product.getPCategories()}" />
 
-      <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." > </textarea>
-      <input type="number" name="" id="price" placeholder="Product Price">
+      <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:field="*{productDescription}" th:value="${product.getPDesc()}"> </textarea>
 
+      <input type="number" name="" id="price" placeholder="Product Price" th:field="*{productPrice}" th:value="${product.getPPrice()}" />
 
-    <form action="#">
+      </form>
+
+    <form action="#" id="foram">
       <input class="file-input" type="file" name="file" accept="image/jpeg, image/png, image/jpg" hidden>
      <i class="fa-solid fa-circle-plus"></i>
       <p><b>Upload Photos</b></p>
@@ -29,6 +32,6 @@
       <button class="next">Next</button>
     </div>
   </div>
-    <script src="/static/js/productphoto.js"></script>
+<!--    <script src="/static/js/productphoto.js"></script>-->
 </body>
 </html>

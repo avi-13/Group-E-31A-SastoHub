@@ -1,6 +1,5 @@
 package com.system.sastohub.controller;
 
-import com.system.sastohub.entity.Product;
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.services.ProductService;
 
@@ -9,11 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -31,9 +27,8 @@ public class ProductController {
 
     @PostMapping("/save")
     public String saveProduct(@Valid ProductPojo productPojo){
-        productService.addProduct(productPojo);
-        return "redirect:/user/list";
+        productService.saveProduct(productPojo);
+        return "redirect:/product/addProduct";
     }
-
 
 }
