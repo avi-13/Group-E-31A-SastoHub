@@ -15,20 +15,21 @@
 </head>
 
 <body>
-<form th:method="post" th:action="@{/product/save}" th:object="${product}">
 
 
       <div class="bodies">
-          <form >
-<!--              <label  id="pid" th:field="*{productId}" th:value="${product.getPid()}"> label</label><br>-->
+          <form th:method="post" th:action="@{product/save}" th:object="${product}">
 
-              <input type="text"  id="title" placeholder="Add Title" />
+              <input type="text" hidden placeholder="UserId..." th:value="${product.pid}" />
 
-              <input type="text"  id="category" placeholder="Category"  />
 
-              <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." > </textarea>
+              <input type="text"  id="title" placeholder="Add Title" th:value="${product.ptitle}" />
 
-              <input type="number" name="" id="price" placeholder="Product Price"  />
+              <input type="text"  id="category" placeholder="Category" th:value="${product.PCategories}" />
+
+              <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:value="${product.PDesc}"  > </textarea>
+
+              <input type="number" name="" id="price" placeholder="Product Price" th:value="${product.PPrice}" />
 
           </form>
 
@@ -36,8 +37,7 @@
 
       <div class="footer">
         <button>Back</button>
-        <button>Next</button>
+        <button type="submit" th:action="@{/product/save}" >Next</button>
       </div>
-</form>
 </body>
 </html>

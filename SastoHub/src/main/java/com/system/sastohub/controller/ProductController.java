@@ -19,16 +19,16 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping("/addProduct")
-        public String addProduct(Model model){
-            model.addAttribute("product", new ProductPojo());
-            return "/addproduct";
+    public String createProduct(Model model){
+        model.addAttribute("product" , new ProductPojo());
+        return "/addproduct";
 
     }
 
     @PostMapping("/save")
     public String saveProduct(@Valid ProductPojo productPojo){
         productService.saveProduct(productPojo);
-        return "redirect:/product/addProduct";
+        return "redirect:/product/create";
     }
 
 }

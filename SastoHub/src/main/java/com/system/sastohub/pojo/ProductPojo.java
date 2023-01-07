@@ -18,8 +18,8 @@ public class ProductPojo {
     private String pCategories;
 
     private String pDesc;
-    private double pPrice;
 
+    private double pPrice;
 
     public ProductPojo(Product product){
         this.pid=product.getProductId();
@@ -28,4 +28,5 @@ public class ProductPojo {
         this.pDesc = product.getProductDescription();
         this.pPrice = product.getProductPrice();
     }
+
 }

@@ -10,13 +10,13 @@
 <body>
   <div class="wrapper">
       <form th:method="post" th:action="@{/product/save}" th:object="${product}">
-      <input type="text" name="title" id="title" placeholder="Add Title" th:field="*{productTitle}" th:value="${product.getPtitle()}" />
+      <input type="text" name="title" id="title" placeholder="Add Title" th:field="*{productTitle}" th:value="${product.pid}" />
 
-      <input type="text" name="category " id="category" placeholder="Category" th:field="*{productCategory}" th:value="${product.getPCategories()}" />
+      <input type="text" name="category " id="category" placeholder="Category" th:field="*{productCategory}" th:value="${product.ptitle}" />
 
-      <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:field="*{productDescription}" th:value="${product.getPDesc()}"> </textarea>
+<!--      <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:field="*{productDescription}" th:value="${product.PDesc}"> </textarea>-->
 
-      <input type="number" name="" id="price" placeholder="Product Price" th:field="*{productPrice}" th:value="${product.getPPrice()}" />
+<!--      <input type="number" name="" id="price" placeholder="Product Price" th:field="*{productPrice}" th:value="${product.pPrice}" />-->
 
       </form>
 

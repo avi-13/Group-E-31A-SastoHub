@@ -19,7 +19,6 @@ public class ProductServiceImpl implements ProductService {
         if (productPojo.getPid()!= null){
             product.setProductId(productPojo.getPid());
         }
-        product.setProductId(productPojo.getPid());
         product.setProductTitle(productPojo.getPtitle());
         product.setProductCategory(productPojo.getPCategories());
         product.setProductDescription(productPojo.getPDesc());
