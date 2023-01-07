@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/static/css/addproduct.css">
+    <link rel="stylesheet" th:href="@{~css/productphoto.css}">
 
 </head>
 
@@ -18,26 +18,26 @@
 
 
       <div class="bodies">
-          <form th:method="post" th:action="@{product/save}" th:object="${product}">
+          <form th:method="post" th:action="@{/product/save}" th:object="${product}">
 
-              <input type="text" hidden placeholder="UserId..." th:value="${product.pid}" />
+              <input type="text" hidden placeholder="UserId..."  th:field="*{pid}" th:value="${product.pid}" />
 
+              <input type="text"  id="title" placeholder="Add Title" required th:field="*{ptitle}" th:value="${product.ptitle}" />
 
-              <input type="text"  id="title" placeholder="Add Title" th:value="${product.ptitle}" />
+              <input type="text"  id="category" placeholder="Category" required th:field="*{PCategories}"  th:value="${product.PCategories}" />
 
-              <input type="text"  id="category" placeholder="Category" th:value="${product.PCategories}" />
+              <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." required th:field="*{PDesc}"  th:value="${product.PDesc}"  > </textarea>
 
-              <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:value="${product.PDesc}"  > </textarea>
+              <input type="number" name="" id="price" placeholder="Product Price"  th:field="*{PPrice}" required th:value="${product.PPrice}" />
 
-              <input type="number" name="" id="price" placeholder="Product Price" th:value="${product.PPrice}" />
+              <div class="footer">
+                  <button type="submit">Next</button>
+              </div>
 
           </form>
 
       </div>
 
-      <div class="footer">
-        <button>Back</button>
-        <button type="submit" th:action="@{/product/save}" >Next</button>
-      </div>
+
 </body>
 </html>

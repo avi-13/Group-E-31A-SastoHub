@@ -37,7 +37,7 @@ body{
   font-weight: 600;
   text-align: center;
 }
-.wrapper #foram{
+#foram{
   height: 167px;
   width: 70%;
   display: flex;
@@ -170,7 +170,7 @@ section .details span{
 }
 
 button {
-  flex: 2;
+  width: 15%;
   margin-inline-end: 10px;
   font-size:x-large;
   background-color:lightgrey;

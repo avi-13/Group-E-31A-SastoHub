@@ -10,28 +10,28 @@
 <body>
   <div class="wrapper">
       <form th:method="post" th:action="@{/product/save}" th:object="${product}">
-      <input type="text" name="title" id="title" placeholder="Add Title" th:field="*{productTitle}" th:value="${product.pid}" />
+
+      <input type="text" name="title" id="title" placeholder="Add Title" th:field="*{productTitle}" th:value="${product}" />
 
       <input type="text" name="category " id="category" placeholder="Category" th:field="*{productCategory}" th:value="${product.ptitle}" />
 
-<!--      <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:field="*{productDescription}" th:value="${product.PDesc}"> </textarea>-->
+      <textarea type="number" rows="10" cols="100" placeholder="ProductDescription....." th:field="*{productDescription}" th:value="${product.PDesc}"> </textarea>
 
-<!--      <input type="number" name="" id="price" placeholder="Product Price" th:field="*{productPrice}" th:value="${product.pPrice}" />-->
+      <input type="number" name="" id="price" placeholder="Product Price" th:field="*{productPrice}" th:value="${product.pPrice}" />
 
-      </form>
 
-    <form action="#" id="foram">
+    <div id="foram">
       <input class="file-input" type="file" name="file" accept="image/jpeg, image/png, image/jpg" hidden>
      <i class="fa-solid fa-circle-plus"></i>
       <p><b>Upload Photos</b></p>
-    </form>
+    </div>
     <section class="progress-area"></section>
     <section class="uploaded-area"></section>
     <div class="footer">
-      <button class="back">Back</button>
-      <button class="next">Next</button>
+      <button class="next">AddProduct</button>
     </div>
+      </form>
   </div>
-<!--    <script src="/static/js/productphoto.js"></script>-->
+    <script src="/static/js/productphoto.js"></script>
 </body>
 </html>
