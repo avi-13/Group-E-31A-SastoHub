@@ -24,6 +24,8 @@ body{
 .wrapper{
   width: 80%;
   background: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
   padding: 15px;
   box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
@@ -37,10 +39,11 @@ body{
 }
 .wrapper form{
   height: 167px;
-  width: 100%;
+  width: 70%;
   display: flex;
   cursor: pointer;
-  margin: 30px 10px;
+  margin-bottom: 100px;
+  margin-left: 15%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -53,13 +56,10 @@ body{
   border-radius: 10px;
   border: 40px;
   height: 50px;
+  margin-bottom: 100px;
   width: 100%;
-  text-align: center;
   font-size: 30px;
 
-}
-input{
-  margin-bottom: 10px;
 }
 
 textarea{
@@ -67,6 +67,7 @@ textarea{
   border-radius: 10px;
   border: 40px;
   height: 200px;
+  margin-bottom: 100px;
   width: 100%;
   resize: none;
   text-align: left;
@@ -163,6 +164,7 @@ section .details span{
 }
 
 .footer{
+  margin-top: 100px;
   margin-right: -9px;
   display: flex;
 }
