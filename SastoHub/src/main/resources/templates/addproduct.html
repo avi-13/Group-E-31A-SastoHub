@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <script src="https://kit.fontawesome.com/dded80a5ca.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link th:href="@{~/css/addproduct.css}" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/addproduct.css">
+<!--    <link href="/static/css/addproduct.css" rel="stylesheet">-->
 
 
 </head>
@@ -20,7 +18,7 @@
 
 
       <div class="wrapper">
-          <form th:method="post" th:action="@{/product/save}" th:object="${product}">
+          <form class="mainform" th:method="post" th:action="@{/product/save}" th:object="${product}">
 
               <input type="text" hidden placeholder="UserId..."  th:field="*{pid}" th:value="${product.pid}" />
 
@@ -32,15 +30,24 @@
 
               <input type="number" id="price" placeholder="Product Price"  required th:field="*{PPrice}"  th:value="${product.PPrice}" />
 
+              <div id="foram">
+                  <input class="file-input" type="file" name="file" accept="image/jpeg, image/png, image/jpg" hidden>
+                  <i class="fa-solid fa-circle-plus"></i>
+                  <p><b>Upload Photos</b></p>
+              </div>
+              <section class="progress-area"></section>
+              <section class="uploaded-area"></section>
+
               <div class="footer">
-                  <button class="next">AddProduct</button>
+                  <button class="next" type="submit">AddProduct</button>
               </div>
 
           </form>
 
       </div>
 
-      <script src="/static/js/productphoto.js"></script>
+      <script th:src="@{~/js/productphoto.js}"></script>
+<!--      <script th:src="/static/js/productphoto.js"></script>-->
 
 </body>
 </html>
