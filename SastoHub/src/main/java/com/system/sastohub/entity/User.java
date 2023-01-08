@@ -1,7 +1,15 @@
 package com.system.sastohub.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -10,10 +18,22 @@ public class User {
     @GeneratedValue(generator = "shb_user_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column()
     private String email;
 
     @Column(name = "mobile_no")
     private String mobileNo;
+
+    @Column(name = "full_name")
+    private String full_name;
+
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "password")
+    private String password;
+
+
 
 }
