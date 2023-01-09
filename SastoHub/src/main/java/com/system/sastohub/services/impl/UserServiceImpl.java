@@ -5,6 +5,8 @@ import com.system.sastohub.userpojo.UserPojo;
 import com.system.sastohub.userrepo.UserRepo;
 import com.system.sastohub.entity.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +21,11 @@ public class UserServiceImpl implements UserServices {
         user.setAddress(userPojo.getAddress());
         user.setEmail(userPojo.getEmail());
         user.setMobileNo(userPojo.getMobile_no());
-        user.setPassword(userPojo.getPassword());
+
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodePassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodePassword);
+
         userRepo.save(user);
         return "created";
     }
