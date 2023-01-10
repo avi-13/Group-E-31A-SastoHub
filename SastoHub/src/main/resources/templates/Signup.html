@@ -23,23 +23,23 @@
       <form th:method="post" th:action="@{/user/save}" th:object="${user}">
 
       <div class="formGroup">
-        <input type="text"  placeholder="FullName" required th:field="*{fullname}"th:value="${user.fullname}">
+        <input type="text"  placeholder="FullName" required th:field="*{fullname}">
       </div>
 
       <div class="formGroup">
-        <input type="email" id="email" placeholder="Email" required th:field="*{email}"th:value="${user.email}">
+        <input type="email" id="email" placeholder="Email" required th:field="*{email}">
       </div>
 
       <div class="formGroup">
-        <input type="text"  placeholder="Phone No." required th:field="*{mobile_no}"th:value="${user.mobile_no}">
+        <input type="text"  placeholder="Phone No." required th:field="*{mobile_no}">
       </div>
 
       <div class="formGroup" >
-        <input type="text"  placeholder="Address" required th:field="*{address}"th:value="${user.address}">
+        <input type="text"  placeholder="Address" required th:field="*{address}">
       </div>
 
       <div class="formGroup">
-        <input type="password"  placeholder="Password" required th:field="*{password}"th:value="${user.password}">
+        <input type="password"  placeholder="Password" required th:field="*{password}">
       </div>
 
       <div class="formGroup">

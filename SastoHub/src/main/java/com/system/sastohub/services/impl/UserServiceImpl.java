@@ -1,10 +1,12 @@
 package com.system.sastohub.services.impl;
 
+import com.system.sastohub.exception.AppException;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.userpojo.UserPojo;
 import com.system.sastohub.userrepo.UserRepo;
 import com.system.sastohub.entity.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,13 +25,19 @@ public class UserServiceImpl implements UserServices {
         user.setMobileNo(userPojo.getMobile_no());
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodePassword = passwordEncoder.encode(user.getPassword());
+        String encodePassword = passwordEncoder.encode(userPojo.getPassword());
         user.setPassword(encodePassword);
 
         userRepo.save(user);
         return "created";
     }
 
+    @Override
+    public UserPojo findByEmail(String email) {
+        User user = userRepo.findByEmail(email)
+                .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
+        return new UserPojo(user);
+    }
 
 
 }
