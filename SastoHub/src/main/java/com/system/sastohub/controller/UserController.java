@@ -4,6 +4,9 @@ import com.system.sastohub.services.UserServices;
 import com.system.sastohub.userpojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,17 +20,31 @@ public class UserController {
     private final UserServices userServices;
 
 
+    @GetMapping("/home")
+    public String homePage(){
+        return "HomePage";
+    }
+
     @GetMapping("/create")
     public String createUser(Model model){
         model.addAttribute("user",new UserPojo());
 
-        return "html/Signup";
+        return "Signup";
 }
+
+    @GetMapping("/login")
+    public String login() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
+            return "/login";
+        }
+        return "redirect:/home";
+    }
 
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo){
         userServices.save(userPojo);
-        return "redirect:html/uploadfile";
+        return "redirect:uploadfile";
     }
 
 
