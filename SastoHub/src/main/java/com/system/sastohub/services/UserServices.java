@@ -1,7 +1,7 @@
 package com.system.sastohub.services;
 
 
-import com.system.sastohub.userpojo.UserPojo;
+import com.system.sastohub.pojo.UserPojo;
 
 public interface UserServices {
     String save (UserPojo userpojo);

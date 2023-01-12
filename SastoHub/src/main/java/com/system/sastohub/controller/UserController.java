@@ -1,7 +1,7 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.services.UserServices;
-import com.system.sastohub.userpojo.UserPojo;
+import com.system.sastohub.pojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;

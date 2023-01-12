@@ -1,4 +1,4 @@
-package com.system.sastohub.userrepo;
+package com.system.sastohub.repo;
 
 import com.system.sastohub.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

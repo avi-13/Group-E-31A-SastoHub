@@ -1,6 +1,6 @@
 package com.system.sastohub.services.impl;
 
-import com.system.sastohub.userrepo.UserRepo;
+import com.system.sastohub.repo.UserRepo;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package com.system.sastohub.userpojo;
+package com.system.sastohub.pojo;
 
 
 import com.system.sastohub.entity.User;

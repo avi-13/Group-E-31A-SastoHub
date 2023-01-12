@@ -2,12 +2,11 @@ package com.system.sastohub.services.impl;
 
 import com.system.sastohub.exception.AppException;
 import com.system.sastohub.services.UserServices;
-import com.system.sastohub.userpojo.UserPojo;
-import com.system.sastohub.userrepo.UserRepo;
+import com.system.sastohub.pojo.UserPojo;
+import com.system.sastohub.repo.UserRepo;
 import com.system.sastohub.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
