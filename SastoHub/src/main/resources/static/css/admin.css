@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
@@ -36,6 +37,9 @@ li {
 html {
     overflow-x: hidden;
 }
+
+
+
 
 
 body {
@@ -180,6 +184,9 @@ body {
     color: var(--blue);
 }
 
+
+
+
 #sidebar .side-menu li a:hover{
     color: #3C91E6;
 
@@ -274,7 +281,7 @@ body {
 
 
 #content nav form .form-input button {
-    width: 36px;
+    width: 40px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -310,6 +317,14 @@ body {
     border-radius: 50%;
     transition: all .3s ease;
 }
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 768px) {
@@ -374,4 +389,3 @@ body {
         min-width: 420px;
     }
 }
-
