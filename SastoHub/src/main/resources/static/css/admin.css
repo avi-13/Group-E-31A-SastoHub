@@ -319,7 +319,13 @@ body {
 }
 
 
-
+#content .vessel {
+    background-color: #ccdce3;
+    margin: 5%;
+    height: 100vh;
+    width: 100vh;
+    border-radius: 20px;
+}
 
 
 
