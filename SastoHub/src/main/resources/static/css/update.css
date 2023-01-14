@@ -3,9 +3,9 @@
     
     
 }
-.whole h1{
+/* .whole h1{
     background-color: #eeeee4;
-}
+} */
 
 .right h1{
     background-color: white;
@@ -91,4 +91,84 @@ input{
     margin-bottom: 40px;
     
 
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 20% auto;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+
+.modal-content h1{
+    background-color: #eeeee4;
+}
+
+.modal-header h2, .modal-footer h3{
+    margin: 0;
+    background: coral;
+}
+
+.modal-header{
+    background: coral;
+    padding: 15px;
+    color: white;
+}
+
+.modal-body{
+    padding: 10px 20px;
+}
+
+/* .modal-body input{
+    border-radius: 10px;
+    width: 40%;
+    background-color: #eeeee4;
+} */
+
+.modal-footer{
+    background: coral;
+    padding: 10px;
+    color: white;
+}
+
+.modal-footer button{
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 70%;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.closeBtn{
+    color: white;
+    background: coral;
+    float: right;
+    font-size: 30px;
+}
+
+.closeBtn:hover,.closeBtn:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalopen{
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
