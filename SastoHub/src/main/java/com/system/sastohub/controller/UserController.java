@@ -25,6 +25,11 @@ public class UserController {
         return "HomePage";
     }
 
+    @GetMapping("/admin")
+    public String admin(){
+        return "Admindashboard";
+    }
+
     @GetMapping("/create")
     public String createUser(Model model){
         model.addAttribute("user",new UserPojo());
