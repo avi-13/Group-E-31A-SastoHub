@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>AdminLogin</title>
 
   <link rel="stylesheet" href="/SastoHub/src/main/resources/static/css/login.css">
   <script src="https://kit.fontawesome.com/b0f0ee728d.js" crossorigin="anonymous"></script>
@@ -18,36 +18,33 @@
 
 <body>
 
-  <div class="login-form">
+  <div class="login-form-admin">
 
-    <img src="/SastoHub/src/main/resources/static/images/sdfa.png" alt="">
+    <img src="/SastoHub/src/main/resources/static/images/adminlogin.jpg" alt="">
     <div class="left-section">
 
       <h2>
-        Sign In
+          Admin Login
       </h2>
 
       <form action="">
         <div class="formAlign">
           <div class="formGroup">
-            <input type="text" id="fullname" placeholder="Email" required>
+            <input type="email" id="name" placeholder="Email" required>
             
           </div>
 
           <div class="formGroup">
-            <input type="text" id="fullname" placeholder="Password" required>
+            <input type="password" id="fullname" placeholder="Password" required>
           </div>
           <a href="#" class="forgot"><small> Forgot Password?</small></a>
-          <button type="button" class="btn btn-secondary btn-align" style="background-color: black ;">
+          <button type="submit"   class="btn btn-secondary btn-align" style="background-color: black ;">
             <a href="HomePage.html" style="color: aliceblue;">Login</a>
           </button>
+          
           <p class="ask">
-            Dont Have An Account?
-            <a href="Signup.html">SignUp</a>
-          </p>
-          <p class="ask">
-            Login As an Admin?
-            <a href="adminlogin.html">Login</a>
+            Login as User?
+            <a href="login.html">SignUp</a>
           </p>
         </div>
       </form>
