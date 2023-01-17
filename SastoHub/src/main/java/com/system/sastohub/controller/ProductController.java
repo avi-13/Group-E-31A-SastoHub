@@ -1,5 +1,6 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.Product;
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.services.ProductService;
 
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,6 +31,13 @@ public class ProductController {
     public String saveProduct(@Valid ProductPojo productPojo){
         productService.saveProduct(productPojo);
         return "redirect:/product/addProduct";
+    }
+    @GetMapping("/product/{id}")
+    public String viewProduct(@PathVariable Integer id, Model model){
+        Product product= productService.fetchbyid(id);
+        model.addAttribute("product", product);
+        return "browseproduct";
+
     }
 
 }

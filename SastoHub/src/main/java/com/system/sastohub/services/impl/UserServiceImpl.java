@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserServices {
@@ -36,6 +38,11 @@ public class UserServiceImpl implements UserServices {
         User user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
         return new UserPojo(user);
+    }
+
+    @Override
+    public List<User> fetchAll() {
+        return userRepo.findAll();
     }
 
 

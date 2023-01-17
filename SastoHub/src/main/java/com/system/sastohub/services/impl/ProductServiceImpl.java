@@ -27,4 +27,10 @@ public class ProductServiceImpl implements ProductService {
         return "NewProductAdded";
     }
 
+    @Override
+    public Product fetchbyid(Integer id) {
+        Product product=productRepo.findById(id).orElseThrow();
+        return product;
+    }
+
 }
