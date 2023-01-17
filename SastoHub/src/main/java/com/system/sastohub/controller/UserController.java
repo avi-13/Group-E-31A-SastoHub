@@ -1,5 +1,6 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.User;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.pojo.UserPojo;
 import jakarta.validation.Valid;
@@ -12,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -38,13 +41,20 @@ public class UserController {
         if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
             return "/login";
         }
-        return "redirect:/home";
+        return "redirect:/login";
     }
 
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo){
         userServices.save(userPojo);
         return "redirect:uploadfile";
+    }
+
+    @GetMapping("/list")
+    public String userList(Model model){
+        List<User> user=userServices.fetchAll();
+        model.addAttribute("user",user);
+        return "userlist";
     }
 
 
