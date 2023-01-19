@@ -14,65 +14,50 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" th:href="@{~/css/admin.css}">
     <link rel="stylesheet" th:href="@{~/css/popup.css}">
-<!--    <link rel="stylesheet" href="/static/css/admin.css">-->
+    <!--    <link rel="stylesheet" href="/static/css/admin.css">-->
     <title>AdminPanel</title>
 </head>
 
 <body>
 <div th:replace="fragments/AdminNavFrag.html :: adminnav"></div>
 <div class="vessel" >
-        <table class="table table-bordered table-hover table-striped">
-            <thead class="thead-dark">
-            <tr>
-                <th>OrderId</th>
-                <th>CustomerName</th>
-                <th>ProductName</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Address</th>
-                <th>MobileNo.</th>
-                <th>Size</th>
-                <th>Email</th>
-                <th>Action</th>
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>OrderId</th>
+            <th>CustomerName</th>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Address</th>
+            <th>MobileNo.</th>
+            <th>Size</th>
+            <th>Email</th>
+            <th>Action</th>
 
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="orders:${orders}">
-                <td th:text="${orders.orderId}"></td>
-                <td th:text="${orders.getProduct().getProductTitle()}"></td>
-                <td th:text="${orders.productTitle}"></td>
-                <td th:text="${orders.quantity}"></td>
-                <td th:text="${orders.productPrice}"></td>
-                <td th:text="${orders.productCategory}"></td>
-                <td th:text="${orders.address}"></td>
-                <td th:text="${orders.mobileNo}"></td>
-                <td th:text="${orders.size}"></td>
-                <td th:text="${orders.email}"></td>
-                <td>
-                    <button class="open-button btn btn-primary " onclick="openForm()">Contact</button>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="orders:${orderLists}">
+            <td th:text="${orders.orderId}"></td>
+            <td th:text="${orders.getUser().full_name}"></td>
+            <td th:text="${orders.getProduct().productTitle}"></td>
+            <td th:text="${orders.getQuantity()}"></td>
+            <td th:text="${orders.getProduct().productPrice}"></td>
+            <td th:text="${orders.getProduct().productCategory}"></td>
+            <td th:text="${orders.getUser().address}"></td>
+            <td th:text="${orders.getUser().mobileNo}"></td>
+            <td th:text="${orders.getProduct().size}"></td>
+            <td th:text="${orders.getUser().email}"></td>
+            <td>
+                <button class="open-button btn btn-primary " onclick="openForm()">Contact</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
-                    <!-- The form -->
-<!--                    <div class="form-popup" id="myForm">-->
-<!--                        <form action=" " class="form-container">-->
-<!--                            <h1>Contact User</h1>-->
-
-<!--&lt;!&ndash;                            <label id="mail"><b>Email</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <input type="email" placeholder="Enter Email" name="email" required>&ndash;&gt;-->
-
-<!--&lt;!&ndash;                            <label id="description"><b>Description</b></label>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <input type="text" placeholder="Details to be Send to User" name="description" required>&ndash;&gt;-->
-
-<!--                            <button type="submit" class="btn">Send</button>-->
-<!--                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
-<!--                        </form>-->
-<!--                    </div>-->
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+</div>
 
 
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->

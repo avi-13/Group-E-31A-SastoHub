@@ -1,8 +1,10 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.Order;
 import com.system.sastohub.entity.Product;
 import com.system.sastohub.entity.User;
 import com.system.sastohub.pojo.ProductPojo;
+import com.system.sastohub.services.OrderService;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.pojo.UserPojo;
 import jakarta.validation.Valid;
@@ -16,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 
 @Controller
@@ -23,12 +26,14 @@ import java.security.Principal;
 @RequestMapping("/user")
 public class UserController {
     private final UserServices userServices;
+    private final OrderService orderService;
 
-
-//    @GetMapping("/admin")
-//    public String admin() {
-//        return "Admindashboard";
-//    }
+    @GetMapping("/admin")
+    public String admin(Model model) {
+        List<Order> orderLists=orderService.fetchAll();
+        model.addAttribute("orderLists", orderLists);
+        return "Admindashboard";
+    }
 
     @GetMapping("/bought")
     public String store(){

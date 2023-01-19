@@ -3,7 +3,7 @@ package com.system.sastohub.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Builder
 @Getter
@@ -36,38 +36,5 @@ public class Order {
 
     @Column(name = "quantity")
     private Integer quantity;
-
-    private String productTitle;
-
-    private Double productPrice;
-
-    private String productCategory;
-
-    private String size;
-
-    private String image;
-
-    @Transient
-    private String imageBase64;
-
-
-    @Column()
-    private String email;
-
-
-    @Column(name = "mobile_no")
-    private String mobileNo;
-
-
-    @Column(name = "full_name")
-    private String full_name;
-
-
-    @Column(name = "address")
-    private String address;
-
-
-
-
 
 }

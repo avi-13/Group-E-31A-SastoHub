@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface OrderRepo extends JpaRepository <Order , Integer> {
 
-    Optional<Order> findOrderByEmail(String email);
+//    Optional<Order> findOrderByEmail(String email);
 }

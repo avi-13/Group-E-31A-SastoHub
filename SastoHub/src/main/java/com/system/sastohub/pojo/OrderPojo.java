@@ -4,7 +4,8 @@ import com.system.sastohub.entity.Order;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
+import java.sql.Date;
+
 @Builder
 @Getter
 @Setter
@@ -22,25 +23,6 @@ public class OrderPojo {
     private Integer id;
 
     private Integer quantity;
-
-    private String email;
-
-    private String address;
-
-    private String mobile_no;
-
-    private String fullname;
-
-
-    private String ptitle;
-
-    private String pCategories;
-
-    private double pPrice;
-
-    private String size;
-
-
     private MultipartFile image;
 
 
@@ -52,13 +34,6 @@ public class OrderPojo {
         this.pid = order.getProduct().getProductId();
         this.id = order.getUser().getId();
         this.quantity = order.getQuantity();
-        this.email = order.getUser().getEmail();
-        this.address = order.getUser().getAddress();
-        this.mobile_no = order.getUser().getMobileNo();
-        this.fullname = order.getUser().getFull_name();
-        this.ptitle= order.getProduct().getProductTitle();
-        this.pCategories = order.getProduct().getProductCategory();
-        this.pPrice = order.getProduct().getProductPrice();
-        this.size = order.getProduct().getSize();
+
     }
 }
