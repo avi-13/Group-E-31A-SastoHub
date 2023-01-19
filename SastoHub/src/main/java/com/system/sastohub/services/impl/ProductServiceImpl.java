@@ -7,6 +7,8 @@ import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
@@ -14,15 +16,15 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepo productRepo;
 
     @Override
-    public String saveProduct(ProductPojo productPojo) {
+    public String saveProduct(ProductPojo productpojo) {
         Product product = new Product();
-        if (productPojo.getPid()!= null){
-            product.setProductId(productPojo.getPid());
+        if (productpojo.getPid()!= null){
+            product.setProductId(productpojo.getPid());
         }
-        product.setProductTitle(productPojo.getPtitle());
-        product.setProductCategory(productPojo.getPCategories());
-        product.setProductDescription(productPojo.getPDesc());
-        product.setProductPrice(productPojo.getPPrice());
+        product.setProductTitle(productpojo.getPtitle());
+        product.setProductCategory(productpojo.getPCategories());
+        product.setProductDescription(productpojo.getPDesc());
+        product.setProductPrice(productpojo.getPPrice());
         productRepo.save(product);
         return "NewProductAdded";
     }
@@ -31,6 +33,11 @@ public class ProductServiceImpl implements ProductService {
     public Product fetchbyid(Integer id) {
         Product product=productRepo.findById(id).orElseThrow();
         return product;
+    }
+
+    @Override
+    public List<Product> fetchAll() {
+        return productRepo.findAll();
     }
 
 }

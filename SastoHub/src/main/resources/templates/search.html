@@ -1,29 +1,281 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/search.css">
-    <script src="/static/js/search.js"></script>
-   
+
+    <title>Task A:</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+
+
+    <link href="assets/css/taska_style.css" rel="stylesheet" />
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
+
+
+
 <body>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
 
-<ul id="myUL">
-  <li><a href="#">Aashu</a></li>
-  <li><a href="#">Bhatta</a></li>
 
-  <li><a href="#">Me</a></li>
-  <li><a href="#">You</a></li>
 
-  <li><a href="#">Too</a></li>
-  <li><a href="#">Css</a></li>
-  <li><a href="#">Java</a></li>
-</ul>
-    
+<p id="ptext">message something!!!</p>
+
+<button id="btnHide">Hide</button>
+
+<button id="btnShow">Show</button>
+
+<button id="btnToggle">Toggle</button>
+
+
+
+
+
+
+
+<div class="textDisplay">something herere</div>
+
+<p id="count"></p>
+
+
+
+<input type="text" id="textBox" />
+
+<button id="btnSubmit">Click</button>
+
+
+
+
+
+
+
 </body>
+
+
+
+<script>
+
+
+
+    $("#btnHide").click(()=>{
+
+        $("#ptext").slideUp()
+
+    })
+
+    $("#btnShow").click(()=>{
+
+        $("#ptext").slideDown()
+
+    })
+
+
+
+
+
+    $("#btnToggle").click(()=>{
+
+        $("#ptext").slideToggle()
+
+    })
+
+
+
+    let customer=document.getElementById("customer");
+
+    customer.style.fontSize="30px";
+
+    customer.style.backgroundColor="Yellow";
+
+    customer.style.color="white";
+
+    $(document).ready(function () {
+
+        $(".textDisplay").mouseover(function (event) {
+
+            $(this).animate(
+
+                { fontSize: '+=4em' },
+
+                1000,
+
+                function () {
+
+                    alert("All done!");
+
+                });
+
+        });
+
+
+
+    });
+
+
+
+    $("#customer").css({
+
+        background: 'red',
+
+        fontSize: "50px",
+
+        color: 'white'
+
+    })
+
+
+
+
+
+
+
+
+
+    let count = 0;
+
+    $("#count").html(count);
+
+    setInterval(() => {
+
+        count = count + 1;
+
+        $("#count").html(count);
+
+
+
+        axios({
+
+            method: 'get',
+
+            url: '/getNotigication'
+
+        }).then((response) => {
+
+            console.log(response);
+
+        }, (error) => {
+
+            console.log(error);
+
+        });
+
+    }, 5000);
+
+
+
+
+
+
+
+
+
+    let btn=document.getElementById("btnSubmit");
+
+    btn.onclick=()=>{
+
+        let text=document.getElementById("customer");
+
+        text.innerText="cusotmer updatedt";
+
+        text.setAttribute("class",'justFun')
+
+    }
+
+
+
+
+
+    $("#btnSubmit").click(() => {
+
+        $("#customer").html("jquery customer updated")
+
+        $("#customer").attr("class", "testJuqyer")
+
+    })
+
+
+
+
+
+
+
+    btn.onclick=()=>{
+
+        let textVal=document.getElementById("textBox");
+
+        alert(textVal.value)
+
+    }
+
+
+
+    btn.addEventListener('click',()=>{
+
+        let textVal=document.getElementById("textBox");
+
+        alert(textVal.value)
+
+    })
+
+
+
+    $(document).ready(function () {
+
+        $(".list-group-item:odd").click(() => {
+
+            alert("odd section clicked");
+
+        })
+
+    });
+
+
+
+</script>
+
+
+
+<script>
+
+
+
+    let myPage = "customer";
+
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+
+    listGroupItem.forEach(i => {
+
+        i.classList.remove("active")
+
+    })
+
+    let activeID = document.getElementById(myPage);
+
+    activeID.classList.add("active");
+
+
+
+
+
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </html>

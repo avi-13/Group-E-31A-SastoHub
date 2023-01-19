@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>UserList</title>
+    <link rel="stylesheet" th:href="@{~/css/userlist.css}">
+    <link rel="stylesheet" href="/css/productlist.css">
 </head>
 <body>
-<div th:each="user:${user}" style="border: 2px solid red">
-    <h1 th:text="${user.email}"></h1>
-    <h1 th:text="${user.address}"></h1>
-    <h1 th:text="${user.address}"></h1>
-<!--    <h1 th:text="${user.mobile_no}"></h1>-->
+<div class="autodiv" th:each="user:${user}">
+    <h6 th:text="${user.full_name}"></h6>
+    <h6 th:text="${user.email}"></h6>
+    <h6 th:text="${user.address}"></h6>
+    <h6 th:text="${user.mobileNo}"></h6>
+
 
 </div>
 </body>
