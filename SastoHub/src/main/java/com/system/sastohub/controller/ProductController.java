@@ -27,7 +27,7 @@ public class ProductController {
 
     @PostMapping("/save")
     public String saveProduct(@Valid ProductPojo productPojo){
-//        productService.saveProduct(productPojo);
+        productService.saveProduct(productPojo);
         return "redirect:/product/addProduct";
     }
 
