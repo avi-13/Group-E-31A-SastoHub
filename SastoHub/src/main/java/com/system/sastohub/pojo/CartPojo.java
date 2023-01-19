@@ -11,14 +11,14 @@ package com.system.sastohub.pojo;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class CartPojo {
 
     private Integer id;
 
-    @NotEmpty(message = "Full name can't be empty")
+    @NotEmpty(message = "enter the namme ")
     private String itemName;
 
-    @NotEmpty(message = "Mobile Number can't be empty")
+    @NotEmpty(message = "plz select your quantity")
     private String itemQuantity;
+    
 }
