@@ -104,12 +104,17 @@
 
 
             <p><i>Brand New</i></p>
-
             <h4 th:text="${product.productPrice}"></h4>
             <p class="unit">Quantity: <input name="" value="2"></p>
+            <button class="button-2" role="button" onClick="showMessage()">Review</button>
+
             <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO
                 CART</span></p>
+
+
+
           </div>
+
         </div>
 <!--        <div class="box">-->
 <!--          <img src="/static/images/dogbelt.jpg">-->
@@ -155,7 +160,11 @@
     </div>
 
     <div class="review">
+
+      <p> </p>
+
       <h1>Reviews</h1>
+
       <div class="individual">
         <p><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></p>
         <p>By: <span>Daju-Bhai</span></p>
@@ -213,6 +222,11 @@
 			</div>
 
 		</footer>
+  <script>
+    function showMessage() {
+      alert("Ok let's review this product!");
+    }
+  </script>
 
 </body>
 
