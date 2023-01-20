@@ -30,6 +30,11 @@ public class UserController {
         return "Admindashboard";
     }
 
+    @GetMapping("/store")
+    public String store(){
+        return "adminproduct";
+    }
+
     @GetMapping("/create")
     public String createUser(Model model){
         model.addAttribute("user",new UserPojo());

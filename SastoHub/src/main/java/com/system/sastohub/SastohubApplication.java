@@ -11,10 +11,10 @@ import org.springframework.context.event.EventListener;
 public class SastohubApplication {
 
 //    @Autowired
-//    private EmailSenderService senderService;
-//    public static void main(String[] args) {
-//        SpringApplication.run(SastohubApplication.class, args);
-//    }
+    private EmailSenderService senderService;
+    public static void main(String[] args) {
+        SpringApplication.run(SastohubApplication.class, args);
+    }
 //    @EventListener(ApplicationReadyEvent.class)
 //    public void sendEmail(){
 //        senderService.sendSimpleEmail("aryalaashutosh@gmail.com",
