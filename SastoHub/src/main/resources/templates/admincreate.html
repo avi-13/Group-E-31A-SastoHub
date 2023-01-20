@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" th:href="@{/css/signupcss.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/b0f0ee728d.js" crossorigin="anonymous"></script>
 
@@ -20,10 +21,11 @@
             <span>sign </span>up
         </h2>
 
-        <form th:method="post" th:action="@{/admin/save}" th:object="${user}">
+        <form id="form" th:method="post" th:action="@{/admin/save}" th:object="${user}">
+            <div class="alert alert-danger d-none" id="errorMsg"></div>
 
             <div class="formGroup">
-                <input type="text"  placeholder="FullName" required th:field="*{fullname}">
+                <input id="name" type="text"  placeholder="FullName" required th:field="*{fullname}">
             </div>
 
             <div class="formGroup">
@@ -31,7 +33,7 @@
             </div>
 
             <div class="formGroup">
-                <input type="text"  placeholder="Phone No." required th:field="*{mobile_no}">
+                <input type="text" id="mobile"  placeholder="Phone No." required th:field="*{mobile_no}">
             </div>
 
             <div class="formGroup" >
@@ -39,11 +41,11 @@
             </div>
 
             <div class="formGroup">
-                <input type="password"  placeholder="Password" required th:field="*{password}">
+                <input type="password" id="password" placeholder="Password" required th:field="*{password}">
             </div>
 
             <div class="formGroup">
-                <input type="password"  placeholder="Confirm Password" required>
+                <input type="password" id="cpassword" placeholder="Confirm Password" required>
             </div>
 
             <button class="submit-btn" type="submit">
@@ -70,5 +72,6 @@
     </div>
 
 </div>
+<script th:src="@{/js/validation.js}"></script>
 </body>
 </html>

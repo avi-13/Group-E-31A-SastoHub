@@ -41,7 +41,7 @@ public class HomepageController {
                         .imageBase64(getImageBase64(product.getImage()))
                         .build()
         ));
-        return "HomePage";
+        return "mainhomepage";
     }
 
     public String getImageBase64(String fileName) {
