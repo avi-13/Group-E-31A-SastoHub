@@ -15,4 +15,4 @@ let products = [{
     actualPrice: 2000,
     salePrice: 2000,
     couponApplied: false,
-},
+}
