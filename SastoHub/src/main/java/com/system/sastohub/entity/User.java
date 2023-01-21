@@ -22,11 +22,14 @@ public class User implements UserDetails {
     @GeneratedValue(generator = "shb_user_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer id;
 
+
     @Column()
     private String email;
 
+
     @Column(name = "mobile_no")
     private String mobileNo;
+
 
     @Column(name = "full_name")
     private String full_name;
@@ -38,7 +41,6 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -49,10 +51,12 @@ public class User implements UserDetails {
         return this.email;
     }
 
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
+
 
     @Override
     public boolean isAccountNonLocked() {

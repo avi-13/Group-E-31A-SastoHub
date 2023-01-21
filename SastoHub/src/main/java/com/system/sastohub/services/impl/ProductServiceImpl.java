@@ -7,24 +7,52 @@ import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepo productRepo;
 
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/sastohubimages";
+
+
     @Override
-    public String saveProduct(ProductPojo productPojo) {
+    public ProductPojo saveProduct(ProductPojo productpojo) throws IOException {
         Product product = new Product();
-        if (productPojo.getPid()!= null){
-            product.setProductId(productPojo.getPid());
+        if (productpojo.getPid()!= null){
+            product.setProductId(productpojo.getPid());
         }
-        product.setProductTitle(productPojo.getPtitle());
-        product.setProductCategory(productPojo.getPCategories());
-        product.setProductDescription(productPojo.getPDesc());
-        product.setProductPrice(productPojo.getPPrice());
+        product.setProductTitle(productpojo.getPtitle());
+        product.setProductCategory(productpojo.getPCategories());
+        product.setProductDescription(productpojo.getPDesc());
+        product.setProductPrice(productpojo.getPPrice());
+
+        if(productpojo.getImage()!=null){
+//            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, productpojo.getImage().getOriginalFilename());
+            Files.write(fileNameAndPath, productpojo.getImage().getBytes());
+
+            product.setImage(productpojo.getImage().getOriginalFilename());
+        }
         productRepo.save(product);
-        return "NewProductAdded";
+        return new ProductPojo(product);
+    }
+
+    @Override
+    public Product fetchbyid(Integer id) {
+        Product product=productRepo.findById(id).orElseThrow();
+        return product;
+    }
+
+    @Override
+    public List<Product> fetchAll() {
+        return productRepo.findAll();
     }
 
 }

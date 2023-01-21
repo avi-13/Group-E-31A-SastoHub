@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -20,6 +21,8 @@ public class ProductPojo {
     private String pDesc;
 
     private double pPrice;
+
+    private MultipartFile image;
 
     public ProductPojo(Product product){
         this.pid=product.getProductId();
