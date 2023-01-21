@@ -35,6 +35,11 @@ public class UserController {
         return "adminproduct";
     }
 
+ @GetMapping("/stat")
+    public String stat(){
+        return "visualization";
+    }
+
     @GetMapping("/create")
     public String createUser(Model model){
         model.addAttribute("user",new UserPojo());

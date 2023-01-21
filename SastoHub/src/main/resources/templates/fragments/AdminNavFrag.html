@@ -13,9 +13,9 @@
 
         <ul class="side-menu top">
 
-            <li class="active">
+            <li class="list-view-active active" id="dash">
 
-                <a href="#">
+                <a  th:href="@{~/user/admin}">
 
                     <i class='bx bxs-dashboard' ></i>
 
@@ -24,9 +24,9 @@
 
             </li>
 
-            <li>
+            <li class="list-view-active" id="store" >
 
-                <a th:href="@{~/user/store}">>
+                <a  th:href="@{~/user/store}">
 
                     <i class='bx bxs-shopping-bag-alt' ></i>
 
@@ -36,9 +36,8 @@
 
             </li>
 
-            <li>
-                <a
-                        href="#">
+            <li class="list-view-active" id="stat" >
+                <a th:href="@{~/user/stat}">
 
                     <i class='bx bxs-chart' ></i>
 
@@ -48,9 +47,9 @@
 
             </li>
 
-            <li>
+            <li class="list-view-active" >
 
-                <a href="#">
+                <a id="sales" href="#">
 
                     <i class='bx bxs-chart' ></i>
 
@@ -110,5 +109,6 @@
             </a>
 
         </nav>
+    </section>
 
 </div>
