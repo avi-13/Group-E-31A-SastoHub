@@ -50,12 +50,7 @@ public class UserController {
         return "redirect:uploadfile";
     }
 
-    @GetMapping("/list")
-    public String userList(Model model){
-        List<User> user=userServices.fetchAll();
-        model.addAttribute("user",user);
-        return "userlist";
-    }
+
 
 
 }

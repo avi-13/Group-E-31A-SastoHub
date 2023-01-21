@@ -15,12 +15,12 @@ public class SastohubApplication {
     public static void main(String[] args) {
         SpringApplication.run(SastohubApplication.class, args);
     }
-    @EventListener(ApplicationReadyEvent.class)
-    public void sendEmail(){
-        senderService.sendSimpleEmail("aryalaashutosh@gmail.com",
-                "this is Subject",
-                "this is body part");
-
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void sendEmail(){
+//        senderService.sendSimpleEmail("aryalaashutosh@gmail.com",
+//                "this is Subject",
+//                "this is body part");
+//
+//    }
 
 }

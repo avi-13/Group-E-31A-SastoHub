@@ -7,6 +7,10 @@ import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Service
@@ -15,8 +19,11 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepo productRepo;
 
+    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/sastohubimages";
+
+
     @Override
-    public String saveProduct(ProductPojo productpojo) {
+    public ProductPojo saveProduct(ProductPojo productpojo) throws IOException {
         Product product = new Product();
         if (productpojo.getPid()!= null){
             product.setProductId(productpojo.getPid());
@@ -25,8 +32,16 @@ public class ProductServiceImpl implements ProductService {
         product.setProductCategory(productpojo.getPCategories());
         product.setProductDescription(productpojo.getPDesc());
         product.setProductPrice(productpojo.getPPrice());
+
+        if(productpojo.getImage()!=null){
+//            System.out.println(UPLOAD_DIRECTORY);
+            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, productpojo.getImage().getOriginalFilename());
+            Files.write(fileNameAndPath, productpojo.getImage().getBytes());
+
+            product.setImage(productpojo.getImage().getOriginalFilename());
+        }
         productRepo.save(product);
-        return "NewProductAdded";
+        return new ProductPojo(product);
     }
 
     @Override

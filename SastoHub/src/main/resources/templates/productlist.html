@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="autodiv" th:each="product:${product}">
-        <a href="BoughtProduct.html">
-        <h6 th:text="${product.productTitle}"></h6>
-        <h6 th:text="${product.productCategory}"></h6>
-        <h6 th:text="${product.productDescription}"></h6>
-        <h6 th:text="${product.productPrice}"></h6>
+        <a th:href="@{~/product/}+${product.productId}">
+            <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
+<!--        <h6 th:text="${product.productTitle}">-->
+        </h6>
+
         </a>
     </div>
 
