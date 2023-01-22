@@ -28,6 +28,21 @@ public class UserController {
         return "HomePage";
     }
 
+    @GetMapping("/admin")
+    public String admin(){
+        return "Admindashboard";
+    }
+
+    @GetMapping("/store")
+    public String store(){
+        return "adminproduct";
+    }
+
+ @GetMapping("/stat")
+    public String stat(){
+        return "visualization";
+    }
+
     @GetMapping("/create")
     public String createUser(Model model){
         model.addAttribute("user",new UserPojo());

@@ -10,7 +10,7 @@ import org.springframework.context.event.EventListener;
 @SpringBootApplication
 public class SastohubApplication {
 
-    @Autowired
+//    @Autowired
     private EmailSenderService senderService;
     public static void main(String[] args) {
         SpringApplication.run(SastohubApplication.class, args);
