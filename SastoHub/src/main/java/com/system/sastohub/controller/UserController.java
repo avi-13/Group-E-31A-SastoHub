@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -65,7 +66,15 @@ public class UserController {
         return "redirect:uploadfile";
     }
 
-
+    @GetMapping("/profile")
+    public String profile(){
+        return "updateprofile";
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteuser(@PathVariable("id") Integer id){
+        userServices.deleteById(id);
+        return "redirect:/user/profile";
+    }
 
 
 }

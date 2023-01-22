@@ -10,4 +10,6 @@ public interface UserServices {
     String save (UserPojo userpojo);
     UserPojo findByEmail(String email);
     List<User> fetchAll();
+
+    void deleteById(Integer id);
 }
