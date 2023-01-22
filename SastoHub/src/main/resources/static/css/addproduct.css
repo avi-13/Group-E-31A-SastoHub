@@ -14,6 +14,7 @@ body{
 }
 
 .wrapper{
+    flex: 1;
     width: 50%;
     background: rgb(255, 255, 255);
     align-items: center;
@@ -79,7 +80,7 @@ textarea{
     border: 2px dashed #010206;
 }
 
-.wrapper input{
+.wrapper .field{
     background-color: lightgrey;
     border-radius: 10px;
     border: 40px;
@@ -94,91 +95,28 @@ textarea{
     padding-left: 10px;
     color: black;
 }
-
-
-form :where(i, p){
-    color: #000309;
+.profile-pic{
+    position: absolute;
+    height:300px;
+    width:300px;
+    z-index: 1001;
+    padding: 10px;
 }
-form i{
-    font-size: 110px;
-    margin-top: 10px;
+.profile-pic img{
+    border-radius: 60%;
+    box-shadow: 10px 10px 10px 10px #c1c1c1;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
 }
-form p{
-    margin-top: 15px;
-    font-size: 16px;
-}
-
-section .row{
-    margin-bottom: 10px;
-    background: #817c7c;
-    list-style: none;
-    padding: 15px 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-section .row i{
-    color: #030713;
-    font-size: 30px;
-}
-section .details span{
-    font-size: 14px;
-}
-.progress-area .row .content{
-    width: 100%;
-    margin-left: 15px;
-}
-.progress-area .details{
-    display: flex;
-    align-items: center;
-    margin-bottom: 7px;
-    justify-content: space-between;
-}
-.progress-area .content .progress-bar{
-    height: 6px;
-    width: 100%;
-    margin-bottom: 4px;
-    background: lightgrey;
-    border-radius: 30px;
-}
-.content .progress-bar .progress{
-    height: 100%;
-    width: 0%;
-    background: #000718;
-    border-radius: inherit;
-}
-.uploaded-area{
-    max-height: 232px;
-    overflow-y: scroll;
-}
-.uploaded-area.onprogress{
-    max-height: 150px;
-}
-.uploaded-area::-webkit-scrollbar{
-    width: 0px;
-}
-.uploaded-area .row .content{
-    display: flex;
-    align-items: center;
-}
-.uploaded-area .row .details{
-    display: flex;
-    margin-left: 15px;
-    flex-direction: column;
-}
-.uploaded-area .row .details .size{
-    color: #080808;
-    font-size: 11px;
-}
-.uploaded-area i.fa-check{
-    font-size: 16px;
-}
-
 .footer{
     margin-top: 100px;
     margin-right: -9px;
     display: flex;
+}
+
+img {
+    height: auto;
 }
 
 button {

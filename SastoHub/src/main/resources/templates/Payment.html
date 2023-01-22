@@ -11,7 +11,7 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="/static/css/Payment.css">
+  <link rel="stylesheet" th:href="@{~/css/Payment.css}">
   <title>Browse Product</title>
 </head>
 <header>
@@ -63,7 +63,7 @@
   <section id="body">
 
 <div class="images">
-  <img src="/static/images/payment2.jpg" alt="" srcset="">
+  <img th:src="@{/images/payment2.jpg}" alt="" srcset="">
 </div>
 
   

@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserServices {
@@ -38,5 +40,15 @@ public class UserServiceImpl implements UserServices {
         return new UserPojo(user);
     }
 
+    @Override
+    public List<User> fetchAll() {
+        return userRepo.findAll();
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        userRepo.deleteById(id);
+
+    }
 
 }
