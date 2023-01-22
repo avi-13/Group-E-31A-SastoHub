@@ -20,6 +20,10 @@ public class ProductPojo {
 
     private String pDesc;
 
+    private String bName;
+
+    private String size;
+
     private double pPrice;
 
     private MultipartFile image;
@@ -30,6 +34,8 @@ public class ProductPojo {
         this.pCategories= product.getProductCategory();
         this.pDesc = product.getProductDescription();
         this.pPrice = product.getProductPrice();
+        this.bName = product.getBrandName();
+        this.size = product.getSize();
     }
 
 }

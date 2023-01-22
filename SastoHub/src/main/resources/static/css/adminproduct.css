@@ -26,6 +26,22 @@ h1{
 
 }
 
+.profile-pic{
+    position: absolute;
+    height:300px;
+    width:300px;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.profile-pic img{
+    border-radius: 60%;
+    box-shadow: 10px 10px 10px 10px #c1c1c1;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+}
+
 .left-side{
     width: 40%;
     /* border: solid red 2px; */

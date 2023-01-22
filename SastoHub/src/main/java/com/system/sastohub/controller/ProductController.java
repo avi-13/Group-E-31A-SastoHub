@@ -34,7 +34,7 @@ public class ProductController {
     @GetMapping("/addProduct")
     public String createProduct(Model model){
         model.addAttribute("product" , new ProductPojo());
-        return "/addproduct";
+        return "/adminproduct";
 
     }
 
@@ -59,7 +59,13 @@ public class ProductController {
         Product product= productService.fetchById(id);
         model.addAttribute("product", product);
         return "browseproduct";
+    }
 
+    @GetMapping("/addtocart")
+    public String addTocart(@PathVariable Integer id, Model model){
+        Product product= productService.fetchById(id);
+        model.addAttribute("product", product);
+        return "index";
     }
 
     @GetMapping("/list")

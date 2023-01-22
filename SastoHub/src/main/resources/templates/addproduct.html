@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link th:href="@{~/css/addproduct.css}" rel="stylesheet">
+    <link href="/static/css/addproduct.css" rel="stylesheet">
 
 
 </head>
@@ -34,12 +35,10 @@
 
           <input class="field" type="number" id="price" placeholder="Product Price"  required th:field="*{PPrice}"  th:value="${product.PPrice}" />
 
-          <div class="container">
               <div class="profile-pic">
                   <img alt="User Pic" src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" id="profile-image1" >
                   <input id="profile-image-upload" class="hidden" th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
               </div>
-          </div>
 
           </div>
 
@@ -50,7 +49,7 @@
       </div>
 </form>
 
-      <script th:src="@{/js/addproduct.js}"></script>
+      <script src="/static/js/addproduct.js"></script>
 
 </body>
 </html>

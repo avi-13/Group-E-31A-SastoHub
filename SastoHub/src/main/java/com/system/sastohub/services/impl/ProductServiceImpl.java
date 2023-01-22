@@ -34,6 +34,8 @@ public class ProductServiceImpl implements ProductService {
         product.setProductCategory(productpojo.getPCategories());
         product.setProductDescription(productpojo.getPDesc());
         product.setProductPrice(productpojo.getPPrice());
+        product.setBrandName(productpojo.getBName());
+        product.setSize(productpojo.getSize());
 
         if(productpojo.getImage()!=null){
 //            System.out.println(UPLOAD_DIRECTORY);
@@ -56,6 +58,8 @@ public class ProductServiceImpl implements ProductService {
                 .productCategory(product.getProductCategory())
                 .productDescription(product.getProductDescription())
                 .productPrice(product.getProductPrice())
+                .brandName(product.getBrandName())
+                .size(product.getSize())
                 .build();
         return product;
     }
