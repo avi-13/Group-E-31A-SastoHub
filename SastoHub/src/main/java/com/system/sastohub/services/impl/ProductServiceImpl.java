@@ -7,10 +7,12 @@ import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -46,7 +48,29 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product fetchById(Integer id) {
-        return productRepo.findById(id).orElseThrow();
+        Product product= productRepo.findById(id).orElseThrow(()-> new RuntimeException("Couldnot find"));
+        product = Product.builder()
+                .productId(product.getProductId())
+                .imageBase64(getImageBase64(product.getImage()))
+                .productTitle(product.getProductTitle())
+                .productCategory(product.getProductCategory())
+                .productDescription(product.getProductDescription())
+                .productPrice(product.getProductPrice())
+                .build();
+        return product;
+    }
+
+    public String getImageBase64(String fileName) {
+        String filePath = System.getProperty("user.dir") + "/sastohubimages/";
+        File file = new File(filePath + fileName);
+        byte[] bytes;
+        try {
+            bytes = Files.readAllBytes(file.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return Base64.getEncoder().encodeToString(bytes);
     }
 
     @Override
