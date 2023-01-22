@@ -39,7 +39,7 @@ public class UserController {
         return "adminproduct";
     }
 
- @GetMapping("/stat")
+    @GetMapping("/stat")
     public String stat(){
         return "visualization";
     }
@@ -49,7 +49,7 @@ public class UserController {
         model.addAttribute("user",new UserPojo());
 
         return "Signup";
-}
+    }
 
     @GetMapping("/login")
     public String login() {
@@ -78,4 +78,3 @@ public class UserController {
 
 
 }
-
