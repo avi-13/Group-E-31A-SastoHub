@@ -14,7 +14,7 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="/static/css/Browseproduct.css" />
+  <link rel="stylesheet" th:href="@{~/css/Browseproduct.css}" />
   <title>Browse Product</title>
 </head>
 <!-- <body>product
@@ -95,18 +95,16 @@
     <div class="project">      
       <div class="shop">
         <div class="box">
-          <img src="/static/images/baggy jeans.jpeg">
+          <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
           <div class="content">
-            <h3 th:text="${product.productTitle}"></h3>
-
-
-
-
+            <h1 th:text="${product.productTitle}"></h1>
 
             <p><i>Brand New</i></p>
-            <h4 th:text="${product.productPrice}"></h4>
+
+           <h4 th:text="${product.productPrice}"></h4>
+
             <p class="unit">Quantity: <input name="" value="2"></p>
-            <button class="button-2" role="button" onClick="showMessage()">Review</button>
+
 
             <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO
                 CART</span></p>
@@ -116,19 +114,6 @@
           </div>
 
         </div>
-<!--        <div class="box">-->
-<!--          <img src="/static/images/dogbelt.jpg">-->
-<!--          <div class="content">-->
-
-<!--            <h3>Dog's Belt</h3>-->
-<!--            <p><i>Brand New</i></p>-->
-
-<!--            <h4>Price: 700</h4>-->
-<!--            <p class="unit">Quantity: <input name="" value="1"></p>-->
-<!--            <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO-->
-<!--                CART</span></p>-->
-<!--          </div>-->
-<!--        </div>-->
 
       </div>
 

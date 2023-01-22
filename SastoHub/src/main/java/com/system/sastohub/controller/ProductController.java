@@ -55,8 +55,8 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public String viewProduct(@PathVariable Integer id, Model model){
-        Product product= productService.fetchbyid(id);
+    public String fetchById(@PathVariable Integer id, Model model){
+        Product product= productService.fetchById(id);
         model.addAttribute("product", product);
         return "browseproduct";
 
