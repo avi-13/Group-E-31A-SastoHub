@@ -45,9 +45,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product fetchbyid(Integer id) {
-        Product product=productRepo.findById(id).orElseThrow();
-        return product;
+    public Product fetchById(Integer id) {
+        return productRepo.findById(id).orElseThrow();
     }
 
     @Override

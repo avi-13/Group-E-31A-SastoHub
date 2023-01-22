@@ -9,7 +9,7 @@ import java.util.List;
 public interface ProductService {
     ProductPojo saveProduct(ProductPojo productpojo) throws IOException;
 
-    Product fetchbyid(Integer id);
+    Product fetchById(Integer id);
 
     List <Product> fetchAll();
 

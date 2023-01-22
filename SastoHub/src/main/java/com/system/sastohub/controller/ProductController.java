@@ -34,7 +34,7 @@ public class ProductController {
     @GetMapping("/addProduct")
     public String createProduct(Model model){
         model.addAttribute("product" , new ProductPojo());
-        return "/addproduct";
+        return "/adminproduct";
 
     }
 
@@ -55,12 +55,26 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public String viewProduct(@PathVariable Integer id, Model model){
-        Product product= productService.fetchbyid(id);
+    public String fetchById(@PathVariable Integer id, Model model){
+        Product product= productService.fetchById(id);
         model.addAttribute("product", product);
         return "browseproduct";
 
     }
+//    @GetMapping("/{id}")
+//    public Product fetchById(Integer id){
+//        Product product= productService.fetchById(id);
+//        product = Product.builder()
+//                .productId(product.getProductId())
+//                .imageBase64(getImageBase64(product.getImage()))
+//                .productTitle(product.getProductTitle())
+//                .productCategory(product.getProductCategory())
+//                .productDescription(product.getProductDescription())
+//                .productPrice(product.getProductPrice())
+//                .build();
+//        return product;
+//
+//    }
 
     @GetMapping("/list")
     public String productList(Model model){

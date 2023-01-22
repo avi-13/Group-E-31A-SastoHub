@@ -14,7 +14,7 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="/static/css/Browseproduct.css" />
+  <link rel="stylesheet" th:href="@{~/css/Browseproduct.css}" />
   <title>Browse Product</title>
 </head>
 <!-- <body>product
@@ -95,7 +95,7 @@
     <div class="project">      
       <div class="shop">
         <div class="box">
-          <img src="/static/images/baggy jeans.jpeg">
+          <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
           <div class="content">
             <h3 th:text="${product.productTitle}"></h3>
 
