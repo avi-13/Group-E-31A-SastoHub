@@ -75,6 +75,11 @@ public class UserController {
     public String profile(){
         return "updateprofile";
     }
+
+    @GetMapping("/myproduct")
+    public String myproduct(){
+        return "myproduct";
+    }
     @GetMapping("/delete/{id}")
     public String deleteuser(@PathVariable("id") Integer id){
         userServices.deleteById(id);

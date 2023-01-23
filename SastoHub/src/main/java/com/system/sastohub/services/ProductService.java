@@ -13,4 +13,6 @@ public interface ProductService {
 
     List <Product> fetchAll();
 
+    void deleteById(Integer id);
+
 }

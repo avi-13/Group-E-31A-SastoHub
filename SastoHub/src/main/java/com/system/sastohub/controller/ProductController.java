@@ -34,7 +34,7 @@ public class ProductController {
     @GetMapping("/addProduct")
     public String createProduct(Model model){
         model.addAttribute("product" , new ProductPojo());
-        return "/addproduct";
+        return "/adminproduct";
 
     }
 
@@ -59,7 +59,13 @@ public class ProductController {
         Product product= productService.fetchById(id);
         model.addAttribute("product", product);
         return "browseproduct";
+    }
 
+    @GetMapping("/addtocart")
+    public String addTocart(@PathVariable Integer id, Model model){
+        Product product= productService.fetchById(id);
+        model.addAttribute("product", product);
+        return "index";
     }
 
     @GetMapping("/list")
@@ -106,6 +112,11 @@ public class ProductController {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
+        @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Integer id){
+        productService.deleteById(id);
+        return "redirect:/product/list";
+    }
 }
 
 
