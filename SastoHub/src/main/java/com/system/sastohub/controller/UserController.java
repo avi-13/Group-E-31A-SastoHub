@@ -57,14 +57,15 @@ public class UserController {
         if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
             return "login";
         }
-        return "redirect:/user/profile";
+        return "redirect:/user/home";
     }
 
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo){
         userServices.save(userPojo);
-        return "redirect:uploadfile";
+        return "redirect:/user/login";
     }
+
 
     @GetMapping("/profile")
     public String profile(){
@@ -75,6 +76,4 @@ public class UserController {
         userServices.deleteById(id);
         return "redirect:/user/profile";
     }
-
-
 }
