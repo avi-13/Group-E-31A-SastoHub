@@ -36,14 +36,15 @@ public class SpringSecurityConfig {
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
 
-                .requestMatchers("/homePage","/user/**","/admin/**","/product/**")
+                .requestMatchers(
+                        "/login/**","/homePage","/user/**","/admin/**","/product/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/homepage")
-                .defaultSuccessUrl("/home",true)
+                .loginPage("/login")
+                .defaultSuccessUrl("/user/profile",true)
                 .usernameParameter("email")
                 .permitAll()
                 .and()
