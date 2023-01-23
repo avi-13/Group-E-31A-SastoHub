@@ -1,5 +1,6 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.User;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.pojo.UserPojo;
 import jakarta.validation.Valid;
@@ -10,8 +11,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -35,7 +39,7 @@ public class UserController {
         return "adminproduct";
     }
 
- @GetMapping("/stat")
+    @GetMapping("/stat")
     public String stat(){
         return "visualization";
     }
@@ -45,23 +49,35 @@ public class UserController {
         model.addAttribute("user",new UserPojo());
 
         return "Signup";
-}
+    }
 
     @GetMapping("/login")
     public String login() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
-            return "/login";
+            return "login";
         }
+<<<<<<< HEAD
         return "redirect:/user/admin";
+=======
+        return "redirect:/user/home";
+>>>>>>> b82ce55e135f1a37ba8fb9af703e5fadf533c0f7
     }
 
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo){
         userServices.save(userPojo);
-        return "redirect:uploadfile";
+        return "redirect:/user/login";
     }
 
 
+    @GetMapping("/profile")
+    public String profile(){
+        return "updateprofile";
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteuser(@PathVariable("id") Integer id){
+        userServices.deleteById(id);
+        return "redirect:/user/profile";
+    }
 }
-

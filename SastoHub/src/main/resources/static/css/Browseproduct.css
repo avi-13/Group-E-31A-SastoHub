@@ -1,5 +1,4 @@
 * {
-  padding: 0%;
   margin: 0%;
 }
 body {
@@ -18,12 +17,34 @@ header {
   align-items: center;
   justify-content: space-around;
 }
-
+.button-2 {
+    background-color: red;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin-top: 5%;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    transition: color 100ms;
+    vertical-align: baseline;
+    touch-action: manipulation;
+}
 .navbar {
     position: relative;
     width: 70%;
     padding: 5%;
-    height: 100%;
+    height: 150%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -194,7 +215,6 @@ ul li a:active,
     position: relative;
     display: block;
     width: 60%;
-    display: none;
   }
   .navbar.navactive {
     display: inline;
@@ -243,7 +263,6 @@ ul li a:active,
   }
   ul li a {
     margin-left: 40px;
-    font-family: 600;
   }
 }
 
@@ -262,6 +281,7 @@ ul li a:active,
   /* justify-content: space-around; */
   align-items: center;
   width: 100%;
+    height: 70%;
 }
 .shop {
 	/* flex: 50%; */
@@ -270,7 +290,7 @@ ul li a:active,
 .box {
 	display: flex;
 	width: 100%;
-	height: 200px;
+	height: 70%;
 	overflow: hidden;
 	margin-bottom: 20px;
 	background: #fff;
@@ -282,9 +302,10 @@ ul li a:active,
 	transform: scale(1.01);
 }
 .box img {
-	width: 300px;
-	height: 200px;
-	object-fit: cover;
+    width: 800px;
+    height: 500px;
+    border-radius: 40px;
+    object-fit: cover;
 }
 .content {
 	padding: 20px;

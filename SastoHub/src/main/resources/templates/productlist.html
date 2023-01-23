@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GetProduct</title>
+    <link rel="stylesheet" th:href="@{~/css/productlist.css}">
+</head>
+<body>
+    <div class="autodiv" th:each="product:${product}">
+        <a th:href="@{~/product/}+${product.productId}">
+            <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
+<!--        <h6 th:text="${product.productTitle}">-->
+        </h6>
+
+        </a>
+    </div>
+
+</body>
+</html>
