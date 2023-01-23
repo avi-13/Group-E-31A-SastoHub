@@ -4,11 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #eeeee4;
+    /*background-color: #d0d0b5;*/
     justify-content: space-around;
     padding: 3%;
     width: 70%;
     border-radius: 5px;
+    margin-left: 20%;
     /* border: green solid 2px;  */
 }
 h1{
@@ -50,7 +51,7 @@ h1{
 }
 button{
     /* padding: 3% 5%; */
-    margin-left: 300px;
+    /*margin-left: 300px;*/
     background: transparent;
     border: transparent;
     cursor: pointer;
