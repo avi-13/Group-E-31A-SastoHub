@@ -55,9 +55,9 @@ public class UserController {
     public String login() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
-            return "/login";
+            return "login";
         }
-        return "redirect:/login";
+        return "redirect:/user/profile";
     }
 
     @PostMapping("/save")
