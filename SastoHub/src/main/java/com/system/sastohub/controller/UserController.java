@@ -55,16 +55,17 @@ public class UserController {
     public String login() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
-            return "/login";
+            return "login";
         }
-        return "redirect:/login";
+        return "redirect:/user/home";
     }
 
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userPojo){
         userServices.save(userPojo);
-        return "redirect:uploadfile";
+        return "redirect:/user/login";
     }
+
 
     @GetMapping("/profile")
     public String profile(){
@@ -75,6 +76,4 @@ public class UserController {
         userServices.deleteById(id);
         return "redirect:/user/profile";
     }
-
-
 }
