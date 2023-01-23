@@ -3,6 +3,7 @@ package com.system.sastohub.services.impl;
 import com.system.sastohub.entity.Product;
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.repo.ProductRepo;
+import com.system.sastohub.repo.UserRepo;
 import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepo productRepo;
 
     public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/sastohubimages";
+    private final UserRepo userRepo;
 
 
     @Override
@@ -80,6 +82,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> fetchAll() {
         return productRepo.findAll();
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        userRepo.deleteById(id);
     }
 
 }

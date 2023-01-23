@@ -27,11 +27,9 @@ h1{
 }
 
 .profile-pic{
-    position: absolute;
-    height:300px;
-    width:300px;
-    z-index: 1001;
-    padding: 10px;
+    margin: -400px -100px 9px;
+    height: 300px;
+    width: 300px;
 }
 
 .profile-pic img{
@@ -40,6 +38,10 @@ h1{
     cursor: pointer;
     width: 300px;
     height: 300px;
+}
+
+i{
+
 }
 
 .left-side{
@@ -62,8 +64,14 @@ h1{
 
 }
 .description{
-    height: 20vh;
+    margin-top: 25px;
 }
+
+textarea{
+    padding: 2%;
+    resize: none;
+}
+
 button{
     /* padding: 3% 5%; */
     margin-left: 300px;

@@ -112,6 +112,11 @@ public class ProductController {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
+        @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Integer id){
+        productService.deleteById(id);
+        return "redirect:/product/list";
+    }
 }
 
 

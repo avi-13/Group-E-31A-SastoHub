@@ -31,6 +31,7 @@
 
 <div class="container">
   <h1>Product Details</h1>
+
   <form th:method="post" th:action="@{/product/save}" th:object="${product}" enctype="multipart/form-data">
   <div class="inside_container">
     <div class="left-side">
@@ -71,14 +72,16 @@
         <input type="text" placeholder="Product Price" required th:field="*{PPrice}"  th:value="${product.PPrice}"  />
       </div>
 
-      <div class="description product" >
-        <input type="Text" placeholder="Description" required th:field="*{PDesc}" th:value="${product.PDesc}"  />
+      <div class="description" >
+<!--        <input type="Text" placeholder="Description" required th:field="*{PDesc}" th:value="${product.PDesc}"  />-->
+        <textarea  type="text" rows="10" cols="100" placeholder="ProductDescription....." required th:field="*{PDesc}"  th:value="${product.PDesc}"  > </textarea>
+
       </div>
 
     </div>
 
       <div class="profile-pic">
-        <img alt="User Pic" src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" id="profile-image1" >
+        <img alt="User Pic" th:src="@{/images/upload.png}" id="profile-image1" >
         <input id="profile-image-upload" class="hidden" th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
       </div>
 

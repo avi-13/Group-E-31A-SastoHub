@@ -9,7 +9,7 @@
     <div class="autodiv" th:each="product:${product}">
         <a th:href="@{~/product/}+${product.productId}">
             <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
-<!--        <h6 th:text="${product.productTitle}">-->
+        <h6 th:text="${product.productTitle}">
         </h6>
 
         </a>
