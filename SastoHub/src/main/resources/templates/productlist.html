@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>GetProduct</title>
+    <link rel="stylesheet" th:href="@{~/css/admin.css}">
     <link rel="stylesheet" th:href="@{~/css/productlist.css}">
 </head>
 <body>
+<div th:replace="fragments/AdminNavFrag.html :: adminnav"></div>
+<div class="mainclass">
     <div class="autodiv" th:each="product:${product}">
         <a th:href="@{~/product/}+${product.productId}">
             <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
@@ -14,6 +17,13 @@
 
         </a>
     </div>
+</div>
 
 </body>
+<!--<script th:src="@{~/js/script.js}"></script>-->
+
+<script>  let myPage = "pro";
+let listGroupItem = Array.from(document.getElementsByClassName("list-view-active"));
+listGroupItem.forEach(i=>{    i.classList.remove("active")  })
+let activeID = document.getElementById(myPage);  activeID.classList.add("active");</script>
 </html>
