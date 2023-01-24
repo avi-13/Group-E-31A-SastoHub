@@ -57,7 +57,11 @@ public class UserController {
         if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
             return "login";
         }
+
+
+
         return "redirect:/user/home";
+
     }
 
     @PostMapping("/save")

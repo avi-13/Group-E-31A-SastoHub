@@ -20,14 +20,18 @@
 <body>
 <div th:replace="fragments/AdminNavFrag.html :: adminnav"></div>
 <div class="vessel"  >
-        <table class="table table-striped" >
-            <thead>
+        <table class="table table-bordered table-hover table-striped" >
+            <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">S.N</th>
                 <th scope="col">Item</th>
                 <th scope="col">Price</th>
                 <th scope="col">Category</th>
-                <th scope="col">Seller</th>
+                <th scope="col">Address</th>
+                <th scope="col">Image</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+
             </tr>
             </thead>
             <tbody>
@@ -36,14 +40,24 @@
                 <td>Men's Jeans</td>
                 <td>2100</td>
                 <td>Clothes</td>
-                <td>Rame</td>
+                <td>Pokhara</td>
+                <td>File</td>
+                <td>smgth@gmail.com</td>
+                <td>
+                    <a  class = "btn btn-primary"href="email.html">Contact</a>
+                </td>
             </tr>
             <tr>
-                <th scope="row">2</th>
-                <td>Women's Watch</td>
-                <td>4000</td>
-                <td>Accessories</td>
-                <td>Laxmi</td>
+                <th scope="row">1</th>
+                <td>Men's Jeans</td>
+                <td>2100</td>
+                <td>Clothes</td>
+                <td>Pokhara</td>
+                <td>File</td>
+                <td>smgth@gmail.com</td>
+                <td>
+                    <a  class = "btn btn-primary"href=" ">Contact</a>
+                </td>
             </tr>
             </tbody>
         </table>
