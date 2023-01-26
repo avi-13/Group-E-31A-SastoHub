@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
@@ -49,6 +50,18 @@ public class UserServiceImpl implements UserServices {
     public void deleteById(Integer id) {
         userRepo.deleteById(id);
 
+    }
+
+    public String generatePassword() {
+        int length = 8;
+        String password = "";
+        Random r = new Random();
+        for (int i = 0; i < length; i++) {
+            int randomChar = (int)(r.nextInt(94) + 33);
+            char c = (char)randomChar;
+            password += c;
+        }
+        return password;
     }
 
 }
