@@ -9,71 +9,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" th:href="@{~/css/update.css}">
+<!--    <link rel="stylesheet" th:href="@{~/css/update.css}">-->
+    <link rel="stylesheet" href="/static/css/update.css">
 </head>
 
-<body>
-<section id="whole">
-    <h1>My Account</h1>
-    <div class="bodies">
-        <div class="left">
-            <a href=""><i class="fa-solid fa-user"></i> My Details</a>
-            <a href=""><i class="fa-sharp fa-solid fa-location-dot"></i> My Address</a>
-            <a href=""><i class="fa-sharp fa-solid fa-location-dot"></i> My Orders</a>
-            <a href=""><i class="fa-sharp fa-solid fa-location-dot"></i> My Reviews</a>
+<header>
+    <div class="upperpart">
+        <h1>
+            SastoHub
+        </h1>
+
+        <!-- <input type="text" placeholder="search.......">  -->
+        <!-- <i class="fa-solid fa-magnifying-glass "></i>   -->
+        <!-- <i class="fa-solid fa-cart-shopping "></i> -->
+        <!-- <i class="fa-solid fa-user "></i> -->
 
 
-        </div>
-        <div class="right">
-            <h1>My Details</h1>
-
-            <h2>Personal information</h2>
-            <div class="input_info">
-                <div class="element">
-                    Name <br>
-                    <input type="text">
-                </div>
-                <div class="element">
-                    Birthdate <br>
-                    <input type="date">
-                </div>
-                <div class="element">
-                    Phone<br>
-                    <input type="text">
-                </div>
-                <div class="element">
-                    Address<br>
-                    <input type="text">
-                </div>
-                <div class="element">
-
-                    Email<br>
-                    <input type="email">
-                </div>
-            </div>
-            <button>Save</button>
-            <button id="modalBtn" class="button">Delete Account</button>
-            <div id="simpleModal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="closeBtn">&times;</span>
-                        <h2>Confirm Delete</h2>
-                    </div>
-                    <div class="modal-body">
-                        <h1>Are you sure you want to delete your account?</h1>
-                        <p>Once deleted you cannot retrieve your account. All of your data will be deleted and
-                            can no longer be accessed</p>
-                    </div>
-                    <div class="modal-footer">
-<!--                        <a class="delete" th:href="@{~/user/delete/}+${user.id}">Delete</a>-->
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
-</section>
-<script th:src="@{~/js/updateaddress.js}"></script>
+    <div class="lowerpart">
+        <a href="#home">Home</a>
+        <a href="#home">Categories</a>
+
+        <a href="#about">Services</a>
+        <a href="#futsal">Contact</a>
+
+
+        <a href="#blogs">About</a>
+        <a href="#contact-us">Help</a>
+
+    </div>
+</header>
+<body>
+
+<div class="rightpart">
+    <h2>
+        My Details
+    </h2>
+    <h3>
+        Personal Information
+    </h3>
+    <div class="namebox">
+        Name<br> <input class="info" type="text">
+    </div>
+    <div class="number">
+        Phone Number<br>
+        <input class="info" type ="text">
+
+    </div>
+
+    <div class="address">
+        Address<br>
+        <input class="info" type="text">
+
+    </div>
+
+    <div class="email">
+        Email Address<br>
+        <input class="info" type="email">
+    </div>
+    <div class="pw">
+        Password<br>
+        <input class="info" type="password">
+    </div>
+    <div class="cpw">
+        Confirm Password<br>
+        <input class="info" type="password">
+    </div>
+
+    <div class="savebuttton">
+        <button type="submit">Save Changes</button>
+    </div>
+
+    <div class="deletebuttton">
+        <button >Delete Account</button>
+    </div>
+
+
+</div>
 </body>
 
 </html>
