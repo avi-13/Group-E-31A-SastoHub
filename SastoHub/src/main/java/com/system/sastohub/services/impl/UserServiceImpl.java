@@ -52,6 +52,20 @@ public class UserServiceImpl implements UserServices {
 
     }
 
+    @Override
+    public String updateResetPassword(String email) {
+        User user = (User) userRepo.findByEmail(email)
+                .orElseThrow(()-> new RuntimeException("Invalid User email"));
+        String updated_password = generatePassword();
+        try {
+            userRepo.updatePassword(updated_password, email);
+            return "CHANGED";
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return "ds";
+    }
+
     public String generatePassword() {
         int length = 8;
         String password = "";
