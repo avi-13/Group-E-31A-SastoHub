@@ -85,4 +85,16 @@ public class UserController {
         userServices.deleteById(id);
         return "redirect:/user/profile";
     }
+
+    @GetMapping("/forgotpassword")
+    public String forgotpassword(Model model){
+        model.addAttribute("users",new UserPojo());
+        return ("Forgetpasword");
+    }
+
+    @PostMapping("/changepassword")
+    public String changepassword(@Valid UserPojo userPojo){
+        userServices.updateResetPassword(userPojo.getEmail());
+        return "redirect:/home";
+    }
 }
