@@ -12,4 +12,6 @@ public interface UserServices {
     List<User> fetchAll();
 
     void deleteById(Integer id);
+
+    String updateResetPassword(String email);
 }
