@@ -33,7 +33,7 @@ h1{
 }
 
 .profile-pic{
-    margin: -400px -100px 9px;
+    margin: -340px -100px 9px;
     height: 300px;
     width: 300px;
 }
@@ -70,6 +70,7 @@ h1{
 }
 
 textarea{
+    border-radius: 5px;
     padding: 2%;
     resize: none;
 }
