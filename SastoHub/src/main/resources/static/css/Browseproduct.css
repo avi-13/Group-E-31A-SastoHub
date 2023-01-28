@@ -198,8 +198,9 @@ ul li #headIcon {
 }
 ul li a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
+    margin-left: 10px;
 }
 ul li a:active,
 :focus {

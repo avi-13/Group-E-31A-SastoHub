@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/pay")
-public class PaymentController {
+@RequestMapping("/mail")
+public class EmailController {
 
-    @GetMapping("/payment")
-    public String pay() {
-        return "Payment";
+    @GetMapping("/email")
+    public String mail() {
+        return "email";
     }
 
 
