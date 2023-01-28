@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HOMEPAGE</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" th:href="@{~/css/mainhomepage.css}">
+</head>
+<body>
+<div class="wrapperhome">
+    <div class="banner">
+        <img class="bannerimage" th:src="@{/images/a2.jpg}" alt="">
+    </div>
+    <div class="maindiv">
+        <h1 id="h1">Recently Added Product</h1>
+        <div class="hmprodclass">
+            <div class="hmproddiv" th:each="product:${products}">
+                <a th:href="@{~/product/}+${product.productId}">
+                    <img class="hmprodimg" th:src="'data:image/png;base64,'+${product.imageBase64}"  alt="image"/>
+                    <h3 th:text="${product.productTitle}"> </h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

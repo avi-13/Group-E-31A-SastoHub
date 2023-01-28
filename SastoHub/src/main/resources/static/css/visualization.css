@@ -1,10 +1,10 @@
-*{
-    margin: 10px 10px 10px 10px;
-}
-
-body{
-    display:flex ;
-    flex-flow: wrap;
+.analytics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: solid green 5px;
+    /*margin-top: -250px;*/
 }
 
 #piechart{

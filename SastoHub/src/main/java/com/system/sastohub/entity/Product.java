@@ -1,12 +1,9 @@
 package com.system.sastohub.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,9 +18,20 @@ public class Product {
     private Integer productId;
 
     private String productTitle;
+
     private String productCategory;
+
+    private String brandName;
+
+    private String size;
 
     private String productDescription;
 
     private double productPrice;
+
+    private String image;
+
+    @Transient
+    private String imageBase64;
+
 }
