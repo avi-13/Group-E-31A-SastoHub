@@ -1,6 +1,8 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.User;
+import com.system.sastohub.pojo.AddToCartPojo;
+import com.system.sastohub.services.AddToCartService;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.pojo.UserPojo;
 import jakarta.validation.Valid;
@@ -22,6 +24,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     private final UserServices userServices;
+    private final AddToCartService addToCartService;
 
 
     @GetMapping("/home")
@@ -84,5 +87,11 @@ public class UserController {
     public String deleteuser(@PathVariable("id") Integer id){
         userServices.deleteById(id);
         return "redirect:/user/profile";
+    }
+
+    @GetMapping("/mycart")
+    public String saveToCart(@Valid AddToCartPojo addToCartPojo){
+        addToCartService.saveToCart(addToCartPojo);
+        return "mycart";
     }
 }

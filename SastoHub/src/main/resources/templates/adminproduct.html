@@ -22,9 +22,7 @@
   <link rel="stylesheet" th:href="@{~/css/adminproduct.css}">
   <link rel="stylesheet" th:href="@{~/css/admin.css}">
 
-<!--    <link rel="stylesheet" th:href="@{~/css/adminphoto.css}">-->
 
-<!--   <link rel="stylesheet" href="addproduct.css"> -->
 </head>
 
 <body>
@@ -62,11 +60,16 @@
 
       <div class="category product">
         <select name="Category " id="category"  th:field="*{PCategories}"  th:value="${product.PCategories}" >
-          <option value="">Category</option>
-          <option value="banana">1</option>
-          <option value="saab">2</option>
-          <option value="mercedes">3</option>
-          <option value="audi">4</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Wedding & Party">Wedding & Party</option>
+          <option value="Jewelry & Accessories">Jewelry & Accessories</option>
+          <option value="Home & Living">Home & Living</option>
+          <option value="Health & Beauty">Health & Beauty</option>
+          <option value="Toys & Entertainment">Toys & Entertainment</option>
+          <option value="Art & Collectibles">Art & Collectibles</option>
+          <option value="Craft Supplies & Tools">Craft Supplies & Tools</option>
+          <option value="Electronics">Electronics</option>
         </select>
       </div>
 
@@ -83,8 +86,8 @@
     </div>
 
       <div class="profile-pic">
-        <img alt="User Pic" th:src="@{/images/upload.png}" id="profile-image1" >
-        <input id="profile-image-upload" class="hidden" th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
+        <img class="img" alt="UserPic" th:src="@{/images/upload.png}" id="profile-image1" >
+        <input id="profile-image-upload" hidden th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
       </div>
 
   </div>

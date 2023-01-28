@@ -105,10 +105,18 @@
 
             <p class="unit">Quantity: <input name="" value="2"></p>
 
+            <form th:method="post" th:action="@{/cart/mycart}" th:object="${product}" enctype="multipart/form-data">
 
-            <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO
-                CART</span></p>
+              <input type="text" hidden="hidden" name="p_id" th:value="${product.productId}">
 
+              <input type="text" hidden="hidden" name="user_id" th:value="${getUser.id}">
+
+              <input type="text" hidden="hidden" name="user_id" th:value="${getUser.fullname}">
+
+              <button class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO
+                CART</span>
+            </button>
+            </form>
 
 
           </div>
@@ -174,11 +182,8 @@
 
       </div>
     </div>
-
-  </div>
-
   <!--  -->
-  <section>Sasto Hub</section>
+  <section>SastoHub</section>
 
 		<footer class="footer-distributed">
 
