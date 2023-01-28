@@ -1,13 +1,10 @@
 package com.system.sastohub.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
-
+@Builder
 @Entity
 @Getter
 @Setter
@@ -30,7 +27,23 @@ public class MyCart {
             foreignKey = @ForeignKey(name = "FKM_Product_Id"))
     private Product product;
 
-    @Column(name = "full_name")
-    private String full_name;
+    private String productTitle;
+
+    private String productCategory;
+
+    private String brandName;
+
+    private String size;
+
+    private String productDescription;
+
+    private Double productPrice;
+
+    private String image;
+
+    @Transient
+    private String imageBase64;
+
+
 
 }

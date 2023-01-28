@@ -22,11 +22,6 @@ public class HomepageController {
     private final ProductService productService;
 
     @GetMapping("/homepage")
-    public String homePage() {
-        return "mainhomepage";
-    }
-
-    @GetMapping("/homepagelist")
     public String getAllProduct(Model model){
         List<Product> hproduct = productService.fetchAll();
         model.addAttribute("products", hproduct.stream().map(product ->
