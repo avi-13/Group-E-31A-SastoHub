@@ -277,15 +277,17 @@ header{
     font-size: 20px;
 }
 .individual{
-  border-top: 1px solid brown;
-  border-bottom: 1px solid brown;
+    background-color: aliceblue;
 }
-i{
-  color: rgb(16, 108, 189);
-  margin: 2px;
+.star{
+    border:none;
+    background-color: unset;
+    color:goldenrod;
+    font-size: 3rem;
 }
-i:hover{
-  color: orange;
+
+p{
+    text-align: center;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
