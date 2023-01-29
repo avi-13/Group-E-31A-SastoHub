@@ -1,17 +1,20 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
+import com.system.sastohub.pojo.UserPojo;
 import com.system.sastohub.services.ProductService;
 import com.system.sastohub.services.UserServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.security.Principal;
 import java.util.Base64;
 import java.util.List;
 
@@ -25,6 +28,14 @@ public class AdminController {
     @GetMapping("/product")
     public String homePage() {
         return "adminproductlist";
+    }
+
+
+    @GetMapping("/{id}")
+    public String fetchById(@PathVariable Integer id, Model model, Principal principal){
+        Product product= productService.fetchById(id);
+        model.addAttribute("product", product);
+        return "myproduct";
     }
 
 
