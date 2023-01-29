@@ -150,16 +150,13 @@
       <h1>Reviews</h1>
 
       <div class="individual">
-        <p><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></p>
-        <p>By: <span>Daju-Bhai</span></p>
-        <p>Best Product</p>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <p class="current-rating">0 of 5</p>
       </div>
-        <p><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></p>
-        <p>By: <span>Didi-Baine</span></p>
-        <p>Dherai Ramro Product</p>
-
-      </div>
-    </div>
 
   </div>
 
@@ -210,6 +207,28 @@
     function showMessage() {
       alert("Ok let's review this product!");
     }
+
+
+  //  rating
+    const stars=document.querySelectorAll('.star');
+    const current_rating=document.querySelector('.current-rating');
+
+    stars.forEach((star,index)=>{
+      star.addEventListener('click',()=>{
+
+        let current_star=index+1;
+        current_rating.innerText=`${current_star} of 5`;
+
+        stars.forEach((star,i)=>{
+          if(current_star>=i+1){
+            star.innerHTML='&#9733;';
+          }else{
+            star.innerHTML='&#9734;';
+          }
+        });
+
+      });
+    });
   </script>
 
 </body>
