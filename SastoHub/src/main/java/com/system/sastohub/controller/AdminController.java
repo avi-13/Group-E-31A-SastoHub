@@ -1,17 +1,21 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
+import com.system.sastohub.pojo.ProductPojo;
+import com.system.sastohub.pojo.UserPojo;
 import com.system.sastohub.services.ProductService;
 import com.system.sastohub.services.UserServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.security.Principal;
 import java.util.Base64;
 import java.util.List;
 
@@ -22,10 +26,11 @@ public class AdminController {
 
     private final ProductService productService;
 
-    @GetMapping("/product")
-    public String homePage() {
-        return "adminproductlist";
-    }
+//
+//    @GetMapping("/product")
+//    public String homePage() {
+//        return "adminproductlist";
+//    }
 
 
 
@@ -43,7 +48,7 @@ public class AdminController {
                         .build()
 
         ));
-        return "adminproductlist";
+        return "productlist";
     }
 
 
@@ -58,6 +63,28 @@ public class AdminController {
             return null;
         }
         return Base64.getEncoder().encodeToString(bytes);
+    }
+
+    @GetMapping("/product/{id}")
+    public String fetchById(@PathVariable Integer id, Model model){
+        Product product= productService.fetchById(id);
+        model.addAttribute("products", new ProductPojo(product));
+//        model.addAttribute("productdata", productService.fetchById(principal.getName())
+        model.addAttribute("product", product);
+        return "deleteproduct";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editProduct(@PathVariable("id") Integer id, Model model){
+        Product product =productService.fetchById(id);
+        model.addAttribute("product", new ProductPojo(product));
+        return "redirect:/product/list";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Integer id){
+        productService.deleteById(id);
+        return "redirect:/product/list";
     }
 }
 

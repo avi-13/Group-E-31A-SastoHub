@@ -6,69 +6,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="./FontAwesome files/fontawesome.css" /> -->
-  <!-- <script src="./FontAwesome files/fontawesome.js"></script> -->
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" th:href="@{~/css/Browseproduct.css}" />
   <title>Browse Product</title>
 </head>
-<!-- <body>product
-    <script>
-      const toggle = () => {
-        document.getElementById("nav").classList.toggle("navactive");
-      };
-    </script> -->
+
+
 <header>
-  <div class="brand">
-    <span class="SastoHub"></span>
-    <h1>SastoHub</h1>
+  <div class="upperpart">
+    <h1>
+      SastoHub
+    </h1>
+
+    <input type="text" placeholder="Search">
+    <!-- <i class="fa-solid fa-magnifying-glass "></i>   -->
+
+    <i class="fa-solid fa-cart-shopping "></i>
+    <i class="fa-solid fa-user "></i>
+
+
   </div>
-  <span class="fas fa-bars" id="menuIcon" onclick="toggle()"></span>
-  <div class="navbar" id="nav">
-    <div class="searchBox">
-      <input type="text" placeholder="Search Here" />
-      <span class="fas fa-search" id="searchIcon"></span>
-    </div>
-    <ul>
-      <li>
-        <a href="#"> Home </a>
-      </li>
-      <li>
-        <a href="#"> Services </a>
-      </li>
-      <li>
-        <a href="#"> Contact </a>
-      </li>
-      <li>
-        <a href="#"> About </a>
-      <li>
-      <li>
-        <a href="#"> Help </a>
-      </li>
-    </ul>
-     <!-- Profile Picture Division -->
-    <div class="profile">
-      <div class="profile-div">
-          <button class="picture" >
-              <div class="profile-head"></div>
-              <div class="profile-body"></div>
-          </button>
-          <!-- <a href="#" class="profile-link"> -->
-            UserName
-          <!-- <i href="#"class="fa fa-caret-down"></i> -->
-          <div class="dropdown">
-            <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/updateprofile.html">My Details <i class="fa-solid fa-user"></i></a>
-            <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/updateaddress.html">My Address <i class="fa-sharp fa-solid fa-location-dot"></i></a>
-            <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/BoughtProduct.html">My Orders <i class="fa-sharp fa-solid fa-bag-shopping"></i></a>
-            <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/myproduct.html">My Reviews <i class="fa-sharp fa-solid fa-book"></i></a>
-            <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/login.html">Logout <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i></a>
-          </div>
-      </div>
-    </div>
+  <div class="lowerpart">
+    <a href="#home">Home</a>
+    <a href="#home">Categories</a>
+
+    <a href="#about">Services</a>
+    <a href="#futsal">Contact</a>
+
+
+    <a href="#blogs">About</a>
+    <a href="#contact-us">Help</a>
+
   </div>
 </header>
 
@@ -78,7 +51,7 @@
 
     <h1>BROWSE PRODUCT</h1>
 
-    <div class="project">      
+    <div class="project">
       <div class="shop">
         <div class="box">
           <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
@@ -89,8 +62,9 @@
 
            <h4 th:text="${product.productPrice}"></h4>
 
-            <p class="unit">Quantity: <input name="" value="2"></p>
+            <p class="unit">Quantity: <input type="number" value=" "></p>
 
+            <p class="btn-area1"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></p>
 
             <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO
                 CART</span></p>
@@ -150,66 +124,73 @@
       <h1>Reviews</h1>
 
       <div class="individual">
-        <p><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></p>
-        <p>By: <span>Daju-Bhai</span></p>
-        <p>Best Product</p>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <button class="star">&#9734;</button>
+        <p class="current-rating">0 of 5</p>
       </div>
-        <p><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></p>
-        <p>By: <span>Didi-Baine</span></p>
-        <p>Dherai Ramro Product</p>
-
-      </div>
-    </div>
 
   </div>
 
   <!--  -->
-  <section>Sasto Hub</section>
+  <div class="footertitle">SastoHub</div>
 
-		<footer class="footer-distributed">
+  <footer class="footer-distributed">
 
-			<div class="footer-right">
+    <div class="footer-right">
 
-				<a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i>
-          
-        </a>
-  
-        <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i>
-          
-        </a>
-        <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i>
-          
-        </a>
+      <a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i></a>
+      <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i></a>
+      <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i></a>
+      <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
 
-        <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i>
-          
-        </a>
-			</div>
+    <div class="footer-left">
 
-			<div class="footer-left">
+      <p class="footer-links">
+        <a class="link-1" href="#">Home</a>
 
-				<p class="footer-links">
-					<a class="link-1" href="#">Home</a>
+        <a href="#">About Us</a>
 
-					<a href="#">Blog</a>
+        <a href="#">FAQs</a>
 
-					
+        <a href="#">Contact Us</a>
+      </p>
 
-					<a href="#">About Us</a>
+      <p>sastohub@gmail.com Ktm, Nepal<br>
+        85475967841, 3210154789, 0124587895</p>
+      <p>SastoHub &copy; 2022</p>
+    </div>
 
-					<a href="#">FAQs</a>
-
-					<a href="#">Contact Us</a>
-				</p>
-
-				<p>SastoHub &copy; 2022</p>
-			</div>
-
-		</footer>
+  </footer>
   <script>
     function showMessage() {
       alert("Ok let's review this product!");
     }
+
+
+  //  rating
+    const stars=document.querySelectorAll('.star');
+    const current_rating=document.querySelector('.current-rating');
+
+    stars.forEach((star,index)=>{
+      star.addEventListener('click',()=>{
+
+        let current_star=index+1;
+        current_rating.innerText=`${current_star} of 5`;
+
+        stars.forEach((star,i)=>{
+          if(current_star>=i+1){
+            star.innerHTML='&#9733;';
+          }else{
+            star.innerHTML='&#9734;';
+          }
+        });
+
+      });
+    });
   </script>
 
 </body>

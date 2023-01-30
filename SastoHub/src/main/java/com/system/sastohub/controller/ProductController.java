@@ -61,12 +61,12 @@ public class ProductController {
         return "browseproduct";
     }
 
-    @GetMapping("/addtocart")
-    public String addTocart(@PathVariable Integer id, Model model){
-        Product product= productService.fetchById(id);
-        model.addAttribute("product", product);
-        return "index";
-    }
+//    @GetMapping("/addtocart")
+//    public String addTocart(@PathVariable Integer id, Model model){
+//        Product product= productService.fetchById(id);
+//        model.addAttribute("product", product);
+//        return "index";
+//    }
 
     @GetMapping("/list")
     public String productList(Model model){
@@ -112,11 +112,8 @@ public class ProductController {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
-        @GetMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable("id") Integer id){
-        productService.deleteById(id);
-        return "redirect:/product/list";
-    }
+
+
 }
 
 

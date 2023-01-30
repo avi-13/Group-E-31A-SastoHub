@@ -42,51 +42,61 @@
 </header>
 <body>
 
-<div class="rightpart">
-    <h2>
-        My Details
-    </h2>
-    <h3>
-        Personal Information
-    </h3>
-    <div class="namebox">
-        Name<br> <input class="info" type="text">
-    </div>
-    <div class="number">
-        Phone Number<br>
-        <input class="info" type ="text">
+<form th:method="post" th:action="@{/user/save}" th:object="${users}" >
 
-    </div>
+    <div class="rightpart">
+        <h2>
+            My Details
+        </h2>
+        <h3>
+            Personal Information
+        </h3>
 
-    <div class="address">
-        Address<br>
-        <input class="info" type="text">
+        <input class="iddds" hidden type="text" th:field="*{id}" th:value="${currentUser.getId()}">
 
-    </div>
+        <div class="namebox">
+            Name<br> <input class="info" type="text" th:field="*{fullname}" th:value="${currentUser.getFull_name()}">
+        </div>
+        <div class="number">
+            Phone Number<br>
+            <input class="info" type ="text" th:field="*{mobile_no}" th:value="${currentUser.getMobileNo()}">
 
-    <div class="email">
-        Email Address<br>
-        <input class="info" type="email">
-    </div>
-    <div class="pw">
-        Password<br>
-        <input class="info" type="password">
-    </div>
-    <div class="cpw">
-        Confirm Password<br>
-        <input class="info" type="password">
-    </div>
+        </div>
 
-    <div class="savebuttton">
-        <button type="submit">Save Changes</button>
-    </div>
+        <div class="address">
+            Address<br>
+            <input class="info" type="text" th:field="*{address}" th:value="${currentUser.getAddress()}">
 
-    <div class="deletebuttton">
-        <button >Delete Account</button>
-    </div>
+        </div>
+
+        <div class="email">
+            Email Address<br>
+            <input class="info" type="email" th:field="*{email}" th:value="${currentUser.getEmail()}">
+        </div>
+        <div class="pw">
+            Password<br>
+            <input class="info" type="password" th:field="*{password}" th:value="${currentUser.getPassword()}">
+        </div>
+        <div class="cpw">
+            Confirm Password<br>
+            <input class="info" type="password">
+        </div>
 
 
-</div>
+        <div class="savebuttton">
+        <a class="delete" th:href="@{~/user/edit/}+${currentUser.id}">
+            <button type="submit">SaveChanges</button>
+        </a>
+        </div>
+
+
+        <div class="deletebuttton">
+            <a class="delete " th:href="@{~/user/delete/}+${currentUser.id}">
+                <button type="button" >DeleteAccount</button>
+            </a>
+        </div>
+    </div>
+</form>
 </body>
 
 </html>
