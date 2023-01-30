@@ -40,7 +40,7 @@
         <input class="field" type="text" hidden placeholder="UserId..."  th:field="*{pid}" th:value="${product.getProductId()}" />
 
         <div class="title product">
-          <input type="text" placeholder="Product Title" required th:value="${product.getProductTitle()}" />
+          <input type="text" required placeholder="Product Title" th:field="*{ptitle}" th:value="${product.getProductTitle()}" />
         </div>
 
 
@@ -49,8 +49,8 @@
         </div>
 
 
-        <div class="sizeProduct" th:field="*{size}"  th:value="${product.getSize()}" >
-          <select name="Size " id="size">
+        <div class="sizeProduct" >
+          <select name="Size" id="size" th:field="*{size}"  th:value="${product.getSize()}" >
             <option value="Null">Size</option>
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
@@ -96,9 +96,11 @@
 
 
     <div class="footer">
-      <button type="submit">Save Changes</button>
+      <a class="delete" th:href="@{~/admin/edit/}+${product.productId}">
+        <button type="submit">Save Changes</button>
+      </a>
       <a class="delete" th:href="@{~/admin/delete/}+${product.productId}">
-      <button type="button">Delete Product</button>
+        <button type="button">Delete Product</button>
       </a>
 
     </div>

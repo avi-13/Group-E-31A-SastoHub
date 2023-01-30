@@ -2,6 +2,7 @@ package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
 import com.system.sastohub.pojo.ProductPojo;
+import com.system.sastohub.pojo.UserPojo;
 import com.system.sastohub.services.ProductService;
 import com.system.sastohub.services.UserServices;
 import lombok.RequiredArgsConstructor;
@@ -71,6 +72,13 @@ public class AdminController {
 //        model.addAttribute("productdata", productService.fetchById(principal.getName())
         model.addAttribute("product", product);
         return "deleteproduct";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editProduct(@PathVariable("id") Integer id, Model model){
+        Product product =productService.fetchById(id);
+        model.addAttribute("product", new ProductPojo(product));
+        return "redirect:/product/list";
     }
 
     @GetMapping("/delete/{id}")
