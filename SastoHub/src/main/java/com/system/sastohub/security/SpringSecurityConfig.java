@@ -42,7 +42,7 @@ public class SpringSecurityConfig {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/user/profile",true)
+                .defaultSuccessUrl("/home/homepage",true)
                 .usernameParameter("email")
                 .permitAll()
                 .and()
