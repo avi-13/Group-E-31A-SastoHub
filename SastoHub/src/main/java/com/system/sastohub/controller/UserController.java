@@ -1,12 +1,13 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.Product;
 import com.system.sastohub.entity.User;
-import com.system.sastohub.pojo.AddToCartPojo;
-import com.system.sastohub.services.AddToCartService;
+import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.services.UserServices;
 import com.system.sastohub.pojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.method.P;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,23 +18,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import java.security.Principal;
+
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
     private final UserServices userServices;
-    private final AddToCartService addToCartService;
 
-
-    @GetMapping("/home")
-    public String homePage(){
-        return "HomePage";
-    }
 
     @GetMapping("/admin")
-    public String admin(){
+    public String admin() {
         return "Admindashboard";
     }
 
@@ -43,13 +39,13 @@ public class UserController {
 //    }
 
     @GetMapping("/stat")
-    public String stat(){
+    public String stat() {
         return "visualization";
     }
 
     @GetMapping("/create")
-    public String createUser(Model model){
-        model.addAttribute("user",new UserPojo());
+    public String createUser(Model model) {
+        model.addAttribute("user", new UserPojo());
 
         return "Signup";
     }
@@ -57,41 +53,51 @@ public class UserController {
     @GetMapping("/login")
     public String login() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication==null||authentication instanceof AnonymousAuthenticationToken){
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "login";
         }
-
-
-
-        return "redirect:/user/home";
-
+        return "redirect:/home/homepage";
     }
 
     @PostMapping("/save")
-    public String saveUser(@Valid UserPojo userPojo){
+    public String saveUser(@Valid UserPojo userPojo) {
         userServices.save(userPojo);
         return "redirect:/user/login";
     }
 
 
     @GetMapping("/profile")
-    public String profile(){
+    public String profile() {
         return "updateprofile";
     }
 
     @GetMapping("/myproduct")
-    public String myproduct(){
+    public String myproduct() {
         return "myproduct";
     }
-    @GetMapping("/delete/{id}")
-    public String deleteuser(@PathVariable("id") Integer id){
-        userServices.deleteById(id);
-        return "redirect:/user/profile";
+
+
+    @GetMapping("/profile/{id}")
+    public String getUserProfiile(@PathVariable("id") Integer id, Model model ){
+        User user = userServices.fetchById(id);
+        model.addAttribute("users", new UserPojo(user));
+//        model.addAttribute("user", userServices.findByEmail(principal.getName()));
+        model.addAttribute("currentUser", user);
+        return "updateprofile";
     }
 
-    @GetMapping("/mycart")
-    public String saveToCart(@Valid AddToCartPojo addToCartPojo){
-        addToCartService.saveToCart(addToCartPojo);
-        return "mycart";
+
+    @GetMapping("/edit/{id}")
+    public String editUser(@PathVariable("id") Integer id, Model model){
+        User user =userServices.fetchById(id);
+        model.addAttribute("currentUser", new UserPojo(user));
+        return "redirect:/user/profile/{id}";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") Integer id) {
+        userServices.deleteById(id);
+        return "redirect:/login";
+    }
+
 }

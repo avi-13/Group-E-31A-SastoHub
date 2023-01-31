@@ -11,7 +11,8 @@
 <div th:replace="fragments/AdminNavFrag.html :: adminnav"></div>
 <div class="mainclass">
     <div class="autodiv" th:each="product:${product}">
-        <a th:href="@{~/product/}+${product.productId}">
+<!--        <a th:href="@{~/product/delete/}+${product.productId}">-->
+        <a th:href="@{~/admin/product/}+${product.productId}">
             <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
 <!--        <h6 th:text="${product.productTitle}">-->
 <!--        </h6>-->
@@ -21,7 +22,7 @@
 </div>
 
 </body>
-<!--<script th:src="@{~/js/script.js}"></script>-->
+<script th:src="@{~/js/script.js}"></script>
 
 <script>  let myPage = "pro";
 let listGroupItem = Array.from(document.getElementsByClassName("list-view-active"));
