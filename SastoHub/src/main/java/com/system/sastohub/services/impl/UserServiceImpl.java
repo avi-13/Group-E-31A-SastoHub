@@ -128,9 +128,11 @@ private final ThreadPoolTaskExecutor taskExecutor;
         if(optionalUser.isPresent()){
             User user = optionalUser.get();
             String password = generatePassword();
-            user.setPassword(password);
-            userRepo.save(user);
             sendPassword(email, password);
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodePassword = passwordEncoder.encode(password);
+            user.setPassword(encodePassword);
+            userRepo.save(user);
         }
     }
     @Override
