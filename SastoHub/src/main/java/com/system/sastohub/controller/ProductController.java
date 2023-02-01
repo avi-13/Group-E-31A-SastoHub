@@ -1,6 +1,7 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
+import com.system.sastohub.pojo.OrderPojo;
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.services.ProductService;
 
@@ -59,9 +60,12 @@ public class ProductController {
 
 
     @GetMapping("/{id}")
-    public String fetchById(@PathVariable Integer id, Model model){
+    public String fetchById(@PathVariable Integer id, Model model,Principal principal){
         Product product= productService.fetchById(id);
-        model.addAttribute("product", product);
+        model.addAttribute("product", new ProductPojo(product));
+        model.addAttribute("pro", product);
+        model.addAttribute("saveorder",new OrderPojo());
+        model.addAttribute("loggedUser",userService.findByEmail(principal.getName()));
         return "browseproduct";
     }
 

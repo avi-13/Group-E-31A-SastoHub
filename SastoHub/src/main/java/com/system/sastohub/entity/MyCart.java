@@ -45,5 +45,4 @@ public class MyCart {
     private String imageBase64;
 
 
-
 }
