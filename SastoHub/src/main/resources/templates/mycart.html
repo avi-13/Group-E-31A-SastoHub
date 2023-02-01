@@ -73,7 +73,7 @@
       <h1>Shopping Cart</h1>
       <div class="project">
         <div class="shop">
-          <div class="box" th:each="product:${product}">
+          <div class="box" th:each="product:${mycart}">
             <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
             <div class="content">
               <h1 th:text="${product.productTitle}"></h1>

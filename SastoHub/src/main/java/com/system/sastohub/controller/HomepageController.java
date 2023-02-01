@@ -2,7 +2,6 @@ package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
 import com.system.sastohub.services.ProductService;
-import com.system.sastohub.services.UserServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +19,7 @@ import java.util.List;
 @RequestMapping("/home")
 public class HomepageController {
     private final ProductService productService;
+
 
 //    @GetMapping("/homepage")
 //    public String homePage() {

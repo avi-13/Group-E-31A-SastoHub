@@ -47,60 +47,69 @@
 
 <body>
 
-  <div class="wrapper">
+  <div class="wrapper" >
 
     <h1>BROWSE PRODUCT</h1>
 
     <div class="project">
+      <form th:method="post" th:action="@{/order/saveOrder}" th:object="${saveorder}" enctype="multipart/form-data">
+
       <div class="shop">
+
         <div class="box">
-          <img class="img" th:src="'data:image/png;base64,'+${product.imageBase64}" />
+
+          <img class="img" th:src="'data:image/png;base64,'+${pro.imageBase64}" />
+
           <div class="content">
-            <h1 th:text="${product.productTitle}"></h1>
+
+            <h1 th:text="${pro.productTitle}"></h1>
+<!--            <h1 hidden th:text="${prod.getProductId()}"></h1>-->
+<!--            <h1 hidden  th:text="${product.productCategory}"></h1>-->
+<!--            <h1 hidden th:text="${product.productPrice}"></h1>-->
+<!--            <h1 hidden th:text="${product.imageBase64}"></h1>-->
+
+            <input type="text"  hidden="hidden" name="pid" th:value="${product.pid}">
+            <input type="text"  hidden="hidden" name="id" th:value="${loggedUser.id}">
+            <input type="text"  hidden="hidden" name="ptitle" th:value="${product.ptitle}">
+            <input type="text"  hidden="hidden" name="pPrice" th:value="${product.PPrice}">
+            <input type="text"  hidden="hidden" name="size" th:value="${product.size}">
+            <input type="text"  hidden="hidden" name="fullname" th:value="${loggedUser.full_name}">
+            <input type="text"  hidden="hidden" name="pCategories" th:value="${product.PCategories}">
+            <input type="text"  hidden="hidden" name="address" th:value="${loggedUser.address}">
+            <input type="text"  hidden="hidden" name="email" th:value="${loggedUser.email}">
+            <input type="text"  hidden="hidden" name="mobile_no" th:value="${loggedUser.mobileNo}">
 
             <p><i>Brand New</i></p>
 
-           <h4 th:text="${product.productPrice}"></h4>
+            <h4 th:text="${pro.productPrice}"> </h4>
+<!--            <p class="unit">Quantity: <p th:> </p> </p>-->
 
-            <p class="unit">Quantity: <input type="number" value=" "></p>
+            <p class="unit">Quantity: <input type="number" value=" " th:value="pro.quantity"></p>
 
 
             <p class="btn-area1"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></p>
 
-            <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO
-                CART</span></p>
 
+            <button class="btn-area" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
 
 
           </div>
-
         </div>
-<!--        <div class="box">-->
-<!--          <img src="/static/images/dogbelt.jpg">-->
-<!--          <div class="content">-->
-
-<!--            <h3>Dog's Belt</h3>-->
-<!--            <p><i>Brand New</i></p>-->
-
-<!--            <h4>Price: 700</h4>-->
-<!--            <p class="unit">Quantity: <input name="" value="1"></p>-->
-<!--            <p class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn2">ADD TO-->
-<!--                CART</span></p>-->
-<!--          </div>-->
-<!--        </div>-->
-
       </div>
+</form>
 
 
-      <div class="right-bar">
+<div class="right-bar">
         <h1>Delivery</h1>
         <a href="" class="All over Nepal"><i class="fa-sharp fa-solid fa-location-dot"></i>
           All Over Nepal
         </a>
         <br>
+
         <a href="" class="No Warrenty"><i class="fa-sharp fa-solid fa-circle-exclamation"></i>
           No Warranty
         </a>
+
       </div>
     </div>
 
@@ -108,20 +117,15 @@
       <h1>Product detail</h1>
       <div class="desc">
         <div class="right_desc">
-          <p   th:text="${product.productDescription}">
-
-          </p>
-
+          <p   th:text="${pro.productDescription}"></p>
         </div>
-        <div class="left_desc">
-                </div>
+        <div class="left_desc"></div>
+
       </div>
     </div>
 
     <div class="review">
-
       <p> </p>
-
       <h1>Reviews</h1>
 
       <div class="individual">
@@ -133,32 +137,27 @@
         <p class="current-rating">0 of 5</p>
       </div>
 
-  </div>
-
-  <!--  -->
-  <div class="footertitle">SastoHub</div>
-
-  <footer class="footer-distributed">
-
-    <div class="footer-right">
-
-      <a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i></a>
-      <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i></a>
-      <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i></a>
-      <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i></a>
     </div>
+  <!--  -->
+    <div class="footertitle">SastoHub</div>
 
-    <div class="footer-left">
+    <footer class="footer-distributed">
 
-      <p class="footer-links">
-        <a class="link-1" href="#">Home</a>
+      <div class="footer-right">
+        <a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i></a>
+        <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i></a>
+        <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i></a>
+        <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
 
-        <a href="#">About Us</a>
+      <div class="footer-left">
 
-        <a href="#">FAQs</a>
-
-        <a href="#">Contact Us</a>
-      </p>
+        <p class="footer-links">
+          <a class="link-1" href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Contact Us</a>
+        </p>
 
       <p>sastohub@gmail.com Ktm, Nepal<br>
         85475967841, 3210154789, 0124587895</p>
@@ -189,12 +188,9 @@
             star.innerHTML='&#9734;';
           }
         });
-
       });
     });
   </script>
   </div>
 </body>
-
-
 </html>
