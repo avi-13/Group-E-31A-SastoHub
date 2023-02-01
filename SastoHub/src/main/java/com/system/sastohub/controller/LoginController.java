@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping()
 public class LoginController {
     @GetMapping("/login")
-    public String getLoginPage(){
+    public String getLoginPage() {
         return "redirect:/user/login";
     }
 }
