@@ -12,7 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" th:href="@{~/css/Payment.css}">
-  <link rel="stylesheet" href="/static/css/Payment.css">
+<!--  <link rel="stylesheet" href="/static/css/Payment.css">-->
   <title>Browse Product</title>
 </head>
 <header>
@@ -28,90 +28,56 @@
     </div>
     <ul>
       <li>
-        <span class="fas fa-home" id="headIcon"></span>
         <a href="#"> Home </a>
       </li>
       <li>
-        <span class="fa fa-list" id="headIcon"></span>
-        <a href="#"> Categories </a>
-      </li>
-      <li>
-        <span class="fas fa-sell" id="headIcon"></span>
-        <a href="#"> Sell</a>
-      </li>
-      <li>
-        <span class="fas fa-services" id="headIcon"></span>
         <a href="#"> Services </a>
       </li>
       <li>
-        <span class="fas fa-contact" id="headIcon"></span>
         <a href="#"> Contact </a>
       </li>
       <li>
-        <span class="fas fa-" id="headIcon"></span>
         <a href="#"> About </a>
       <li>
-        <span class="fas fa-help" id="headIcon"></span>
+      <li>
         <a href="#"> Help </a>
       </li>
-      </li>
     </ul>
-  </div>
+
+      </div>.
 </header>
 
 
 <body>
-  <section id="body">
-
-<div class="images">
-  <img th:src="@{/images/payment2.jpg}" alt="" srcset="">
-  <img src="/static/images/payment2.jpg" alt="" srcset="">
-</div>
-
-  
-<div class="side_content">
-  <h1><b>
-    PAYMENT DETAILS
-  </b>
-</h1>
-  <b>
-    <p>Complete your Payment by filling the following details</p>
-  </b>
-  <div class="inputsection">
-
-  
-  <div class="Card">
-    <b>Card Holder Name</b><br>
-  <input type="text">
-</div>
-
-<div class="CardNumber">
-  <b>CardNumber</b><br>
-<input type="text">
-</div>
-
-  
-  
-</div>
-
-  <div class="billing">
-    <div class="first_half">
-      CardNumber:<br>
-      Details:<br>
+<div class="wrapper">
+  <div class="checkout_wrapper">
+    <div class="product_info">
+      <p>
+        Make your Payment
+      </p>
     </div>
-    <div class="second_half">      
-      Cost:<br>
-      Extra Charge: <br>
+    <div class="checkout_form">
+      <p>Payment Section</p>
+      <div class="details">
+        <div class="section">
+          <input type="text" placeholder="Card Number">
+        </div>
+        <div class="section">
+          <input type="text" placeholder="Cardholder Name">
+        </div>
+        <div class="section last_section">
+          <div class="item">
+            <input type="text" placeholder="Expiry Date">
+          </div>
+        </div>
+
+        <div class="btn">
+          <a href="#">Pay</a>
+        </div>
+      </div>
     </div>
-
-    
-
   </div>
-  
-  <button>PAY</button>
-
 </div>
-</section>
 </body>
 <footer>
 </footer>

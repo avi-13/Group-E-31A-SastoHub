@@ -1,9 +1,11 @@
 package com.system.sastohub.controller;
 
 import com.system.sastohub.entity.Product;
+import com.system.sastohub.pojo.OrderPojo;
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.services.ProductService;
 
+import com.system.sastohub.services.UserServices;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.security.Principal;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
@@ -30,6 +33,7 @@ import java.util.Map;
 public class ProductController {
 
     private final ProductService productService;
+    private final UserServices userService;
 
     @GetMapping("/addProduct")
     public String createProduct(Model model){
@@ -54,19 +58,33 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
+
     @GetMapping("/{id}")
-    public String fetchById(@PathVariable Integer id, Model model){
+    public String fetchById(@PathVariable Integer id, Model model,Principal principal){
         Product product= productService.fetchById(id);
-        model.addAttribute("product", product);
+        model.addAttribute("product", new ProductPojo(product));
+        model.addAttribute("pro", product);
+        model.addAttribute("saveorder",new OrderPojo());
+        model.addAttribute("loggedUser",userService.findByEmail(principal.getName()));
         return "browseproduct";
     }
 
-    @GetMapping("/addtocart")
-    public String addTocart(@PathVariable Integer id, Model model){
-        Product product= productService.fetchById(id);
-        model.addAttribute("product", product);
-        return "index";
-    }
+//    @GetMapping("/{id}")
+//    public String fetchById(@PathVariable Integer id, Model model, Principal principal){
+//        Product product= productService.fetchById(id);
+////        User user = userService.findById(id);
+//        model.addAttribute("product", product);
+//        model.addAttribute("getUser", userService.findByEmail(principal.getName()));
+////        model.addAttribute("getUser", new UserPojo(user));
+//        return "browseproduct";
+//    }
+
+//    @GetMapping("/addtocart")
+//    public String addTocart(@PathVariable Integer id, Model model){
+//        Product product= productService.fetchById(id);
+//        model.addAttribute("product", product);
+//        return "index";
+//    }
 
     @GetMapping("/list")
     public String productList(Model model){
@@ -112,11 +130,8 @@ public class ProductController {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
-        @GetMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable("id") Integer id){
-        productService.deleteById(id);
-        return "redirect:/product/list";
-    }
+
+
 }
 
 
