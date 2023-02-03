@@ -10,6 +10,7 @@
     border: none;
     text-transform: capitalize;
     font-family: "Nunito", sans-serif;
+
 }
 
 form{
@@ -26,6 +27,7 @@ header{
     height: 20vh;
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
 .upperpart{
     /* border: solid red 5px; */
@@ -35,7 +37,7 @@ header{
     background-color: black;
 
 }
-.upperpart i{
+i{
     /* border: solid red 2px; */
     color: white;
     height: 50%;
@@ -43,6 +45,12 @@ header{
     margin-right:10px;
     margin-left: 10px;
     width: 2%;
+
+}
+i:hover{
+    transform:scale(1.3);
+    -webkit-transform:scale(1.3);
+    cursor: pointer;
 
 }
 .upperpart input{
@@ -55,18 +63,23 @@ header{
     font-size: 18px;
     font-weight: 500;
 }
-.upperpart h1{
-    font-size: 24px;
-    margin-left: 10px;
-    margin-top: 10px;
-    color: white;
+.upperpart h1 {
+    font-size: 26px;
+    margin-left: 140px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.upperpart h1 a{
+    color: White;
 }
 
 .lowerpart{
-    /* border: solid purple 5px; */
+    /* border: solid #292c2f 3px; */
+    border-radius: 2px;
     height: 8vh;
     display: flex;
-    background-color:white;
+    background-color:#eee0;
+    z-index: 1000;
     /* margin-left: -10px; */
 
 
@@ -76,13 +89,16 @@ header{
     height: 30px;
     color: gray;
     font-weight: 700;
-    margin-left: 150px;
-    margin-top: 5px;
+    margin-left: 140px;
+    margin-top: 13px;
     font-size: 18px;
+    padding-left: 50px;
+
 }
 .lowerpart a:hover{
     background-color: rgb(240, 243, 255);
 }
+
 /* navigation upto here */
 
 .wrapper {
@@ -409,3 +425,5 @@ p {
 }
 
 /* Footer Ends Here */
+
+
