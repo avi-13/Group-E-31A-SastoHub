@@ -20,6 +20,7 @@
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <title>Admin Panel</title>
   <link rel="stylesheet" th:href="@{~/css/adminproduct.css}">
+<!--  <link rel="stylesheet" href="/static/css/adminproduct.css">-->
   <link rel="stylesheet" th:href="@{~/css/admin.css}">
 
 
@@ -86,13 +87,14 @@
 
       </div>
 
-      <div class="profile-pic">
-        <img class="img" alt="UserPic" th:src="@{/images/upload.png}" id="profile-image1" >
-        <input id="profile-image-upload" hidden th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
       </div>
 
-    </div>
 
+      <div class="profile-pic">
+        <img class="img" alt="UserPic" th:src="@{/images/upload.png}" id="profile-image1" >
+<!--        <img class="img" alt="UserPic" src="/static/images/upload.png" id="profile-image1" >-->
+        <input id="profile-image-upload" hidden th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
+      </div>
 
     <div class="footer">
       <button type="submit">Add Product</button>

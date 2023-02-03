@@ -24,7 +24,13 @@
         <input type="text" placeholder="Search">
 
         <i class="fa-solid fa-cart-shopping "></i>
-        <a th:href="@{~/user/profile/{id}}"><i class="fa-solid fa-user "></i></a>
+
+        <div>
+        <a th:href="@{~/user/profile/}+${userdata.id}">
+        <i class="fa-solid fa-user "></i>
+        </a>
+            <span th:text="${userdata.getFull_name()}" style="color: white;margin-left: 5px;" ></span>
+        </div>
 
 
     </div>

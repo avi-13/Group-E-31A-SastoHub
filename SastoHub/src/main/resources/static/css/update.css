@@ -121,6 +121,7 @@ h3{
     width: 80%;
     border: #d9d9d9;
     background-color: #eee;
+    text-transform: none;
 }
 .rightpart .namebox{
     border-radius: 20px;

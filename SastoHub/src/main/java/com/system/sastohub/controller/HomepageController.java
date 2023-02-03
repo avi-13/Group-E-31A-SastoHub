@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.security.Principal;
 import java.util.Base64;
 import java.util.List;
 
@@ -20,6 +21,9 @@ import java.util.List;
 @RequestMapping("/home")
 public class HomepageController {
     private final ProductService productService;
+    private final UserServices userService;
+
+
 
 //    @GetMapping("/homepage")
 //    public String homePage() {
@@ -27,8 +31,9 @@ public class HomepageController {
 //    }
 
     @GetMapping("/homepage")
-    public String getAllProduct(Model model){
+    public String getAllProduct(Model model,Principal principal){
         List<Product> hproduct = productService.fetchAll();
+        model.addAttribute("userdata",userService.findByEmail(principal.getName()));
         model.addAttribute("products", hproduct.stream().map(product ->
                 Product.builder()
                         .productId(product.getProductId())

@@ -1,6 +1,6 @@
 package com.system.sastohub;
 
-import com.system.sastohub.email.EmailSenderService;
+//import com.system.sastohub.email.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import org.springframework.context.event.EventListener;
 public class SastohubApplication {
 
     @Autowired
-    private EmailSenderService senderService;
+//    private EmailSenderService senderService;
     public static void main(String[] args) {
         SpringApplication.run(SastohubApplication.class, args);
     }
