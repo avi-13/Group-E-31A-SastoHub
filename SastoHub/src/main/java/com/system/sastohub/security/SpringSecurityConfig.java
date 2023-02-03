@@ -52,7 +52,7 @@ public class SpringSecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer()
     {
-            return (web) -> web.ignoring().requestMatchers("/css/**","/images/**","/js/**");
+            return (web) -> web.ignoring().requestMatchers("/css/**","/images/**","/js/**","/vendor/**");
     }
 }
 
