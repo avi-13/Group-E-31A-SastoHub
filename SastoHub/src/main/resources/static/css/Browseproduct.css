@@ -120,8 +120,8 @@ header{
     border-radius: 10px;
 }
 .box:hover {
-    border: none;
     transform: scale(1.01);
+    border: solid;
 }
 .box img {
     width: 111%;
@@ -145,6 +145,7 @@ p {
     margin-bottom: 30px;
 }
 .content h4 {
+    text-align: left;
     margin-bottom: 50px;
 }
 .btn-area1 {
@@ -188,10 +189,11 @@ p {
     margin-right: 5px;
 }
 .right-bar {
+    margin-right: -71px;
+    margin-top: -62px;
     flex: 33%;
-    margin-right: -85px;
-    margin-top: -30px;
     padding: 20px;
+    border: solid;
     height: 530px;
     border-radius: 5px;
     background: #fff;
@@ -294,10 +296,6 @@ p {
     background-color: unset;
     color:goldenrod;
     font-size: 3rem;
-}
-
-p{
-    text-align: center;
 }
 
 * {

@@ -81,16 +81,15 @@
 
             <p><i>Brand New</i></p>
 
-            <h4 th:text="${pro.productPrice}"> </h4>
+            <p> ProductPrice: <i th:text="${pro.productPrice}" style="color: red"></i></p>
 <!--            <p class="unit">Quantity: <p th:> </p> </p>-->
 
             <p class="unit">Quantity: <input type="number" value=" " th:value="pro.quantity"></p>
 
 
-            <p class="btn-area1"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></p>
+            <button class="btn-area1" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></button>
 
-
-            <button class="btn-area" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
+            <button class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
 
 
           </div>
