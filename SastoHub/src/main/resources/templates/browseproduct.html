@@ -81,16 +81,15 @@
 
             <p><i>Brand New</i></p>
 
-            <h4 th:text="${pro.productPrice}"> </h4>
+            <p> ProductPrice: <i th:text="${pro.productPrice}" style="color: red"></i></p>
 <!--            <p class="unit">Quantity: <p th:> </p> </p>-->
 
             <p class="unit">Quantity: <input type="number" value=" " th:value="pro.quantity"></p>
 
 
-            <p class="btn-area1"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></p>
+            <button class="btn-area1" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></button>
 
-
-            <button class="btn-area" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
+            <button class="btn-area"><i aria-hidden="true" class="fa fa-shopping-cart"></i>ADD TO CART</button>
 
 
           </div>
@@ -137,28 +136,6 @@
         <p class="current-rating">0 of 5</p>
       </div>
 
-<<<<<<< HEAD
-    </div>
-  <!--  -->
-    <div class="footertitle">SastoHub</div>
-
-    <footer class="footer-distributed">
-
-      <div class="footer-right">
-        <a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i></a>
-        <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i></a>
-        <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i></a>
-        <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
-
-      <div class="footer-left">
-
-        <p class="footer-links">
-          <a class="link-1" href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">FAQs</a>
-          <a href="#">Contact Us</a>
-=======
   </div>
 
   <!--  -->
@@ -177,14 +154,10 @@
       <div class="footer-left">
 
         <p class="footer-links">
-          <a class="link-1" th:href="@{~/home/homepage}">Home</a>
-
-          <a th:href="@{~/user/about}">About Us</a>
-
-          <a th:href="@{~/user/faq}">FAQs</a>
-
-          <a th:href="@{~/pay/payment}">Contact Us</a>
->>>>>>> 628b2317e810d61a0ca51450ca5f0deb1ec79185
+          <a class="link-1" href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">FAQs</a>
+          <a href="#">Contact Us</a>
         </p>
 
         <p>sastohub@gmail.com Ktm, Nepal<br>

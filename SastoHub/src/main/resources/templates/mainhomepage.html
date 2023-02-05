@@ -24,7 +24,13 @@
         <input type="text" placeholder="Search">
 
         <i class="fa-solid fa-cart-shopping "></i>
-        <a th:href="@{~/user/profile/{id}}"><i class="fa-solid fa-user "></i></a>
+
+        <div>
+        <a th:href="@{~/user/profile/}+${userdata.id}">
+        <i class="fa-solid fa-user "></i>
+        </a>
+            <span th:text="${userdata.getFull_name()}" style="color: white;margin-left: 5px;" ></span>
+        </div>
 
 
     </div>
@@ -55,8 +61,8 @@
         <!-- <div class="swiper-pagination"></div> -->
 
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+<!--        <div class="swiper-button-prev"></div>-->
+<!--        <div class="swiper-button-next"></div>-->
 
 
     </div>
@@ -67,7 +73,7 @@
 <script>
     const swiper = new Swiper('.swiper', {
         autoplay:{
-            delay: 5000,
+            delay: 10000,
             disableOnInteraction: false
         },
         loop: true,
@@ -78,10 +84,10 @@
             clickable: true,
         },
 
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
 
     });
 </script>

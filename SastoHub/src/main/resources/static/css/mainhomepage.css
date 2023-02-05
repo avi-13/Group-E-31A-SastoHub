@@ -98,14 +98,24 @@ i:hover{
 
 }
 .container{
+<<<<<<< HEAD
     width: 80.6%;
     height: 81vh;
      margin-left: 119px;
+=======
+    width: 100%;
+    height: 88vh;
+     /*margin-left: 119px;*/
+>>>>>>> 6e6be63a4c97aa71131f0d5caa2e7827d4ba2841
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     margin-top: 140px;
+=======
+    margin-top: 60px;
+>>>>>>> 6e6be63a4c97aa71131f0d5caa2e7827d4ba2841
 
 }
 .swiper{
@@ -131,7 +141,11 @@ i:hover{
     /*border: #c000d5 solid 2px;*/
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     margin: 30px 119px 0 119px;
+=======
+    margin: 30px 160px 0 119px;
+>>>>>>> 6e6be63a4c97aa71131f0d5caa2e7827d4ba2841
 }
 
 .banner{
