@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class Adminlogin {
     private final AdminServices adminServices;
 
@@ -31,10 +31,10 @@ public class Adminlogin {
     }
 
 
-    @GetMapping("/dash")
-    public String homePage(){
-        return "Admindashboard";
-    }
+//    @GetMapping("/dash")
+//    public String homePage(){
+//        return "Admindashboard";
+//    }
 
 
 

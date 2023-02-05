@@ -1,11 +1,13 @@
 package com.system.sastohub.services.impl;
 
 import com.system.sastohub.entity.Order;
+import com.system.sastohub.entity.Product;
 import com.system.sastohub.pojo.OrderPojo;
 import com.system.sastohub.repo.OrderRepo;
 import com.system.sastohub.repo.ProductRepo;
 import com.system.sastohub.repo.UserRepo;
 import com.system.sastohub.services.OrderService;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -61,5 +63,20 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> fetchAll() {
        return this.orderRepo.findAll();
+    }
+
+    @Override
+    public Order fetchById(Integer id) {
+        Order order= orderRepo.findById(id).orElseThrow(()-> new RuntimeException("CouldNot Find"));
+//        Product product = productRepo.findById(order.getOrderId()).orElseThrow(()-> new RuntimeException("CouldNot Find"));
+        order = Order.builder()
+                .product(order.getProduct())
+                .imageBase64(order.getImageBase64())
+                .productTitle(order.getProductTitle())
+                .productCategory(order.getProductCategory())
+                .productPrice(order.getProductPrice())
+                .size(order.getSize())
+                .build();
+        return order;
     }
 }

@@ -11,5 +11,7 @@ public interface OrderService {
 
     List<Order> fetchAll();
 
+    Order fetchById(Integer id);
+
 
 }

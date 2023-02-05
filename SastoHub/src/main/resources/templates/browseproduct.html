@@ -77,13 +77,14 @@
             <input type="text"  hidden="hidden" name="address" th:value="${loggedUser.address}">
             <input type="text"  hidden="hidden" name="email" th:value="${loggedUser.email}">
             <input type="text"  hidden="hidden" name="mobile_no" th:value="${loggedUser.mobileNo}">
+<!--            <img type="text"  hidden="hidden" name="image" th:value="${product.image}">-->
 
             <p><i>Brand New</i></p>
 
             <p> ProductPrice: <i th:text="${pro.productPrice}" style="color: red"></i></p>
 <!--            <p class="unit">Quantity: <p th:> </p> </p>-->
 
-            <p class="unit">Quantity: <input type="number" value=" " th:value="pro.quantity"></p>
+            <p class="unit">Quantity: <input type="number" value=" " th:field="${saveorder.quantity}"></p>
 
 
             <button class="btn-area1" type="submit"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="btn3">BUY NOW</span></button>
