@@ -13,10 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -110,4 +107,17 @@ public class UserController {
         return "redirect:/login";
     }
 
+    @GetMapping("/forgotpassword")
+    public String forgotpassword(Model model){
+        model.addAttribute("users",new UserPojo());
+        return ("Forgetpasword");
+    }
+
+    @PostMapping("/changepassword")
+    public String changepassword(@RequestParam("email") String email, Model model, @Valid UserPojo userPojo){
+        userServices.processPasswordResetRequest(userPojo.getEmail());
+        model.addAttribute("message","Your new password has been sent to your email Please " +
+                "check your inbox");
+        return "redirect:/home";
+    }
 }
