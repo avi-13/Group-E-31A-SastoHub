@@ -43,6 +43,16 @@ public class UserController {
         return "visualization";
     }
 
+    @GetMapping("/about")
+    public String about() {
+        return "aboutus";
+    }
+
+    @GetMapping("/faq")
+    public String faq() {
+        return "FAQ";
+    }
+
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());

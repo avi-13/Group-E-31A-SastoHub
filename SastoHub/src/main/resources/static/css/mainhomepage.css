@@ -9,6 +9,7 @@
     border: none;
     text-transform: capitalize;
     font-family: "Nunito", sans-serif;
+
 }
 
 /*Navigation From Here  */
@@ -55,11 +56,14 @@ i:hover{
     font-size: 18px;
     font-weight: 500;
 }
-.upperpart h1{
-    font-size: 24px;
-    margin-left: 10px;
-    margin-top: 10px;
-    color: white;
+.upperpart h1 {
+    font-size: 26px;
+    margin-left: 140px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.upperpart h1 a{
+    color: White;
 }
 
 .lowerpart{
@@ -78,9 +82,10 @@ i:hover{
     height: 30px;
     color: gray;
     font-weight: 700;
-    margin-left: 150px;
+    margin-left: 140px;
     margin-top: 13px;
     font-size: 18px;
+    padding-left: 50px;
 
 }
 .lowerpart a:hover{
@@ -95,12 +100,12 @@ i:hover{
 .container{
     width: 80.6%;
     height: 81vh;
-     margin-left: 145px;
+     margin-left: 119px;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 113px;
+    margin-top: 140px;
 
 }
 .swiper{
@@ -126,7 +131,7 @@ i:hover{
     /*border: #c000d5 solid 2px;*/
     display: flex;
     flex-direction: column;
-    margin: 30px 0 0 143px;
+    margin: 30px 119px 0 119px;
 }
 
 .banner{
@@ -152,7 +157,7 @@ i:hover{
 
 .hmproddiv{
     background: #FFFFFF;
-    width: 270px;
+    width: 400px;
     height: 300px;
     align-content: center;
     align-items: center;
@@ -188,7 +193,7 @@ i:hover{
 /*    border-radius: 20px;*/
 /*}*/
 .hmprodimg{
-    width: 270px;
+    width: 100%;
     height: 100%;
     border-radius: 5px;
     object-fit: cover;
