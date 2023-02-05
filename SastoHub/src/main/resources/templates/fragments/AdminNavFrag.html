@@ -26,11 +26,22 @@
 
             <li class="list-view-active" id="store" >
 
-                <a  th:href="@{~/user/store}">
+                <a  th:href="@{~/product/addProduct}">
 
                     <i class='bx bxs-shopping-bag-alt' ></i>
 
                     <span class="text">My Store</span>
+
+                </a>
+
+            </li>
+            <li class="list-view-active" id="pro" >
+
+                <a  th:href="@{~/product/list}">
+
+                    <i class='bx bxs-shopping-bag-alt' ></i>
+
+                    <span class="text">My Products</span>
 
                 </a>
 
@@ -104,7 +115,7 @@
 
             <a href="#" class="profile">
 
-                <img src="/static/images/profile.jpg">
+                <img class="image" th:src="@{/images/profile.jpg}" alt="image">
 
             </a>
 

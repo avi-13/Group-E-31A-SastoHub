@@ -232,6 +232,7 @@ body {
     grid-gap: 24px;
     font-family: var(--lato);
     position: sticky;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -396,4 +397,19 @@ body {
     #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
+}
+
+
+
+
+
+/*-------------dashboard------------*/
+body .vessel{
+    width: 100%;
+    display: flex;justify-content: center;
+    align-items: center;
+
+}
+table{
+    margin-left: 20%;
 }

@@ -1,8 +1,8 @@
-body{
+.mainclass{
     border: #c000d5 solid 2px;
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 10px 10px 10px ;
+    margin: 30px 10px 10px 300px ;
 }
 .autodiv{
     width:300px;

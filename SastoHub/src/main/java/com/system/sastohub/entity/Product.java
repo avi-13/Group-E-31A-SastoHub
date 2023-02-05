@@ -18,11 +18,16 @@ public class Product {
     private Integer productId;
 
     private String productTitle;
+
     private String productCategory;
+
+    private String brandName;
+
+    private String size;
 
     private String productDescription;
 
-    private double productPrice;
+    private Double productPrice;
 
     private String image;
 

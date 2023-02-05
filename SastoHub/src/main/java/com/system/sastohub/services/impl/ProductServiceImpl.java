@@ -34,10 +34,14 @@ public class ProductServiceImpl implements ProductService {
         product.setProductCategory(productpojo.getPCategories());
         product.setProductDescription(productpojo.getPDesc());
         product.setProductPrice(productpojo.getPPrice());
+        product.setBrandName(productpojo.getBName());
+        product.setSize(productpojo.getSize());
 
         if(productpojo.getImage()!=null){
 //            System.out.println(UPLOAD_DIRECTORY);
+            StringBuilder fileNames = new StringBuilder();
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, productpojo.getImage().getOriginalFilename());
+            fileNames.append(productpojo.getImage().getOriginalFilename());
             Files.write(fileNameAndPath, productpojo.getImage().getBytes());
 
             product.setImage(productpojo.getImage().getOriginalFilename());
@@ -56,6 +60,8 @@ public class ProductServiceImpl implements ProductService {
                 .productCategory(product.getProductCategory())
                 .productDescription(product.getProductDescription())
                 .productPrice(product.getProductPrice())
+                .brandName(product.getBrandName())
+                .size(product.getSize())
                 .build();
         return product;
     }
@@ -76,6 +82,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> fetchAll() {
         return productRepo.findAll();
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        productRepo.deleteById(id);
     }
 
 }

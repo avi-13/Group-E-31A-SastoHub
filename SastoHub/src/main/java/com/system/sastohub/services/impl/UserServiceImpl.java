@@ -20,6 +20,9 @@ public class UserServiceImpl implements UserServices {
     @Override
     public String save(UserPojo userPojo){
         User user =new User();
+        if(userPojo.getId()!=null){
+            user.setId(userPojo.getId());
+        }
         user.setFull_name(userPojo.getFullname());
         user.setAddress(userPojo.getAddress());
         user.setEmail(userPojo.getEmail());
@@ -34,15 +37,31 @@ public class UserServiceImpl implements UserServices {
     }
 
     @Override
-    public UserPojo findByEmail(String email) {
+    public User findByEmail(String email) {
         User user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
-        return new UserPojo(user);
+        return user;
     }
 
     @Override
     public List<User> fetchAll() {
         return userRepo.findAll();
+    }
+
+    @Override
+    public User fetchById(Integer id) {
+        return userRepo.findById(id).orElseThrow(() -> new RuntimeException("Not Found"));
+
+//        User user= userRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+//        user=User.builder()
+//                .id(user.getId())
+//                .full_name(user.getFull_name())
+//                .email(user.getEmail())
+//                .mobileNo(user.getMobileNo())
+//                .address(user.getAddress())
+////                .imageBase64(getImageBase64(user.getImage()))
+//                .build();
+//        return user;
     }
 
     @Override

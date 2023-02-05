@@ -18,15 +18,22 @@
 <div th:replace="fragments/AdminNavFrag.html :: adminnav"></div>
 
 
+<div class="analytics">
+
+
+
     <canvas id="piechart" style="width:100%;max-width:700px"></canvas>
 
     <canvas id="bargraph" style="width:100%;max-width:700px"></canvas>
 
     <canvas id="linegraph" style="width:100%;max-width:700px"></canvas>
 
+</div>
+
 
 </body>
 <script th:src="@{~/js/script.js}"></script>
+
 <script th:src="@{~/js/visualization.js}"></script>
 <script>  let myPage = "stat";
 let listGroupItem = Array.from(document.getElementsByClassName("list-view-active"));
