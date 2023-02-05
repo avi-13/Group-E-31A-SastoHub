@@ -1,8 +1,11 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.Order;
 import com.system.sastohub.entity.Product;
 
 import com.system.sastohub.pojo.ProductPojo;
+import com.system.sastohub.repo.OrderRepo;
+import com.system.sastohub.services.OrderService;
 import com.system.sastohub.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -24,13 +27,7 @@ import java.util.List;
 public class AdminController {
 
     private final ProductService productService;
-
-//
-//    @GetMapping("/product")
-//    public String homePage() {
-//        return "adminproductlist";
-//    }
-
+    private final OrderService orderService;
 
     @GetMapping("/{id}")
     public String fetchById(@PathVariable Integer id, Model model, Principal principal){
@@ -55,7 +52,7 @@ public class AdminController {
                         .build()
 
         ));
-        return "productlist";
+        return "adminproductlist";
     }
 
 
@@ -92,6 +89,29 @@ public class AdminController {
     public String deleteProduct(@PathVariable("id") Integer id){
         productService.deleteById(id);
         return "redirect:/product/list";
+    }
+
+    @GetMapping("/orderList")
+    public String getOrderList(Model model){
+        List <Order> orderLists=orderService.fetchAll();
+        List <Order> orderList=orderService.fetchAll();
+//        model.addAttribute("orderList", orderLists);
+        model.addAttribute("orders", orderList);
+//        model.addAttribute("order", orderLists.stream().map(orders ->
+//                Order.builder()
+//                        .orderId(orders.getOrderId())
+//                        .full_name(orders.getFull_name())
+//                        .productTitle(orders.getProductTitle())
+//                        .quantity(orders.getQuantity())
+//                        .productPrice(orders.getProductPrice())
+//                        .productCategory(orders.getProductCategory())
+//                        .address(orders.getAddress())
+//                        .mobileNo(orders.getMobileNo())
+//                        .size(orders.getSize())
+//                        .email(orders.getEmail())
+//                        .build()
+//        ));
+        return "Admindashboard";
     }
 }
 

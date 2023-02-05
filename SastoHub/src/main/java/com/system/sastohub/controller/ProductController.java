@@ -100,7 +100,7 @@ public class ProductController {
                         .build()
 
         ));
-        return "productlist";
+        return "adminproductlist";
     }
 
     public Map<String, String> validateRequest(BindingResult bindingResult) {

@@ -1,13 +1,16 @@
 package com.system.sastohub.controller;
 
+import com.system.sastohub.entity.Order;
 import com.system.sastohub.pojo.OrderPojo;
 import com.system.sastohub.pojo.ProductPojo;
 import com.system.sastohub.services.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -27,6 +30,11 @@ import java.util.Map;
 public class OrderController {
     private final OrderService orderService;
 
+
+//    @GetMapping("/dashboard")
+//    public String homePage() {
+//        return "Admindashboard";
+//    }
 
     @PostMapping("/saveOrder")
     public String saveProduct(@Valid OrderPojo orderPojo, BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException {
@@ -57,5 +65,21 @@ public class OrderController {
         return errors;
 
     }
-
+//    @GetMapping("/orderList")
+//    public String getOrderList(Model model){
+//        List <Order> orderLists=orderService.fetchAll();
+//        model.addAttribute("orderList", orderLists);
+////        model.addAttribute("orders", orderLists);
+//        model.addAttribute("order", orderLists.stream().map(orders ->
+//                Order.builder()
+//                        .productId(orders.getProduct().getProductId())
+//                        .imageBase64(getImageBase64(orders.getImage()))
+//                        .productTitle(orders.getProductTitle())
+//                        .productCategory(orders.getProductCategory())
+//                        .size(orders.getSize())
+//                        .productPrice(orders.getProductPrice())
+//                        .build()
+//        ));
+//        return "Admindashboard";
+//    }
 }

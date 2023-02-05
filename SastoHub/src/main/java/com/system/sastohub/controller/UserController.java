@@ -33,10 +33,10 @@ public class UserController {
         return "Admindashboard";
     }
 
-//    @GetMapping("/store")
-//    public String store(){
-//        return "adminproduct";
-//    }
+    @GetMapping("/bought")
+    public String store(){
+        return "boughtproducts";
+    }
 
     @GetMapping("/stat")
     public String stat() {
