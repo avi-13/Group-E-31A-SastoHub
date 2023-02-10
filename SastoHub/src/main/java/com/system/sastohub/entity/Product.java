@@ -27,7 +27,7 @@ public class Product {
 
     private String productDescription;
 
-    private double productPrice;
+    private Double productPrice;
 
     private String image;
 

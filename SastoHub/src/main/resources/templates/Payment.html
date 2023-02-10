@@ -10,62 +10,65 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" th:href="@{~/css/Payment.css}">
 <!--  <link rel="stylesheet" href="/static/css/Payment.css">-->
   <title>Browse Product</title>
 </head>
 <header>
-  <div class="brand">
-    <span class="SastoHub"></span>
-    <h1>SastoHub</h1>
-  </div>
-  <span class="fas fa-bars" id="menuIcon" onclick="toggle()"></span>
-  <div class="navbar" id="nav">
-    <div class="searchBox">
-      <input type="text" placeholder="Search Here" />
-      <span class="fas fa-search" id="searchIcon"></span>
-    </div>
-    <ul>
-      <li>
-        <a href="#"> Home </a>
-      </li>
-      <li>
-        <a href="#"> Services </a>
-      </li>
-      <li>
-        <a href="#"> Contact </a>
-      </li>
-      <li>
-        <a href="#"> About </a>
-      <li>
-      <li>
-        <a href="#"> Help </a>
-      </li>
-    </ul>
-<!--    <button>-->
-<!--     Profile Picture Division -->
-<!--    <div class="profile">-->
-<!--      <div class="profile-div">-->
-<!--        <button class="picture" >-->
-<!--          <div class="profile-head"></div>-->
-<!--          <div class="profile-body"></div>-->
-<!--        </button>-->
-<!--         <a href="#" class="profile-link"> </a>-->
-<!--        UserName-->
-<!--         <i href="#"class="fa fa-caret-down"></i> -->
-<!--        <div class="dropdown">-->
-<!--          <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/updateprofile.html">My Details <i class="fa-solid fa-user"></i></a>-->
-<!--          <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/updateaddress.html">My Address <i class="fa-sharp fa-solid fa-location-dot"></i></a>-->
-<!--          <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/BoughtProduct.html">My Orders <i class="fa-sharp fa-solid fa-bag-shopping"></i></a>-->
-<!--          <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/myproduct.html">My Reviews <i class="fa-sharp fa-solid fa-book"></i></a>-->
-<!--          <a href="/Group-E-31A-SastoHub/Sastohub/src/main/resources/templates/login.html">Logout <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i></a>-->
-<!--        </div>-->
-      </div>.
-    </div>
-  </div>
-</header>
+  <div class="upperpart">
+    <h1>
+      <a th:href="@{~/home/homepage}">Sasto Hub</a>
+    </h1>
 
+    <input type="text" placeholder="Search">
+
+    <i class="fa-solid fa-cart-shopping "></i>
+    <a th:href="@{~/user/profile/{id}}"><i class="fa-solid fa-user "></i></a>
+
+
+  </div>
+  
+  <div class="lowerpart">
+    <a th:href="@{~/home/homepage}">Home</a>
+    <a th:href="@{~/home/homepage}">Categories</a>
+    <a th:href="@{~/home/homepage}">Services</a>
+    <a th:href="@{~/pay/payment}">Contact</a>
+    <a th:href="@{~/user/about}">About</a>
+
+  </div>
+<!--  <span class="fas fa-bars" id="menuIcon" onclick="toggle()"></span>-->
+<!--  <div class="navbar" id="nav">-->
+<!--    <div class="searchBox">-->
+<!--      <input type="text" placeholder="Search Here" />-->
+<!--      <span class="fas fa-search" id="searchIcon"></span>-->
+<!--    </div>-->
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <a href="#"> Home </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="#"> Services </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="#"> Contact </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a href="#"> About </a>-->
+<!--      <li>-->
+<!--      <li>-->
+<!--        <a href="#"> Help </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+      </div>.
+</header>
 
 <body>
 <div class="wrapper">
@@ -97,10 +100,38 @@
     </div>
   </div>
 </div>
-</body>
-<footer>
-</footer>
 
+<div class="footertitle">SastoHub</div>
+
+<footer class="footer-distributed">
+
+  <div class="footer-right">
+
+    <a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i></a>
+    <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i></a>
+    <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i></a>
+    <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+
+  <div class="footer-left">
+
+    <p class="footer-links">
+      <a class="link-1" th:href="@{~/home/homepage}">Home</a>
+
+      <a th:href="@{~/user/about}">About Us</a>
+
+      <a th:href="@{~/user/faq}">FAQs</a>
+
+      <a th:href="@{~/pay/payment}">Contact Us</a>
+    </p>
+
+    <p>sastohub@gmail.com Ktm, Nepal<br>
+      85475967841, 3210154789, 0124587895</p>
+    <p>SastoHub &copy; 2022</p>
+  </div>
+
+</footer>
+</body>
 
 
 </html>

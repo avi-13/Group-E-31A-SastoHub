@@ -20,56 +20,56 @@
 
 <body>
 <div th:replace="fragments/AdminNavFrag.html :: adminnav"></div>
-<div class="vessel"  >
-        <table class="table table-bordered table-hover table-striped" >
+<div class="vessel" >
+        <table class="table table-bordered table-hover table-striped">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">S.N</th>
-                <th scope="col">Customer Name</th>
-                <th scope="col">Item</th>
-                <th scope="col">Price</th>
-                <th scope="col">Category</th>
-                <th scope="col">Address</th>
-                <th scope="col">Image</th>
-                <th scope="col">Email</th>
-                <th scope="col">Action</th>
+                <th>OrderId</th>
+                <th>CustomerName</th>
+                <th>ProductName</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Address</th>
+                <th>MobileNo.</th>
+                <th>Size</th>
+                <th>Email</th>
+                <th>Action</th>
 
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Bhatta</td>
-                <td>Men's Jeans</td>
-                <td>2100</td>
-                <td>Clothes</td>
-                <td>Pokhara</td>
-                <td>File</td>
-                <td>smgth@gmail.com</td>
+            <tr th:each="orders:${orders}">
+                <td th:text="${orders.orderId}"></td>
+                <td th:text="${orders.getProduct().getProductTitle()}"></td>
+                <td th:text="${orders.productTitle}"></td>
+                <td th:text="${orders.quantity}"></td>
+                <td th:text="${orders.productPrice}"></td>
+                <td th:text="${orders.productCategory}"></td>
+                <td th:text="${orders.address}"></td>
+                <td th:text="${orders.mobileNo}"></td>
+                <td th:text="${orders.size}"></td>
+                <td th:text="${orders.email}"></td>
                 <td>
-<!--                    <a onclick="popup()"  class = "btn btn-primary"href="email.html">Contact</a>-->
-                    <!-- Button trigger modal -->
                     <button class="open-button btn btn-primary " onclick="openForm()">Contact</button>
 
                     <!-- The form -->
-                    <div class="form-popup" id="myForm">
-                        <form action=" " class="form-container">
-                            <h1>Contact User</h1>
+<!--                    <div class="form-popup" id="myForm">-->
+<!--                        <form action=" " class="form-container">-->
+<!--                            <h1>Contact User</h1>-->
 
-                            <label for="mail"><b>Email</b></label>
-                            <input type="email" placeholder="Enter Email" name="email" required>
+<!--&lt;!&ndash;                            <label id="mail"><b>Email</b></label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="email" placeholder="Enter Email" name="email" required>&ndash;&gt;-->
 
-                            <label for="description"><b>Description</b></label>
-                            <input type="text" placeholder="Details to be Send to User" name="description" required>
+<!--&lt;!&ndash;                            <label id="description"><b>Description</b></label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="text" placeholder="Details to be Send to User" name="description" required>&ndash;&gt;-->
 
-                            <button type="submit" class="btn">Send</button>
-                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                        </form>
-                    </div>
+<!--                            <button type="submit" class="btn">Send</button>-->
+<!--                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
+<!--                        </form>-->
+<!--                    </div>-->
                 </td>
             </tr>
-
-
             </tbody>
         </table>
     </div>

@@ -31,6 +31,8 @@ body {
   box-shadow: 0 6px 20px rgba(25, 27, 28, 0.5);
   /* padding: 30px; */
   margin: 60px 390px;
+  
+
 }
 
 .left-section {
@@ -109,4 +111,19 @@ body {
   margin-left: 60px;
 }
 
- 
+@media screen and (max-width: 920px) {
+ img{
+   display:none;
+ }
+  .left-section{
+    width:100%;
+    margin:auto;
+  }
+
+  .login-form-admin{
+    margin:auto;
+    width:100%;
+    box-shadow:none;
+  }
+
+}
