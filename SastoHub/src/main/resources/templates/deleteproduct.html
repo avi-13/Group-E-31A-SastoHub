@@ -33,9 +33,13 @@
 <div class="container">
   <h1>Product Details</h1>
 
+
   <form th:method="post" th:action="@{/product/save}" th:object="${products}" enctype="multipart/form-data">
     <div class="inside_container">
+
+
       <div class="left-side">
+
 
         <input class="field" type="text" hidden placeholder="UserId..."  th:field="*{pid}" th:value="${product.getProductId()}" />
 
@@ -84,7 +88,12 @@
           <textarea rows="10" cols="100" placeholder="ProductDescription....." required th:field="*{PDesc}"  th:value="${product.getProductDescription()}"  > </textarea>
 
         </div>
-
+        <div ><a class="delete" th:href="@{~/admin/edit/}+${product.productId}">
+          <button type="submit">Save Changes</button>
+        </a>
+          <a class="delete" th:href="@{~/admin/delete/}+${product.productId}">
+            <button type="button">Delete Product</button>
+          </a></div>
       </div>
 
       <div class="profile-pic">
@@ -92,18 +101,21 @@
         <input id="profile-image-upload" hidden th:field="*{image}" accept="image/jpeg, image/png, image/jpg" type="file" onchange="previewFile()">
       </div>
 
+
+
     </div>
 
 
-    <div class="footer">
-      <a class="delete" th:href="@{~/admin/edit/}+${product.productId}">
-        <button type="submit">Save Changes</button>
-      </a>
-      <a class="delete" th:href="@{~/admin/delete/}+${product.productId}">
-        <button type="button">Delete Product</button>
-      </a>
 
-    </div>
+<!--    <div class="footer">-->
+<!--      <a class="delete" th:href="@{~/admin/edit/}+${product.productId}">-->
+<!--        <button type="submit">Save Changes</button>-->
+<!--      </a>-->
+<!--      <a class="delete" th:href="@{~/admin/delete/}+${product.productId}">-->
+<!--        <button type="button">Delete Product</button>-->
+<!--      </a>-->
+
+<!--    </div>-->
 
   </form>
 </div>
