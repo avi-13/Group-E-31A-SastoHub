@@ -119,6 +119,34 @@ body {
   height: 100%;
   border-radius: 0 10px 10px 0;
 }
+@media screen and (max-width: 920px) {
+  .login-form {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
+    height: 70%;
+    /* background-color: white; */
+    box-shadow: 0 6px 20px rgba(25, 27, 28, 0.5);
+    /* padding: 30px; */
+    margin: 20px 300px;
+    border-radius: 10px;
+    /* border: solid red 5px; */
 
+  }
+  .left-section {
+    width: 75%;
+    background: #c4c8c9;
+    border-radius: 10px 0 0 10px;
+  }
+  .right-section {
+    width: 20%;
+    /* background: white; */
+  }
+  .right-section img {
+  display: none;
+  }
+
+}
 
 

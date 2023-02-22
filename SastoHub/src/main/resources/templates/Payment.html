@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./FontAwesome files/fontawesome.css" /> -->
+    <!-- <script src="./FontAwesome files/fontawesome.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="./FontAwesome files/fontawesome.css" /> -->
-  <!-- <script src="./FontAwesome files/fontawesome.js"></script> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{~/css/Payment.css}" />
+    <!--  <link rel="stylesheet" href="/static/css/Payment.css">-->
+    <title>Browse Product</title>
+  </head>
+  <header>
+    <div class="upperpart">
+      <h1>
+        <a th:href="@{~/home/homepage}">Sasto Hub</a>
+      </h1>
 
-  <link rel="stylesheet" th:href="@{~/css/Payment.css}">
-<!--  <link rel="stylesheet" href="/static/css/Payment.css">-->
-  <title>Browse Product</title>
-</head>
-<header>
-  <div class="upperpart">
-    <h1>
-      <a th:href="@{~/home/homepage}">Sasto Hub</a>
-    </h1>
+      <input type="text" placeholder="Search" />
 
-    <input type="text" placeholder="Search">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <a th:href="@{~/user/profile/{id}}"><i class="fa-solid fa-user"></i></a>
+    </div>
 
-    <i class="fa-solid fa-cart-shopping "></i>
-    <a th:href="@{~/user/profile/{id}}"><i class="fa-solid fa-user "></i></a>
-
-
-  </div>
-  
-  <div class="lowerpart">
-    <a th:href="@{~/home/homepage}">Home</a>
-    <a th:href="@{~/home/homepage}">Categories</a>
-    <a th:href="@{~/home/homepage}">Services</a>
-    <a th:href="@{~/pay/payment}">Contact</a>
-    <a th:href="@{~/user/about}">About</a>
-
-  </div>
-<!--  <span class="fas fa-bars" id="menuIcon" onclick="toggle()"></span>-->
-<!--  <div class="navbar" id="nav">-->
-<!--    <div class="searchBox">-->
-<!--      <input type="text" placeholder="Search Here" />-->
-<!--      <span class="fas fa-search" id="searchIcon"></span>-->
-<!--    </div>-->
-<!--    <ul>-->
-<!--      <li>-->
-<!--        <a href="#"> Home </a>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <a href="#"> Services </a>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <a href="#"> Contact </a>-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <a href="#"> About </a>-->
-<!--      <li>-->
-<!--      <li>-->
-<!--        <a href="#"> Help </a>-->
-<!--      </li>-->
-<!--    </ul>-->
+    <div class="lowerpart">
+      <a th:href="@{~/home/homepage}">Home</a>
+      <a th:href="@{~/home/homepage}">Categories</a>
+      <a th:href="@{~/home/homepage}">Services</a>
+      <a th:href="@{~/pay/payment}">Contact</a>
+      <a th:href="@{~/user/about}">About</a>
+    </div>
+    <ul>
+      <li>
+        <a href="#"> Home </a>
+      </li>
+      <li>
+        <a href="#"> Services </a>
+      </li>
+      <li>
+        <a href="#"> Contact </a>
+      </li>
+      <li>
+        <a href="#"> About </a>
+      <li>
+      <li>
+        <a href="#"> Help </a>
+      </li>
+    </ul>
 
       </div>.
 </header>
-
 <body>
 <div class="wrapper">
   <div class="checkout_wrapper">
@@ -93,45 +102,49 @@
           </div>
         </div>
 
-        <div class="btn">
-          <a href="#">Pay</a>
+            <div class="btn">
+              <a href="#">Pay</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="footertitle">SastoHub</div>
+    <div class="footertitle">SastoHub</div>
 
-<footer class="footer-distributed">
+    <footer class="footer-distributed">
+      <div class="footer-right">
+        <a href="" class="facebook-class">
+          <i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="" class="twitter-class"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="" class="instagram-class"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="" class="linkedin-class"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
 
-  <div class="footer-right">
+      <div class="footer-left">
+        <p class="footer-links">
+          <a class="link-1" th:href="@{~/home/homepage}">Home</a>
 
-    <a href="" class="facebook-class"> <i class="fa-brands fa-facebook"></i></a>
-    <a href="" class="twitter-class"><i class="fa-brands fa-twitter"></i></a>
-    <a href="" class="instagram-class"><i class="fa-brands fa-instagram"></i></a>
-    <a href="" class="linkedin-class"><i class="fa-brands fa-linkedin"></i></a>
-  </div>
+          <a th:href="@{~/user/about}">About Us</a>
 
-  <div class="footer-left">
+          <a th:href="@{~/user/faq}">FAQs</a>
 
-    <p class="footer-links">
-      <a class="link-1" th:href="@{~/home/homepage}">Home</a>
+          <a th:href="@{~/pay/payment}">Contact Us</a>
+        </p>
 
-      <a th:href="@{~/user/about}">About Us</a>
-
-      <a th:href="@{~/user/faq}">FAQs</a>
-
-      <a th:href="@{~/pay/payment}">Contact Us</a>
-    </p>
-
-    <p>sastohub@gmail.com Ktm, Nepal<br>
-      85475967841, 3210154789, 0124587895</p>
-    <p>SastoHub &copy; 2022</p>
-  </div>
-
-</footer>
-</body>
-
-
+        <p>
+          sastohub@gmail.com Ktm, Nepal<br />
+          85475967841, 3210154789, 0124587895
+        </p>
+        <p>SastoHub &copy; 2022</p>
+      </div>
+    </footer>
+  </body>
 </html>
